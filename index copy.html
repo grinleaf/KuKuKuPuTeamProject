@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    
+    <style>
+        /* 기본 설정 */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 1px solid olivedrab;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        /* wrapper 영역 */
+        #wrapper{
+            margin: 0 auto;
+            width: 1130px;
+        }
+
+        /* header */
+        header{
+            position: relative;
+        }
+        #top-nav{
+            display: flex;
+            justify-content: flex-end;
+        }
+        #top-nav > a{
+            margin-left: 20px;
+        }
+        #main-nav{
+            width: 600px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            display: inline-flex;
+            justify-content: space-between;
+        }
+        #main-nav > a.active::after{
+            height: 300px;
+        }
+
+        /* content : header와 footer 사이 본문 영역 */
+        #content{
+            
+        }
+        #swiper-and-login{
+            display: flex;
+        }
+        #swiper{
+            flex-basis: 500px;
+        }
+        .login-area{
+            flex-basis: 300px;
+        }
+        #login-form{
+
+        }
+        #loggedin{
+            display: none;
+        }
+
+        #guide-nav{
+            height: 100px;
+            display: flex;
+        }
+        #guide-nav > div{
+            flex-grow: 1;
+        }
+
+        /* footer */
+        footer{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="top-nav">
+                <a href="">로그인</a>
+                <a href="">회원가입</a>
+                <a href="">알림</a>
+            </div>
+            <img src="./image/logo.png" alt="" width="250px">
+            <nav id="main-nav">
+                <a href="">이용안내</a>
+                <a href="">대여소 조회</a>
+                <a href="">이용권 구매</a>
+                <a href="">문의/FAQ</a>
+                <a href="">공지사항</a>
+            </nav>
+            <div style="height:300px"></div>
+        </header>
+        <div id="container">
+            <section id="swiper-and-login">
+                <!-- Slider -->
+                <div class="swiper-container">
+                    <!-- Slide wrapper -->
+                    <div class="swiper-wrapper"></div>
+                        <!-- 각 슬라이드 -->
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 1</div>
+                </div>
+                <aside class="login-area" id="login-form">
+                    <h4>login</h4>
+                </aside>
+                <aside class="login-area" id="loggedin">
+                    <h4>loggedin</h4>
+                </aside>    
+            </section>
+            <nav id="guide-nav">
+                <div>대여방법</div>
+                <div>대여방법</div>
+                <div>대여방법</div>
+                <div>대여방법</div>
+            </nav>
+            <section id="guide">
+                <div>
+                    <img src="./image/tutorial_sample04.jpg" alt="" width="250px">
+                </div>  
+            </section>
+        </div>
+        <footer>
+            <h4>footer</h4>
+        </footer>
+    </div>
+</body>
+</html>
