@@ -9,12 +9,33 @@
     <body>
 
         <!-- 맨위 -->
-        <div id="top" style="border: 1px solid black; width: 100%; height: 40px;"></div>
+        <div id="top" style="width: 100%; height: 40px;"></div>
 
         <!-- 상단 탭 -->
-        <header>
+        <header class="header">
+
+            <link rel="stylesheet" href="./css/rental_station_top.css">
 
             <div id="header" style="border: 1px solid black; width: 100%; height: 80px;">
+
+                <span class="menu_btn">
+                    <button type="submit" id="btn" style='cursor:pointer;'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1280px-Hamburger_icon.svg.png" alt="" id="btn_img">
+                    </button>
+                </span>
+
+                <h1 class="img_log">
+                    <a href="">
+                        <img src="https://www.bikeseoul.com/images/logo.png" alt="서울자전거" id="logo">
+                    </a>
+                </h1>
+
+                <div class="search">
+                    <input type="text" placeholder="위치를 입력해 주세요" id="input_text">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" alt="" id="input_img">
+                </div>
+
+
                 
             </div>
             
@@ -23,27 +44,127 @@
         <!-- 지도영역 -->
         <section>
 
-            <div id="map" style="width: 100%; height: 690px;"></div>
+            <div id="map" style="width: 100%; height: 680px;"></div>
 
             <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb1a68396a7392559ab685f4fee81211"></script>
 
+            
             <script>
+
                 var container = document.getElementById('map');
                 var options = { 
                     center: new kakao.maps.LatLng(37.5663, 126.9779), //지도의 중심좌표 - 내위치로 바꾸기
                     level: 4 
                 };
-        
+                        
                 var map = new kakao.maps.Map(container, options);
 
                 // 마커 표시 - 자전거 보관소
-                var markerPosition  = new kakao.maps.LatLng(37.5663, 126.9779); 
+                var positions = [
+                    {
+                        title: "102. 망원역 1번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55564880, 126.91062927)
+                    },
+                    {
+                        title: "103. 망원역 2번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55495071,126.91083527)
+                    },
+                    {
+                        title: "104. 합정역 1번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55062866,126.91083527)
+                    },
+                    {
+                        title: "105. 합정역 5번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55000687,126.91482544)
+                    },
+                    {
+                        title: "106. 합정역 7번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.54864502,126.91282654)
+                    },
+                    {
+                        title: "107. 신한은행 서교동지점",
+                        latlng: new kakao.maps.LatLng(37.55751038,126.91850281)
+                    },
+                    {
+                        title: "108. 서교동 사거리",
+                        latlng: new kakao.maps.LatLng(37.55274582,126.91861725)
+                    },
+                    {
+                        title: "109. 제일빌딩 앞",
+                        latlng: new kakao.maps.LatLng(37.54769135,126.91998291)
+                    },
+                    {
+                        title: "111. 상수역 2번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.54787064,126.92353058)
+                    },
+                    {
+                        title: "112. 극동방송국 앞",
+                        latlng: new kakao.maps.LatLng(37.54920197,126.92320251)
+                    },
+                    {
+                        title: "113. 홍대입구역 2번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55743790,126.92382050)
+                    },
+                    {
+                        title: "114. 홍대입구역 8번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.55706024,126.92442322)
+                    },
+                    {
+                        title: "115. 마스타 빌딩 앞",
+                        latlng: new kakao.maps.LatLng(37.55893326,126.92711639)
+                    },
+                    {
+                        title: "116. 일진아이윌아파트 옆",
+                        latlng: new kakao.maps.LatLng(37.56454086,126.92707062)
+                    },
+                    {
+                        title: "117. 홍은사거리",
+                        latlng: new kakao.maps.LatLng(37.59115982,126.94132996)
+                    },
+                    {
+                        title: "118. 광흥창역 2번출구 앞",
+                        latlng: new kakao.maps.LatLng(37.54773331,126.93176270)
+                    },
+                    {
+                        title: "119. 서강나루 공원",
+                        latlng: new kakao.maps.LatLng(37.54528427,126.93105316)
+                    },
+                    {
+                        title: "120. 신수동 사거리",
+                        latlng: new kakao.maps.LatLng(37.54524231,126.93411255)
+                    },
+                    {
+                        title: "121. 마포소방서 앞",
+                        latlng: new kakao.maps.LatLng(37.54976654,126.93317413)
+                    },
+                    {
+                        title: "122. 신성기사식당 앞",
+                        latlng: new kakao.maps.LatLng(37.54745865,126.93837738)
+                    }
+                ];
+
+                // 마커 이미지의 이미지 주소입니다
+                var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
         
-                var marker = new kakao.maps.Marker({
-                    position: markerPosition
-                });
-        
-                marker.setMap(map); 
+                for (var i = 0; i < positions.length; i ++) {
+                    
+                    // 마커 이미지의 이미지 크기 입니다
+                    var imageSize = new kakao.maps.Size(24, 35); 
+                    
+                    // 마커 이미지를 생성합니다    
+                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+                    
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map, // 마커를 표시할 지도
+                        position: positions[i].latlng, // 마커를 표시할 위치
+                        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                        image : markerImage // 마커 이미지 
+                    });
+                }
+
+                marker.setMap(map);
+
             </script>
 
         </section>
@@ -58,4 +179,67 @@
         </footer>
         
     </body>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #btn{
+            margin-left: 350px;
+            background-color: white;
+            border: 0px;
+            
+        }
+
+        #btn_img{
+            width: 40px;
+            height: 40px;
+        }
+
+        #logo{
+            width: 250px;
+            height: 60px;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+
+        .search {
+            position: relative;
+            width: 520px;
+            height: 45px;
+            margin-left: 50px;
+        }
+
+        #input_text{
+            width: 100%;
+            background-color: #EDEDED;
+            border: 0px;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 14px;
+            height: 28px;
+        }
+
+        #input_img{
+
+            position : absolute;
+            width: 25px;
+            top: 13px;
+            right: 15px;
+            margin: 0;
+
+        }
+
+
+    </style>
+
 </html>
