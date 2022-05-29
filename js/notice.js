@@ -17,13 +17,11 @@ function notice_add(){
     let table= document.getElementById('notice_table')
     for(var i=0; i<noticeArray.length; i++){
         let tr= document.createElement('tr')
-        // let a= document.createElement('a')
         let noticeTitle= document.createElement('td')
         noticeTitle.appendChild(document.createTextNode(noticeArray[i].titleTr))
         noticeTitle.onclick= move_detail_page
         let noticeDate= document.createElement('td')
         noticeDate.appendChild(document.createTextNode(noticeArray[i].dateTr))
-
         tr.appendChild(noticeTitle)
         tr.appendChild(noticeDate)
         table.appendChild(tr)
@@ -33,5 +31,6 @@ function notice_add(){
 function move_detail_page(){
     window.open('./noticeDetail.html', '_self')
 }
+
 
 notice_add()
