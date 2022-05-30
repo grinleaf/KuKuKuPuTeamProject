@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { padding: 0px; margin: 0px;}
+        #wapper{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+        }
+
+        .item0{
+            border: 5px solid red;
+            
+        }
+        .item1{
+            background-color: aqua;
+            width: 50%;  height: 50%;
+        }
+        .item2{
+            background-color: blue;
+            width: 50%;  height: 50%;
+        }
+        .item3{background-color: yellow;
+            width: 50%;  height: 50%;
+            }
+
+            @media screen and (min-width:1000px){
+                #wapper { flex-flow: row wrap;}
+            }
+            @media screen and (max-width:1000px){
+                #wapper { flex-flow: column nowrap;}
+            }
+       
+    </style>
+</head>
+<body>
+
+    <div id="wapper">
+        <img src="./image/tutorial_sample04.jpg"  id = "item0" alt="샘플 이미지" style="width: 50%;  height: 50%; display: inline; padding: 0px;margin: 0px;" >
+        <div class="item1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, molestiae! Laudantium provident quos odio fugiat sapiente ratione eveniet quod repellat porro possimus illo maxime ab, amet reiciendis omnis delectus quis!</div>
+        <div class="item2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, molestiae! Laudantium provident quos odio fugiat sapiente ratione eveniet quod repellat porro possimus illo maxime ab, amet reiciendis omnis delectus quis!</div>
+        <div class="item3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, molestiae! Laudantium provident quos odio fugiat sapiente ratione eveniet quod repellat porro possimus illo maxime ab, amet reiciendis omnis delectus quis!</div>
+    </div>
+    
+</body>
+</html>

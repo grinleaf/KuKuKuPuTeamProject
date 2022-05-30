@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="join my">
+        <div class="sub_title">
+            <h3>회원가입</h3>
+        </div>
+        <div class="join_tab">
+            <ul>
+                <li class="on"><a href="#">약관동의</a></li>
+                <li>본인인증</li><li><a href="#">정보입력</a></li>
+            </ul>
+        </div>
+    
+        <div class="join_label no1">
+            <p><span>1</span></p>
+        </div>
+    
+        <div class="agree">
+            <p><a href="/app/use/moveUseMenuClauseInfo.do">서비스 이용약관 동의 (상세내용 보기)</a> <input type="checkbox" id="check2" name="check2"><label for="check2"><span></span></label></p>
+            <p><a href="javascript:viewAgree();">개인정보 수집ㆍ이용 동의 (상세내용 보기)</a> <input type="checkbox" id="check3" name="check3"><label for="check3"><span></span></label></p>
+            
+            <div class="my_info" id="viewAgreeDiv" style="display: none;">
+                <a href="javascript:viewAgree();"><strong>닫기</strong></a><br>
+                <ul class="usagr">
+                    <li align="left">
+                        [서울자전거 따릉이](‘www.bikeseoul.com')는 기본적인 회원 서비스 제공을 위한 필수정보와 정보주체 각각의 기호와 필요에 맞는 서비스를 제공하기 위한 선택정보로 구분하여 다음의 정보를 수집하고 있습니다. <br>
+                        가입정보에 대한 선택정보를 입력하지 않은 경우에도 서비스 이용에는 제한이 없습니다.<br>(단 실명인증이 필요한 서비스에서는 실명인증을 하지 않을시 서비스 이용에 제한이 있을 수 있습니다)
+                    </li>
+                </ul>
+                <p align="left"><strong>● 개인정보 수집‧이용 동의 </strong></p>
+                <table class="psboard3 mt10">
+                    <caption>
+                        <details>
+                            <summary>개인정보</summary>
+                            <p class="usagr mb10">구분, 항목, 수집목적, 보유기간</p>
+                        </details>
+                    </caption>
+                    <colgroup>
+                        <col align="center" style="width:10%">
+                        <col align="center" style="width:30%; font-size:19px">
+                        <col align="center" style="width:20%; font-size:19px">
+                        <col align="center" style="width:40%; font-size:19px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" align="center">순번</th>
+                            <th scope="col" align="center" style="font-size:19px;font-weight: bold;">항목</th>
+                            <th scope="col" align="center" style="font-size:19px;font-weight: bold;">수집목적</th>
+                            <th scope="col" align="center" style="font-size:19px;font-weight: bold;">보유기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">필수</td>
+                            <td align="center" style="font-size:19px;font-weight: bold;">휴대번호, 아이디, 비밀번호, 전자메일주소, 생년, 성별</td>
+                            <td align="center" rowspan="2" style="font-size:19px;font-weight: bold;">
+                                서울공공자전거 대여
+                            </td>
+                            <td align="center" rowspan="2" style="font-size:19px;font-weight: bold;">
+                                회원 탈퇴 시까지<br>(2년마다 재동의가 요구됨)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">선택</td>
+                            <td align="center" style="font-size:19px;font-weight: bold;">체중</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="usagr">
+                    <li align="left">
+                        ※ 개인정보 수집‧이용에 대한 동의를 거부할 권리가 있습니다. 그러나 필수 항목의 동의를 거부할 경우 공공자전거 대여에 제한을 받을 수 있습니다.
+                        <br> 선택 항목의 동의를 거부하셔도 공공자전거 대여는 하실 수 있습니다.
+                    </li>
+                </ul>
+                
+                
+            </div>
+            <p><a href="/app/use/moveUseMenuClauseInfo.do?tabInfo=2&amp;part=p3">수집한 개인정보의 제 3자 정보제공 동의 (상세내용 보기)</a> <input type="checkbox" id="check4" name="check4"><label for="check4"><span></span></label></p>
+            <p><a href="/app/use/moveUseMenuClauseInfo.do?part=loc">위치기반 서비스 이용약관에 동의  (상세내용 보기)</a> <input type="checkbox" id="check5" name="check5"><label for="check5"><span></span></label></p>
+            <span>에 동의하여 가입합니다.</span>
+        </div>
+        <div class="check agree"><input type="checkbox" id="check1" name="check1"><label for="check1"><span></span>위 약관을 모두 읽었으며 이에 동의합니다.</label></div>
+        
+        <div class="btn" id="consent" name="consent"><a href="#">다음</a></div>
+    </div>
+    
+</body>
+</html>

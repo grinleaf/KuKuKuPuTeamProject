@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"  media="(min-width:600px)">
+    
+    <title>회원가입 계정 종류 선택 페이지</title>
+    
+    <style>
+        *{margin: 0 auto;}
+        ul {list-style: none;}
+        .container { 
+            display: flex;
+            flex-flow: column ;
+            min-height: 100vh;
+        }
+        li{margin: 0px;}
+        .item1{
+            flex-direction: column;
+            /* 위아래 마진 주는거 수정해야 함. */
+            align-content: space-around; 
+        }
+        button { 
+
+            display: inline-block;
+            justify-content: center;
+        border: 2px solid black;}
+
+
+    </style>
+
+</head>
+
+<body class="container">
+    <!-- 구글이 준 로그인 이미지 -->
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+        // Google 회원가입을 위한 스크립트 입니다.
+        // https://developers.google.com/identity/gsi/web
+        // 하 위에꺼 지원중단이라 파이어베이스 써야 함. 빨리 말해주지 만드는거 다 설명해주고 알았네? 호호
+
+
+    </script>
+            <div id="item1">
+                <img src="./image/logo.png" alt="따릉이 로고" ></div>
+            <div id="item1">
+                <button type="button" class="btn btn-success">일반 회원으로 가입</button></div>
+            <div id="item1">
+                <img src="./image/join_line.jpg" alt=""></div>
+            <div id="item1">
+                <button type="button" class="btn btn-warning" id="kakaoSignIn" onclick="kakao()">카카오 계정으로 가입</button></div>
+            <div id="item1">
+                <button type="button" class="btn btn-primary" onclick="onSignIn()">구글 계정으로 가입</button></div>
+            <p>SNS 로그인 회원가입시 SNS 제공 업체 정책상 자동로그인이 지원되고 있지 않습니다.<br> 이점 양해 부탁드립니다</p></div>
+        </ul>
+    </div>
+</body>
+</html>
