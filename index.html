@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
@@ -16,6 +19,13 @@
             box-sizing: border-box;
             border: 1px solid olivedrab;
         }
+        body{
+            min-width: 400px;
+        }
+        ol, ul{
+            margin-bottom: 0;
+            padding-left: 0;
+        }
         ul li{
             list-style-type: none;
         }
@@ -23,14 +33,18 @@
             text-decoration: none;
         }
 
-        /* wrapper 영역 */
-        header, #container{
+        /* 공통 설정 */
+        #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
             width: 1100px;
             margin: 0 auto;
         }
+
         /* header */
-        header{
+        #header{
             position: relative;
+        }
+        #navbar-toggler{
+            display: none
         }
         #top-nav{
             display: flex;
@@ -41,7 +55,9 @@
         }
 
         #main-nav{
-            /* position: absolute; */
+            /* carousel의 z-index가 1이라 메뉴가 덮이지 않도록 */
+            z-index: 2;
+            position: absolute;
             bottom: 0;
             right: 0;
             line-height: 2.5rem;
@@ -82,45 +98,216 @@
         #content{
             
         }
+        #carouselExampleCaptions{
+            /* display: none; */
+        }
+        .carousel-inner{
+            max-width: 800px;
+        }
         #swiper-and-login{
-            /* display: flex; */
+            display: flex;
         }
         #swiper{
             flex-basis: 500px;
+        }
+        #swiper-slide > img{
+            height: 500px;
         }
         .login-area{
             flex-basis: 300px;
         }
         #login-form{
-
+            
         }
         #loggedin{
             
         }
 
         #guide-nav{
+            /* position: fixed;
+            top: 0;
+            right: 0; */
             height: 100px;
             display: flex;
         }
         #guide-nav > div{
             flex-grow: 1;
         }
+        #guide{
+            display: flex;
+        }
+        #guide > div > img{
+            width: 100%;
+        }
+        #places{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #places > div{
+            width: 50%;
+        }
+        #places > div > img{
+            width: 100%;
+        }
 
         /* footer */
-        footer{
-
+        #footer{
         }
     </style>
+
+    <style media="(max-width:640px)">
+        body{
+            background-color: lightblue;
+        }
+        #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
+            width: auto;
+        }
+        #header{
+            /* display: flex;
+            flex-direction: column; */
+        }
+        #logo-and-toggler{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        #logo{
+            margin:0 auto;
+        }
+        #navbar-toggler{
+            display: inline;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        #navbar-toggler span{
+            display: block;
+            width: 30px;
+            height: 3px;
+            margin: 6px auto;
+            background: rgb(0, 0, 0);
+            transition: all .6s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+        }
+        #top-nav{
+            display: none;
+        }
+        #m_top-nav{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #main-nav{
+            display: none;
+        }
+        #m_main-nav{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-area{
+            display: none;
+        }
+
+    </style>
+
+    
+    <script>
+        function afterload(){
+            let isLogin = false
+            const loginForm = document.getElementById("login-form")
+            const loggedIn = document.getElementById("loggedin")
+            if(isLogin == false){
+                loginForm.style.display = "auto"
+                loggedIn.style.display = "none"
+            } else {
+                loginForm.style.display = "none"
+                loggedIn.style.display = "auto"
+            }
+        }
+    </script>
 </head>
-<body>
-    <div id="wrapper">
-        <header>
+<body onload="afterload()">
+    <div id="header-wrap">
+        <header id="header">
             <div id="top-nav">
                 <a href="">로그인</a>
                 <a href="">회원가입</a>
                 <a href="">알림</a>
             </div>
-            <img src="./image/logo.png" alt="" width="250px">
+            
+            <div id="logo-and-toggler">
+                <img id="logo" src="./image/logo.png" alt="" width="250px">
+                <button id="navbar-toggler" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <img class="offcanvas-title" id="staticBackdropLabel" src="./image/logo.png" alt="" width="250px">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="m_top-nav">
+                        <a href="">로그인</a>
+                        <a href="">회원가입</a>
+                        <a href="">알림</a>
+                    </div>
+                    <nav id="m_main-nav">
+                        <ul>
+                            <li><a href="">이용안내</a>
+                                <ul>
+                                    <li><a href="">aaa</a></li>
+                                    <li><a href="">bbb</a></li>
+                                    <li><a href="">ccc</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="">대여소 조회</a>
+                                <ul>
+                                    <li><a href="">aaa</a></li>
+                                    <li><a href="">bbb</a></li>
+                                    <li><a href="">ccc</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="">이용권 구매</a>
+                                <ul>
+                                    <li><a href="">aaa</a></li>
+                                    <li><a href="">bbb</a></li>
+                                    <li><a href="">ccc</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="">문의/FAQ</a>
+                                <ul>
+                                    <li><a href="">aaa</a></li>
+                                    <li><a href="">bbb</a></li>
+                                    <li><a href="">ccc</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="">공지사항</a>
+                                <ul>
+                                    <li><a href="">aaa</a></li>
+                                    <li><a href="">bbb</a></li>
+                                    <li><a href="">ccc</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
             <nav id="main-nav">
                 <ul>
                     <li><a href="">이용안내</a>
@@ -168,95 +355,158 @@
                     </li>
                 </ul>
             </nav>
+            
         </header>
-        <div id="container">
-            <div id="swiper-and-login-wrap">
-                <div id="swiper-and-login">
-                    <!-- Slider -->
-                    <div class="swiper-container">
-                        <!-- Slide wrapper -->
-                        <div class="swiper-wrapper"></div>
-                            <!-- 각 슬라이드 -->
-                            <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                            <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                            <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
+    </div>
+    
+    <div id="swiper-and-login-wrap">
+        <div id="swiper-and-login">
+            <!-- Bootstrap carousel 추가 -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>First slide label</h5>
+                      <p>Some representative placeholder content for the first slide.</p>
                     </div>
-                    <aside class="login-area" id="login-form">
-                        <input id="id" type="text" placeholder="아이디"><br>
-                        <input id="pw" type="password" placeholder="비밀번호"><br>
-                        <input type="checkbox" id="autologin">
-                        <label for="autologin">자동로그인</label>
-                        <span>
-                            <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
-                        </span>
-                        <button id="btn_login">로그인</button>
-                    </aside>
-                    <aside class="login-area" id="loggedin">
-                        <p>ID</p>
-                        <p>010-1111-1111</p>
-                        <button id="btn_member-info-mgmt">회원정보 변경</button>
-                        <table>
-                            <tr>
-                                <td>N월 이용이력</td>
-                                <td>대여반납이력 ></td>
-                            </tr>
-                            <tr>
-                                <td>이용시간</td>
-                                <td>0 분</td>
-                            </tr>
-                            <tr>
-                                <td>거리</td>
-                                <td>0.00 km</td>
-                            </tr>
-                            <tr>
-                                <td>칼로리</td>
-                                <td>0.00 kcal</td>
-                            </tr>
-                            <tr>
-                                <td>탄소절감</td>
-                                <td>0.00 kg</td>
-                            </tr>
-                        </table>
-                    </aside>    
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Second slide label</h5>
+                      <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Third slide label</h5>
+                      <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div id="guide-nav-wrap">
-                <nav id="guide-nav">
-                    <div>대여방법</div>
-                    <div>대여방법</div>
-                    <div>대여방법</div>
-                    <div>대여방법</div>
-                </nav>    
+
+            <!-- Slider -->
+            <div class="swiper-container">
+                <!-- Slide wrapper -->
+                <div class="swiper-wrapper"></div>
+                    <!-- 각 슬라이드 -->
+                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
+                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
+                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
             </div>
-            <div id="guide-wrap">
-                <section id="guide">
-                    <div>
-                        <img src="./image/tutorial_sample04.jpg" alt="" width="250px">
-                    </div>  
-                </section>    
-            </div>
+            <aside class="login-area" id="login-form">
+                <input id="id" type="text" placeholder="아이디"><br>
+                <input id="pw" type="password" placeholder="비밀번호"><br>
+                <input type="checkbox" id="autologin">
+                <label for="autologin">자동로그인</label>
+                <span>
+                    <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
+                </span>
+                <button id="btn_login">로그인</button>
+            </aside>
+            <aside class="login-area" id="loggedin">
+                <p>ID</p>
+                <p>010-1111-1111</p>
+                <button id="btn_member-info-mgmt">회원정보 변경</button>
+                <table>
+                    <tr>
+                        <td>N월 이용이력</td>
+                        <td>대여반납이력 ></td>
+                    </tr>
+                    <tr>
+                        <td>이용시간</td>
+                        <td>0 분</td>
+                    </tr>
+                    <tr>
+                        <td>거리</td>
+                        <td>0.00 km</td>
+                    </tr>
+                    <tr>
+                        <td>칼로리</td>
+                        <td>0.00 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>탄소절감</td>
+                        <td>0.00 kg</td>
+                    </tr>
+                </table>
+            </aside>    
         </div>
-        <div id="footer-wrap" style="background-color: gainsboro;">
-            <footer id="footer">
-                <div id="store">
-                    <img src="./image/app_ios.png" alt="">
-                    <img src="./image/app_and.png" alt="">
-                </div>
-                <div id="sns">
-                    <img src="./image/instaLink.png" alt="">
-                    <img src="./image/facebookLink.png" alt="">
-                    <img src="./image/naverblogLink.png" alt="">
-                </div>
-                <div id="footer-nav">
-                    <a href="">이용약관</a> | 
-                    <a href="">개인정보처리방침</a> | 
-                    <a href="">보험안내</a> | 
-                    <a href="">도움주신 분</a>
-                </div>
-                <p>서울특별시 중구 세종대로 110 서울특별시 대표자 오세훈, Tel : 1599-0120 (사업자등록번호 : 104-83-00469) 우편번호 04524</p>
-                <p>COPYRIGHT ⓒ 2018 bikeseoul All RIGHTS RESERVED.</p>
-            </footer>
-        </div>
+    </div>
+    <div id="guide-nav-wrap">
+        <nav id="guide-nav">
+            <div>대여방법</div>
+            <div>대여방법</div>
+            <div>대여방법</div>
+            <div>대여방법</div>
+        </nav>    
+    </div>
+    <div id="guide-wrap">
+        <section id="guide">
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+        </section>    
+    </div>
+    <div id="places-wrap">
+        <section id="places">
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+            <div>
+                <img src="./image/tutorial_sample04.jpg" alt="">
+            </div>  
+        </section>    
+    </div>
+
+    <div id="footer-wrap" style="background-color: gainsboro;">
+        <footer id="footer">
+            <div id="store">
+                <img src="./image/app_ios.png" alt="">
+                <img src="./image/app_and.png" alt="">
+            </div>
+            <div id="sns">
+                <img src="./image/instaLink.png" alt="">
+                <img src="./image/facebookLink.png" alt="">
+                <img src="./image/naverblogLink.png" alt="">
+            </div>
+            <div id="footer-nav">
+                <a href="">이용약관</a> | 
+                <a href="">개인정보처리방침</a> | 
+                <a href="">보험안내</a> | 
+                <a href="">도움주신 분</a>
+            </div>
+            <p>서울특별시 중구 세종대로 110 서울특별시 대표자 오세훈, Tel : 1599-0120 (사업자등록번호 : 104-83-00469) 우편번호 04524</p>
+            <p>COPYRIGHT ⓒ 2018 bikeseoul All RIGHTS RESERVED.</p>
+        </footer>
     </div>
 </body>
 </html>
