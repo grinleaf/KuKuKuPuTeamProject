@@ -1,22 +1,24 @@
+div#all{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
 #container_total{
+    display: inline-block;
     padding: 100px;
-    width: 1000px;
+    width: 640px;
 }
 
 #notice_div_btn{
     text-align: center;
 }
 
-
-
 #notice_detail_btn{
     text-align: center;
     width: 150px;
     font-size: 12px;
     line-height: 2rem;
-    border: 1px solid #333;
-}
-
-a{
-    text-decoration: none;
+    border: 1px solid #aaa;
 }
