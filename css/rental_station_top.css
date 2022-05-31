@@ -10,7 +10,7 @@
 }
 
 #btn{
-    margin-left: 350px;
+    /* margin-left: 350px; */
     background-color: white;
     border: 0px;
     
@@ -24,7 +24,7 @@
 #logo{
     width: 250px;
     height: 60px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     margin-top: 20px;
 }
 
@@ -32,7 +32,7 @@
     position: relative;
     width: 520px;
     height: 45px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 #input_text{
