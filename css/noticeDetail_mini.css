@@ -1,21 +1,36 @@
-*{
+/* *{
     border: 1px solid red;
-}
+} */
 div#all{
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 50px;
     align-items: center;
 }
 
 #container_total{
-    display: inline-block;
     text-align: center;
-    width: 600px;
+    max-width: 560;
+}
+
+#container_total span:first-child{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#container_total hr{
+    max-width: 555px;
+}
+
+h5#content_title{
+    font-size: 15px;
+    padding-left: 250px;
 }
 
 #notice_div_btn{
     text-align: center;
+    max-width: 555px;
 }
 
 #notice_detail_btn{
@@ -24,4 +39,12 @@ div#all{
     font-size: 12px;
     line-height: 2rem;
     border: 1px solid #aaa;
+}
+
+header{
+    
+}
+
+footer{
+
 }
