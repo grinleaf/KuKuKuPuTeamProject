@@ -86,7 +86,6 @@
         }
         #main-nav > ul > li:hover > ul{
             display: block;
-            
         }
         #main-nav > ul > li > ul > li:hover{
             border: 1px solid blue;
@@ -197,21 +196,41 @@
             flex-direction: row;
             flex-wrap: wrap;
         }
+        #m_top-nav > a{
+            margin-right: 1rem;
+            margin-bottom: 10px;
+        }
+
         #main-nav{
             display: none;
         }
-        #m_main-nav{
-            display: flex;
-            flex-direction: column;
+        #m_main-nav a{
+            display: block;
+            border: 3px solid red;
+            line-height: 3rem;
+        }
+        #m_main-nav > ul > li > ul{
+            border: 3px solid yellow;
+            display: none;
+        }
+        #m_main-nav > ul > li:hover > ul{
+            display: block;
         }
 
         .login-area{
             display: none;
         }
 
+        @media(hover:none){
+            body{
+                background-color: yellowgreen;
+            }
+            #m_main-nav > ul > li:active > ul{
+            display: block;
+            }
+        }
     </style>
 
-    
     <script>
         function afterload(){
             let isLogin = false
@@ -260,7 +279,7 @@
                     </div>
                     <nav id="m_main-nav">
                         <ul>
-                            <li><a href="">이용안내</a>
+                            <li><a>이용안내</a>
                                 <ul>
                                     <li><a href="">aaa</a></li>
                                     <li><a href="">bbb</a></li>
@@ -269,7 +288,7 @@
                             </li>
                         </ul>
                         <ul>
-                            <li><a href="">대여소 조회</a>
+                            <li><a>대여소 조회</a>
                                 <ul>
                                     <li><a href="">aaa</a></li>
                                     <li><a href="">bbb</a></li>
@@ -278,7 +297,7 @@
                             </li>
                         </ul>
                         <ul>
-                            <li><a href="">이용권 구매</a>
+                            <li><a>이용권 구매</a>
                                 <ul>
                                     <li><a href="">aaa</a></li>
                                     <li><a href="">bbb</a></li>
@@ -287,7 +306,7 @@
                             </li>
                         </ul>
                         <ul>
-                            <li><a href="">문의/FAQ</a>
+                            <li><a>문의/FAQ</a>
                                 <ul>
                                     <li><a href="">aaa</a></li>
                                     <li><a href="">bbb</a></li>
@@ -296,7 +315,7 @@
                             </li>
                         </ul>
                         <ul>
-                            <li><a href="">공지사항</a>
+                            <li><a>공지사항</a>
                                 <ul>
                                     <li><a href="">aaa</a></li>
                                     <li><a href="">bbb</a></li>
