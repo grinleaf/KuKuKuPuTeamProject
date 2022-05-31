@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+        <!--  필요 라이브러리들 추가  -->
+       
+        <!-- CSS 연결 -->
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <!-- JS 연결 --> 
+        <script src="./js/bootstrap.js"></script>
+        <script src="jquery-3.6.0.slim.min.js"></script>
+       
+        <style>
+            /*  테스트 용으로 마진만 줌. */
+            body { margin: 10%;} 
+
+            label { width: 150px;}
+
+            /* 나만의 class를 만들어서 저 밑에 di */
+            /* <div class="row g-3 align-items-center">  */
+            /* 이 위를 보면 클래스를 총 세 가지 적용 한거임, space로 구분해서, */
+            /*  그래서 나만의 class my 를 만들어서 저 뒤에 하난 뛰고 my 쓰면 됨. */
+
+        </style>
+
+</head>
+<body>
+    <script>
+
+            jQuery(document).ready(function(){
+              alert('제이쿼리로 온로드 콜백 구현 성공')
+
+
+              //HTML 요소를 찾을 때 CSS 선택자를 이용해서 쉽게 선택할 수 있음.
+              // 문법 1. [JQuery('CSS 선택자' or 객체).원하는 기능]
+              // 문법 2. [$('CSS 선택자' or 객체).원하는 기능]
+
+              jQuery('#bbb').click( function(){ // 클릭돌 떼 이
+                alert('clicked')
+                $(this).hide
+
+
+              })
+
+              var $userNum = $('#userNum').val()
+              var $phone = $('#userNum').val() // 이건 세개 조합해야 함
+              var $id = $('#id').val()
+              var $pw = $('#pw').val()
+              var $email = $('#userNum').val()
+
+
+              var 
+              $btn= $('#ccc').click( isvail(name))
+
+
+              
+            function isvail(value){
+                alert(reName.test(value) )
+                
+                return reName.test(value)
+
+                
+            }
+            })
+
+
+
+            //---------------------------------------------
+                // 로그인 종류에 대한 const 값,
+                const MEMBER = 0    //일반회원
+                const NONMEMBER = 0 //일반회원
+                const KAKAO = 1     //카카오 로그인
+                const GOOGLE = 2    //구글 로그인
+
+                // 나이 종류에 대한 const 값 ( 새싹 따릉이 일 경우 , isAdult = false)
+                const isAdult = false 
+
+                const reName = /^\w{ ,17}/    //17자 까지 허용
+                const reId = /^\w{6,12}/     //영문, 숫자 6~12자리
+                const rePw = /[a-z!@#$%^&*?~]{8,12}/      //영문, 숫자, 특수문자(!@#$%^&*?~)조합 8~12자리
+                const reEmailFirst = /\w+/    //  @ 앞
+                const reEmailSecond = /^[a-zA-Z0-9]+@[a-z]+.[a-z]+$/    // @ 뒤 
+
+
+            //----------------------------------------------
+
+          
+
+
+
+
+
+
+
+            // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러
+            $('#form-register').submit(function(e) {
+                e.preventDefault(); // 버튼을 눌러 넘어온 이벤트 객체임. 이 객체의 기본 동작을 막기. (안넘으면 넘어감)
+                
+                $(this).find('.txt-warning').empty().hide();
+
+                var email = $('#userName').next().html('테스트트트트트').show()
+
+                
+            });
+
+
+        // 생성자 함수로 사용자 객체 만들기
+        class SignUpUserInfo{
+
+            constructor(name, phoneNum, id, pw, email, cbEmail){
+                this.name = name,
+                this.phoneNum = phoneNum,
+                this.id = id, 
+                this.pw = pw, 
+                this.email = email,
+                this.cbEmail = cbEmail
+            }
+
+            toServer(){
+                // 포스트 방식으로 보내기 ㄱㄱ
+            }
+            fromServer(){
+
+            }
+
+        }
+
+        // 다음 버튼을 누르면 제이슨 객체로 만듬. 포스트로 보내야 하는데 ㅠ 나중에 ㄱ ㅜㅜ
+        // function sub(name, phoneNum, id, pw, email, cbEmail){
+            
+        //     var userInfo = {
+        //     name : name,
+        //     phoneNum: phoneNum,
+        //     id : id, 
+        //     pw : pw, 
+        //     email : email,
+        //     cbEmail : cbEmail
+        //     }
+
+        //     var json = JSON.stringify(userInfo) 
+
+        //         console.log(json); // 유저 폼 데이터를 객체로 만듬.
+
+        // }
+
+        // var a = document.getElementById('aa')
+        // a.
+
+    </script>
+
+    <form id="form-redister">
+        <legend>필수 입력 항목입니다.</legend>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="name" class="col-form-label">이름</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="userName" class="form-control" minlength="6" maxlength="12" autofocus>
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                영문, 숫자 6~12자리
+            </span>
+            </div>
+        </div>
+
+        
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">휴대폰 번호 인증</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="phoneNum1" class="form-control" minlength="6" maxlength="12">
+            </div>
+            -
+            <div class="col-auto">
+                <input type="tel" id="phoneNum2" class="form-control" minlength="6" maxlength="12">
+            </div>
+            -
+            <div class="col-auto">
+                <input type="tel" id="phoneNum3" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+                <button type="submit" id="bbb" class="btn btn-primary">인증번호 보내기</button>
+            </div>
+        </div>
+
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">인증번호 확인</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="??" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                올바르지 않습니다
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">아이디</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="id" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                영문, 숫자 6~12자리
+            </span>
+            </div>
+            <div class="col-auto">
+                <button id="aa" type="submit" class="btn btn-primary">중복 검사</button>
+            </div>
+
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">비밀번호 </label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="pw" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                영문, 숫자, 특수문자(!@#$%^&*?~)조합 8~12자리
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">비밀번호 확인</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="pw" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                비밀번호를 한 번 더 입력하세요
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">이메일</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="email1" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                @
+                </span>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="email2" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <select class="form-select" aria-label="Default select example" placeholder="">
+                <option selected>직접 입력</option>
+                <option value="daum.net">daum.net</option>
+                <option value="empal.com">empal.com</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="hotmail.com">hotmail.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="naver.com">naver.com</option>
+                <option value="yahoo.co.kr">yahoo.co.kr</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <input type="checkbox" id="cbEmail" class="form-control" >
+            </div>
+            <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                이메일 수신 여부
+            </span>
+            </div>
+        </div>
+
+        
+    <p>단, 회원의 서비스 이용과 관련한 권리 및 의무 등에 관한 사항에 대해 변경될 경우 통지 
+        <br>
+        의무사항에 따라 수신 동의 여부와 무관하게 메일이 발송될 수 있음을 참고해 주시기 바랍니다.
+    </p>
+    <div class="col-auto">
+        <button id="btn-submit" type="submit" class="btn btn-primary">다 음</button>
+    </div>
+
+    </form>
+
+
+
+
+    <div class="col-auto">
+        <button id="ccc"type="button" class="btn btn-primary">다음2</button>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
