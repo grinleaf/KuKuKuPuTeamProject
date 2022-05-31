@@ -31,7 +31,7 @@
 </head>
 <body>
 
-    <form id="form-redister">
+    <form id="form-register">
         <legend>필수 입력 항목입니다.</legend>
 
         <div class="row g-3 align-items-center">
@@ -107,7 +107,7 @@
             <label for="inputPassword6" class="col-form-label">비밀번호 </label>
             </div>
             <div class="col-auto">
-            <input type="text" id="pw" class="form-control" minlength="6" maxlength="12">
+            <input type="text" id="pw1" class="form-control" minlength="6" maxlength="12">
             </div>
             <div class="col-auto">
             <span id="text-warning" class="form-text">
@@ -121,7 +121,7 @@
             <label for="inputPassword6" class="col-form-label">비밀번호 확인</label>
             </div>
             <div class="col-auto">
-            <input type="text" id="pw" class="form-control" minlength="6" maxlength="12">
+            <input type="text" id="pw2" class="form-control" minlength="6" maxlength="12">
             </div>
             <div class="col-auto">
             <span id="text-warning" class="form-text">
@@ -135,7 +135,7 @@
             <label for="inputPassword6" class="col-form-label">이메일</label>
             </div>
             <div class="col-auto">
-            <input type="text" id="email1" class="form-control" minlength="6" maxlength="12">
+            <input type="text" id="userEmail" class="form-control" minlength="6" maxlength="12">
             </div>
             <div class="col-auto">
                 <span id="passwordHelpInline" class="form-text">
@@ -146,7 +146,7 @@
                 <input type="text" id="email2" class="form-control" minlength="6" maxlength="12">
             </div>
             <div class="col-auto">
-            <select class="form-select" aria-label="Default select example" placeholder="">
+            <select class="form-select"  id="userDomain" aria-label="Default select example" placeholder="">
                 <option selected>직접 입력</option>
                 <option value="daum.net">daum.net</option>
                 <option value="empal.com">empal.com</option>
@@ -181,17 +181,6 @@
     </div>
 
     </form>
-
-
-
-
-    <div class="col-auto">
-        <button id="ccc"type="button" class="btn btn-primary">다음2</button>
-    </div>
-
-
-
-
 
 
 
