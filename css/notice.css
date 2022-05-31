@@ -7,7 +7,7 @@ div#all{
 #container_total{
     display: inline-block;
     text-align: center;
-    width: 640px;
+    width: 800px;
 }
 #container_search{
     flex-wrap: wrap;
@@ -28,7 +28,7 @@ img#back_mini{
 }
 
 #search_box{
-    width: 50%;
+    width: 70%;
     font-size: 12px; 
     line-height: 1.2rem; 
     padding: 6px;

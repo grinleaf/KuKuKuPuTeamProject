@@ -1,7 +1,6 @@
 *{
     border: 1px solid red;
 }
-
 div#all{
     display: flex;
     flex-direction: column;
@@ -11,11 +10,8 @@ div#all{
 
 #container_total{
     display: inline-block;
-    width: 800px;
-}
-
-#content_title{
-    
+    text-align: center;
+    width: 600px;
 }
 
 #notice_div_btn{
