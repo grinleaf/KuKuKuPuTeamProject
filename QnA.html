@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnA</title>
+
+    <link rel="stylesheet" href="./css/QnA.css">
+    <link rel="stylesheet" href="./css/bootstrap774.css">
+    <script src="./js/bootstrap774.js"></script>
+    <script src="./js/QnA.js"></script> 
+    
+</head>
+<body>
+    <div id="container_total">
+        <h5 id="content_title">문의/FAQ</h5>
+        <br>
+        <hr>
+        <div>
+            <table id="menu_table">
+                <tr>
+                    <td><a onclick="clickMenu(0)"><img src="https://www.bikeseoul.com/images/opi/opi_1.png"><br>대여 및 반납</a></td>
+                    <td><a onclick="clickMenu(1)"><img src="https://www.bikeseoul.com/images/opi/opi_2.png"><br>자전거 추가배치</a></td>
+                    <td><a onclick="clickMenu(2)"><img src="https://www.bikeseoul.com/images/opi/opi_3.png"><br>대여소(개설/폐쇄)</a></td>
+                    <td><a onclick="clickMenu(3)"><img src="https://www.bikeseoul.com/images/opi/opi_4.png"><br>결제/환불/마일리지</a></td>
+                    <td rowspan="2"><a href="./QnA_1to1.html"><img id="img_1to1" src="https://www.bikeseoul.com/images/opi/opi_9.png" alt=""><br>1:1 문의하기</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="clickMenu(4)"><img src="https://www.bikeseoul.com/images/opi/opi_6.png"><br>자전거 및 시설관리</a></td>
+                    <td><a onclick="clickMenu(5)"><img src="https://www.bikeseoul.com/images/opi/opi_7.png"><br>앱 또는 홈페이지 문의</a></td>
+                    <td><a onclick="clickMenu(6)"><img src="https://www.bikeseoul.com/images/opi/opi_8.png"><br>방치 자전거 발견</a></td>
+                    <td><a onclick="clickMenu(7)"><img src="https://www.bikeseoul.com/images/opi/opi_5.png"><br>운영 및 정책</a></td>
+                </tr>
+            </table>
+            <br><hr>
+            <div>
+                <div class='accordion' id='accordionExample01'>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingOne'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script> document.write(qnaArray1[0].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                            <script>document.write(qnaArray1[0].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingTwo'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[1].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[1].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingThree'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[2].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <script>document.write(qnaArray1[2].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingFour'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='true' aria-controls='collapseFour'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[3].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[3].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingFive'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFive' aria-expanded='true' aria-controls='collapseFive'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[4].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseFive' class='accordion-collapse collapse' aria-labelledby='headingFive' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[4].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingSix'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSix' aria-expanded='true' aria-controls='collapseSix'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[5].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseSix' class='accordion-collapse collapse' aria-labelledby='headingSix' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[5].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingSeven'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSeven' aria-expanded='true' aria-controls='collapseSeven'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[6].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseSeven' class='accordion-collapse collapse' aria-labelledby='headingSeven' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[6].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingEight'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEight' aria-expanded='true' aria-controls='collapseEight'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[7].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseEight' class='accordion-collapse collapse' aria-labelledby='headingEight' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[7].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingNine'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseNine' aria-expanded='true' aria-controls='collapseNine'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[8].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseNine' class='accordion-collapse collapse' aria-labelledby='headingNine' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[8].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingTen'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTen' aria-expanded='true' aria-controls='collapseTen'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray1[9].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseTen' class='accordion-collapse collapse' aria-labelledby='headingTen' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray1[9].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+<!-- -->
+                <div class='accordion' id='accordionExample02'>
+                  <div class='accordion-item'>
+                    <h2 class='accordion-header' id='headingOne'>
+                      <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script> document.write(qnaArray2[0].q)</script>
+                      </button>
+                    </h2>
+                    <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                      <div class='accordion-body'>
+                          <script>document.write(qnaArray2[0].a)</script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingTwo'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray2[1].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray2[1].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingThree'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray2[2].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <script>document.write(qnaArray2[2].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+<!-- -->
+                <div class='accordion' id='accordionExample03'>
+                  <div class='accordion-item'>
+                    <h2 class='accordion-header' id='headingOne'>
+                      <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script> document.write(qnaArray3[0].q)</script>
+                      </button>
+                    </h2>
+                    <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                      <div class='accordion-body'>
+                          <script>document.write(qnaArray3[0].a)</script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingTwo'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray3[1].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray3[1].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingThree'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray3[2].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <script>document.write(qnaArray3[2].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingFour'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='true' aria-controls='collapseFour'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray3[3].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray3[3].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+<!-- -->
+                <div class='accordion' id='accordionExample04'>
+                  <div class='accordion-item'>
+                    <h2 class='accordion-header' id='headingOne'>
+                      <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script> document.write(qnaArray4[0].q)</script>
+                      </button>
+                    </h2>
+                    <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                      <div class='accordion-body'>
+                          <script>document.write(qnaArray4[0].a)</script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingTwo'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray4[1].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray4[1].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingThree'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray4[2].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <script>document.write(qnaArray4[2].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingFour'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='true' aria-controls='collapseFour'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray4[3].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray4[3].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingFive'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFive' aria-expanded='true' aria-controls='collapseFive'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray4[4].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseFive' class='accordion-collapse collapse' aria-labelledby='headingFive' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray4[4].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+<!-- -->               
+                <div class='accordion' id='accordionExample05'>
+                  <div class='accordion-item'>
+                    <h2 class='accordion-header' id='headingOne'>
+                      <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script> document.write(qnaArray5[0].q)</script>
+                      </button>
+                    </h2>
+                    <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                      <div class='accordion-body'>
+                          <script>document.write(qnaArray5[0].a)</script>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingTwo'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray5[1].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray5[1].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingThree'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray5[2].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <script>document.write(qnaArray5[2].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingFour'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='true' aria-controls='collapseFour'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray5[3].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray5[3].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingFive'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFive' aria-expanded='true' aria-controls='collapseFive'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray5[4].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseFive' class='accordion-collapse collapse' aria-labelledby='headingFive' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray5[4].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingSix'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSix' aria-expanded='true' aria-controls='collapseSix'>
+                          <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                          <script>document.write(qnaArray5[5].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseSix' class='accordion-collapse collapse' aria-labelledby='headingSix' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                          <span id='qna_q_content'></span>
+                          <script>document.write(qnaArray5[5].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+<!-- -->
+                  <div class='accordion' id='accordionExample06'>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingOne'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script> document.write(qnaArray6[0].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                            <script>document.write(qnaArray6[0].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingTwo'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='true' aria-controls='collapseTwo'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[1].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[1].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingThree'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='true' aria-controls='collapseThree'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[2].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <script>document.write(qnaArray6[2].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingFour'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='true' aria-controls='collapseFour'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[3].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[3].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingFive'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFive' aria-expanded='true' aria-controls='collapseFive'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[4].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseFive' class='accordion-collapse collapse' aria-labelledby='headingFive' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[4].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingSix'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSix' aria-expanded='true' aria-controls='collapseSix'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[5].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseSix' class='accordion-collapse collapse' aria-labelledby='headingSix' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[5].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingSeven'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSeven' aria-expanded='true' aria-controls='collapseSeven'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[6].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseSeven' class='accordion-collapse collapse' aria-labelledby='headingSeven' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[6].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingEight'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEight' aria-expanded='true' aria-controls='collapseEight'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[7].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseEight' class='accordion-collapse collapse' aria-labelledby='headingEight' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[7].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingNine'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseNine' aria-expanded='true' aria-controls='collapseNine'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[8].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseNine' class='accordion-collapse collapse' aria-labelledby='headingNine' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[8].a)</script>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='accordion-item'>
+                        <h2 class='accordion-header' id='headingTen'>
+                          <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTen' aria-expanded='true' aria-controls='collapseTen'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script>document.write(qnaArray6[9].q)</script>
+                          </button>
+                        </h2>
+                        <div id='collapseTen' class='accordion-collapse collapse' aria-labelledby='headingTen' data-bs-parent='#accordionExample'>
+                          <div class='accordion-body'>
+                            <span id='qna_q_content'></span>
+                            <script>document.write(qnaArray6[9].a)</script>
+                          </div>
+                        </div>
+                        <div class='accordion-item'>
+                          <h2 class='accordion-header' id='headingEleven'>
+                            <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseEleven' aria-expanded='true' aria-controls='collapseEleven'>
+                              <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                              <script>document.write(qnaArray6[10].q)</script>
+                            </button>
+                          </h2>
+                          <div id='collapseEleven' class='accordion-collapse collapse' aria-labelledby='headingEleven' data-bs-parent='#accordionExample'>
+                            <div class='accordion-body'>
+                              <span id='qna_q_content'></span>
+                              <script>document.write(qnaArray6[10].a)</script>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='accordion-item'>
+                          <h2 class='accordion-header' id='headingTwelve'>
+                            <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwelve' aria-expanded='true' aria-controls='collapseTwelve'>
+                              <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                              <script>document.write(qnaArray6[11].q)</script>
+                            </button>
+                          </h2>
+                          <div id='collapseTwelve' class='accordion-collapse collapse' aria-labelledby='headingTwelve' data-bs-parent='#accordionExample'>
+                            <div class='accordion-body'>
+                              <span id='qna_q_content'></span>
+                              <script>document.write(qnaArray6[11].a)</script>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='accordion-item'>
+                          <h2 class='accordion-header' id='headingThirteen'>
+                            <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThirteen' aria-expanded='true' aria-controls='collapseThirteen'>
+                              <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                              <script>document.write(qnaArray6[12].q)</script>
+                            </button>
+                          </h2>
+                          <div id='collapseThirteen' class='accordion-collapse collapse' aria-labelledby='headingThirteen' data-bs-parent='#accordionExample'>
+                            <div class='accordion-body'>
+                              <span id='qna_q_content'></span>
+                              <script>document.write(qnaArray6[12].a)</script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+<!-- -->
+                  <div class='accordion' id='accordionExample07'>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingOne'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script> document.write(qnaArray7[0].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                            <script>document.write(qnaArray7[0].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+<!-- -->
+                  <div class='accordion' id='accordionExample08'>
+                    <div class='accordion-item'>
+                      <h2 class='accordion-header' id='headingOne'>
+                        <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                            <img src="https://www.bikeseoul.com/img/faqlist_q.png" alt="">
+                            <script> document.write(qnaArray8[0].q)</script>
+                        </button>
+                      </h2>
+                      <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+                        <div class='accordion-body'>
+                            <script>document.write(qnaArray8[0].a)</script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
