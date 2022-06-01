@@ -67,7 +67,10 @@
             var num = $('#phoneNum').val()
             const rePhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
             if(rePhone.test(num)) console.log( rePhone.test(num) )
-            else console.log( '폰 번호가 아님' )
+            else {
+                console.log( '폰 번호가 아님' )
+                $('#phoneNum').val('')
+            }
 
         })
 
