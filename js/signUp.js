@@ -18,16 +18,20 @@
         // 폼에서 넘어오는 값들
         var $name = $('userName').val()
         var $userNum = $('#userNum').val()
-        var $phone = $('#userNum').val() // 이건 세개 조합해야 함
-        var $id = $('#id').val()
+        
         var $pw1 = $('#pw1').val()
         var $pw2 = $('#pw2').val()
         var $email = $('#userEmail').val()
         var $domain = $('#userDomain').val()
 
-        $('#aa').click(
-            ()=>{ alert('눌리나 Test  1  ')}
-        )
+        $('#checkId').click( ()=>{
+            const reId = /^\w{6,12}/     //영문, 숫자 6~12자리        
+            var id = $('#id').val()
+            console.log( '값 :  ' + id)
+            if (reId.test(id)) console.log(' 올바른 아이디임.')
+            else console.log(' 올바르지 않은 아이디임.')
+
+        })
 
         //----------------------------------------------
         // 정규식 판단 메소드들
@@ -47,15 +51,6 @@
             return reId.test(id)
         }
 
-        let vaildateName = name =>{ //id :  사용자의 id
-
-            // const reName = /^\w\w\w/    //17자 까지 허용 -> 정규식 다시.
-
-            
-            return alert(reName.test(name)) 
-
-        }
-
         let vaildatePw = pw =>{ //id :  사용자의 id
             const rePw = /[a-z!@#$%^&*?~]{8,12}/      //영문, 숫자, 특수문자(!@#$%^&*?~)조합 8~12자리 
             return rePw.test(pw)
@@ -68,21 +63,12 @@
             var  $name = $('#userName').val()
             // 여기서 사용자 정보를 가지고 전체적인 폼 검사흫 해야 함.
            alert('제출')
-            alert($name)
-            vaildateName($name)
     
-            
         });
 
 
             
         }) //JSQuery
-
-        $('#aa').click(
-            ()=>{ alert('눌리나 Test  2  ')}
-        )
-  
-
 
         // 생성자 함수로 사용자 객체 만들기 - 더 생각해보기.
         class SignUpUserInfo{
