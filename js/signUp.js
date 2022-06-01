@@ -16,15 +16,9 @@
         // 나이 종류에 대한 const 값 ( 새싹 따릉이 일 경우 , isAdult = false)
         const isAdult = false  // 디폴트 성인
 
-        // 폼에서 넘어오는 값들
-        var $name = $('userName').val()
-        var $userNum = $('#userNum').val()
-
-        var $id = $('#id').val()
-
-        var $pw1 = $('#pw1').val()
-        var $pw2 = $('#pw2').val()
-        var $email = $('#userEmail').val()
+        var $pw1
+        var $pw2 
+        var $email 
         var $domain = $('#userDomain').val()
 
 
@@ -36,11 +30,6 @@
             else console.log(' 올바르지 않은 아이디임.')
 
         })
-
-
-
-
-
 
         // 핸드폰 번호 자동 - 넣어주기.
         // keydown() : 사용자가 키보드를 누르는 순간 발생하는 이벤트. event : 어떤 키인지 줌.
@@ -67,39 +56,63 @@
             var num = $('#phoneNum').val()
             const rePhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
             if(rePhone.test(num)) console.log( rePhone.test(num) )
-            else {
-                console.log( '폰 번호가 아님' )
-                $('#phoneNum').val('')
-            }
-
+            else (console.log( '폰 번호가 아님' )
+             )
         })
 
+        // 비번 입력 칸에서 포커스 나가면 발동하는 콜백
+        $('#pw1').blur(()=>{ 
+            $pw1 = $('#pw1').val()
+            const rePw = /[a-z0-9!@#$%^&*?~]{8,12}/
+            
+            console.log('포커스 나감, ' +$pw1 + "정규식 결과값은 :"+ rePw.test($pw1))
+        })
 
+        // 비번 확인 입력 칸에서 포커스 나가면 발동하는 콜백
+        $('#pw2').blur(()=>{ 
+            $pw2 = $('#pw2').val()
 
-        //----------------------------------------------
-        // 정규식 판단 메소드들
+            if ($pw1 === $pw2) console.log('비번이 같음') 
+            else {
+                console.log('비번이 틀림')
+                $('#pw2').val('')
+            }
+        })
 
-        let vaildateEmail = (email , domain )=>{ //email :  사용자의 email값
+        // 이메일 검사
+        $('#userEmail').blur(()=>{ 
 
-            const reEmailFirst = /\w+/    //  @ 앞
-            const reEmailSecond = /^[a-zA-Z0-9]+@[a-z]+.[a-z]+$/    // @ 뒤 
+            const reEmailFirst = /[a-z0-9]+/    //  @ 앞
+            
+            if( reEmailFirst.test($('#userEmail').val())) console.log(" 이멜이 정규식에 맞음" + $('#userEmail').val())
+            else console.log(" 이멜이 정규식에 안 맞음 " + $('#email1').val())
+        })
 
-            return ((reEmailFirst.test(email)) && (reEmailSecond.test(domain))) ? true : false
+        // 이메일 검사
+        $('#email2').blur(()=>{ 
 
-        }
+            const reEmailSecond =  /\.\w+(\.\w+)?/   // @ 뒤 
+            
+            if( reEmailSecond.test($('#email2').val())) console.log(" 이멜이 정규식에 맞음" + $('#email2').val())
+            else console.log(" 이멜이 정규식에 안 맞음 " + $('#email2').val())
+        })
 
+        $("#userDomain").on('change', function() {
+            var domain = this.value
+            $('#email2').val(domain)
+            console.log('셀렉트로 선택된 값은' + domain)
+        });
+    
+       
 
-        let vaildatePw = pw =>{ //id :  사용자의 id
-            const rePw = /[a-z!@#$%^&*?~]{8,12}/      //영문, 숫자, 특수문자(!@#$%^&*?~)조합 8~12자리 
-            return rePw.test(pw)
-        }
-        //----------------------------------------------
-
+  
         // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러 ( 콜백 메소드)
          $('#form-register').submit(function(e) {
             e.preventDefault(); // 버튼을 눌러 넘어온 이벤트 객체임. 이 객체의 기본 동작을 막기. (안넘으면 넘어감)
             var  $name = $('#userName').val()
-            // 여기서 사용자 정보를 가지고 전체적인 폼 검사흫 해야 함.
+            
+            // 제출 하기 전 객체를 만들어서 데이터를 보내자. 나중..
+
            alert('제출')
     
         });
