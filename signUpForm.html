@@ -42,9 +42,7 @@
             <input type="text" id="userName" class="form-control" minlength="6" maxlength="12" autofocus>
             </div>
             <div class="col-auto">
-            <span id="text-warning" class="form-text">
-                영문, 숫자 6~12자리
-            </span>
+            <span id="text-warning" class="form-text"></span>
             </div>
         </div>
 
@@ -54,18 +52,10 @@
                 <label for="inputPassword6" class="col-form-label">휴대폰 번호 인증</label>
             </div>
             <div class="col-auto">
-                <input type="text" id="phoneNum1" class="form-control" maxlength="4">
-            </div>
-            -
-            <div class="col-auto">
-                <input type="tel" id="phoneNum2" class="form-control"  maxlength="4">
-            </div>
-            -
-            <div class="col-auto">
-                <input type="tel" id="phoneNum3" class="form-control" maxlength="4">
+                <input type="text" id="phoneNum" class="form-control" maxlength="13">
             </div>
             <div class="col-auto">
-                <button type="submit" id="bbb" class="btn btn-primary">인증번호 보내기</button>
+                <button type="submit" id="phoneNumSubmit" class="btn btn-primary">인증번호 보내기</button>
             </div>
         </div>
 
@@ -97,7 +87,7 @@
             </span>
             </div>
             <div class="col-auto">
-                <button id="aa" type="submit" class="btn btn-primary">중복 검사</button>
+                <button id="checkId" class="btn btn-primary">중복 검사</button>
             </div>
 
         </div>

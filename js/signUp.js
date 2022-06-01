@@ -3,7 +3,8 @@
 
     // 문서가 준비돨 때 자동으로 온로드 콜백--------------------------------------------
 
-    jQuery(document).ready(function(){ 
+    jQuery(document).ready(
+        function(){ 
       alert('제이쿼리로 온로드 콜백 구현 성공') 
 
         // 로그인 종류에 대한 const 값,
@@ -18,16 +19,60 @@
         // 폼에서 넘어오는 값들
         var $name = $('userName').val()
         var $userNum = $('#userNum').val()
-        var $phone = $('#userNum').val() // 이건 세개 조합해야 함
         var $id = $('#id').val()
         var $pw1 = $('#pw1').val()
         var $pw2 = $('#pw2').val()
         var $email = $('#userEmail').val()
         var $domain = $('#userDomain').val()
 
-        $('#aa').click(
+        $('#aa').click( // 이게 먹힘
             ()=>{ alert('눌리나 Test  1  ')}
         )
+
+
+
+
+
+        // 핸드폰 번호 자동 - 넣어주기.
+        // keydown() : 사용자가 키보드를 누르는 순간 발생하는 이벤트. event : 어떤 키인지 줌.
+        // 사용자가 키값을 하나 누를 때 마다 발동. -> 콜백이벤트...
+        $('#phoneNum').keydown(function (event) {
+            var key = event.charCode || event.keyCode || 0;
+            $text = $(this); 
+            if (key !== 8 && key !== 9) {
+                if ($text.val().length === 3) {
+                    $text.val($text.val() + '-');
+                }
+                if ($text.val().length === 8) {
+                    $text.val($text.val() + '-');
+                }
+            }
+            return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+            // Key 8번 백스페이스, Key 9번 탭, Key 46번 Delete 부터 0 ~ 9까지, Key 96 ~ 105까지 넘버패트
+            // 한마디로 JQuery 0 ~~~ 9 숫자 백스페이스, 탭, Delete 키 넘버패드외에는 입력못함
+        })
+
+        // 인증번호 보내기 버튼 누르면 발동하는 콜백. 정규식으로 숫자 확인.
+        $('#phoneNumSubmit').click( () =>
+        {
+            var num = $('#phoneNum').val()
+            const rePhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+            if(rePhone.test(num)) console.log( rePhone.test(num) )
+            else console.log( '폰 번호가 아님' )
+
+        })
+
+        $('checkId').click( ()=>{ //중복검사 버튼 -> 1. 정규식에 맞는지 확인 2. 서버에 있는 아이와 겹치는지 확인
+        
+            var text = $('checkId').val() // 사용자의 입력값
+            const reId = /^\w{6,12}/     //영문, 숫자 6~12자리
+                
+            return reId.test(id)
+            
+
+        })
+
+
 
         //----------------------------------------------
         // 정규식 판단 메소드들
@@ -41,15 +86,11 @@
 
         }
 
-        let vaildateId = id =>{ //id :  사용자의 id
-            const reId = /^\w{6,12}/     //영문, 숫자 6~12자리
-            
-            return reId.test(id)
-        }
+
 
         let vaildateName = name =>{ //id :  사용자의 id
 
-            // const reName = /^\w\w\w/    //17자 까지 허용 -> 정규식 다시.
+            const reName = /^\w\w\w/    //17자 까지 허용 -> 정규식 다시.
 
             
             return alert(reName.test(name)) 
@@ -71,13 +112,14 @@
             alert($name)
             vaildateName($name)
     
-            
         });
 
 
-            
-        }) //JSQuery
 
+            
+        }) //JSQuery=========================================================================================   
+
+        // 제이쿼리 밖에서 쓴 건 안먹힘.
         $('#aa').click(
             ()=>{ alert('눌리나 Test  2  ')}
         )
