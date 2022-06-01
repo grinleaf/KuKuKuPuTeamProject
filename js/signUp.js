@@ -67,15 +67,15 @@
             var num = $('#phoneNum').val()
             const rePhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
             if(rePhone.test(num)) console.log( rePhone.test(num) )
-            else console.log( '폰 번호가 아님' )
-
+            else console.log( '폰 번호가 아님' ) 
         })
 
         $('checkId').click( ()=>{ //중복검사 버튼 -> 1. 정규식에 맞는지 확인 2. 서버에 있는 아이와 겹치는지 확인
         
             var text = $('checkId').val() // 사용자의 입력값
             const reId = /^\w{6,12}/     //영문, 숫자 6~12자리
-                
+            // 중복검ㅅ 끝
+            console.log( "과과임" + reId.test(id)  )
             return reId.test(id)
             
 
