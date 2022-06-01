@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notice</title>
 
+    <link rel="stylesheet" href="./css/notice_mini.css" media="(max-width:800px)">
     <link rel="stylesheet" href="./css/notice.css">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <script src="./js/bootstrap.js"></script>
+    
 </head>
 <body>
+    <div id="all">
     <div id="container_total">
-        <h5 id="content_title">공지사항</h5>
+        <h5 id="content_title"><img id="back_mini" src="https://www.bikeseoul.com/img/btn_back.png">공지사항</h5>
         <br>
         <div id="container_search">        
             <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn">검색</button>
@@ -31,7 +34,7 @@
             <li onclick="select_indicator(4)" class="page-item"><a href="" class="page-link" style="color: #444;">5</a></li>
         </ul>
     </div>
-    
+    </div>
 
 </body>
 </html>

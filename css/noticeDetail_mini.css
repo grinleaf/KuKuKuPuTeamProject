@@ -10,8 +10,8 @@ div#all{
 }
 
 #container_total{
-    display: inline-block;
-    min-width: 80%;
+    text-align: center;
+    max-width: 560;
 }
 
 #container_total span:first-child{
@@ -20,18 +20,17 @@ div#all{
 }
 
 #container_total hr{
-    width: 800px;
+    max-width: 555px;
 }
 
 h5#content_title{
-    width: 100%;
-    font-weight: bold;
-    text-align: left;
+    font-size: 15px;
+    padding-left: 250px;
 }
 
 #notice_div_btn{
     text-align: center;
-    max-width: 800px;
+    max-width: 555px;
 }
 
 #notice_detail_btn{

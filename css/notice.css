@@ -1,18 +1,34 @@
+div#all{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 #container_total{
-    padding: 100px;
-    width: 1000px;
+    display: inline-block;
+    text-align: center;
+    width: 800px;
 }
 #container_search{
+    flex-wrap: wrap;
+    display:block;
     text-align: center;
     margin-bottom: 30px;
 }
 #content_title{
+    display: flex;
+    flex-direction: row;
     font-weight: bold;
-    text-align: left;
+    border: 1px solid red;
+}
+img#back_mini{
+    border: 1px solid blue;
+    width: 13px; height: 18px;
+    display: none;
 }
 
 #search_box{
-    width: 35rem; 
+    width: 70%;
     font-size: 12px; 
     line-height: 1.2rem; 
     padding: 6px;
@@ -28,7 +44,6 @@
 }
 
 #notice_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem;}
-#notice_table th:hover{ background-color: none;}
 #notice_table tr{ font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
 #notice_table tr:first-child{ 
     width: "70%";
@@ -45,3 +60,4 @@ ul a{
     text-decoration: none;
     color: red;
 }
+
