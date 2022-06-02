@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnA</title>
+
+    <link rel="stylesheet" href="./css/QnA_1to1.css">
+    <link rel="stylesheet" href="./css/bootstrap774.css">
+    <script src="./js/bootstrap774.js"></script>
+    <script src="./js/QnA_1to1.js"></script>
+</head>
+<body>
+    <div id="container_total">
+        <h5 id="content_title">문의/FAQ</h5>
+        <br>
+        <div>
+            <table>
+                <tr>
+                    <td>제목</td>
+                    <td><input id="qna_title" type="text" width="100%"></td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td>userID</td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td>
+                        반복 작성, 비문, 반말, 욕설, 비난, 상업광고 게재 시 해당 글이 답변없이 삭제됨을 동의합니다. (동의 <input type="checkbox" name="qna_cb" id="qna_checkbox">)
+                        <textarea name="" id="qna_content" cols="80" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>사진 첨부</td>
+                    <td><input type="file"></td>
+                </tr>
+            </table>
+            <div id="qna_warning">시민의견 수렴 게시판은 회원 <span>누구나 자유롭게 의견을 게시할 수 있는 열린 공간입니다. 사업성 광고, 욕설, 저속한 표현, 비방, 정치적 성향, 반복게시물 등은 관리자에 의해 통보없이 삭제</span>될 수 있으며, 홈페이지를 통해 불법 유해 정보 게시, 배포 시 정보통신망 이용촉진 및 정보보호 등에 대한 관한 법률 제 74조에 의거 1년 이하 징역 또는 1천만원 이하의 벌금에 처해질 수 있습니다.</div>
+            <div id="qna_div_btn"><button id="qna_cancel_btn">취소</button><button id="qna_save_btn">저장</button></div>
+        </div>
+    
+    </div>
+    
+
+</body>
+</html>

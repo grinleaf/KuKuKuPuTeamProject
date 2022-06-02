@@ -10,6 +10,46 @@
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
+     <!-- 𝘎𝘰𝘰𝘨𝘭𝘦 𝘓𝘰𝘨𝘪𝘯 -->
+    <!--  https://firebase.google.com/docs/auth/web/firebaseui?hl=ko -->
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <title>로그인</title>
+    <!-- 𝘉𝘰𝘰𝘵𝘚𝘵𝘳𝘢𝘱 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"  media="(min-width:600px)">
+    <!--  𝘒𝘢𝘬𝘢𝘰 𝘓𝘰𝘨𝘪𝘯 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <style>
+
+        ul { list-style: none;}
+
+        /*  전체 레이아웃 */
+        .container { 
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        /* 총 세 개의 플렉스 아이템들  => 1. 이미지 2. 로그인 부분 3. 안내 글씨들 */
+        /*  */
+   
+        .item2{
+            width: 50%;  height: 50%; margin-left: 10%; margin-right: 10%;
+            align-self: stretch;
+        }
+        .item3{
+            width: 50%;  height: 50%;
+            margin-left: 10%; margin-right: 10%;
+            }
+
+        @media screen and (min-width:500px){
+                #wapper { flex-flow: row wrap;}
+            }
+            @media screen and (max-width:500px){
+                #wapper { flex-flow: column nowrap;}
+            }
+
+    </style>
     
     <style>
         /* 기본 설정 */
@@ -17,7 +57,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border: 1px solid lightgrey;
+            /* border: 1px solid lightgrey; */
         }
         body{
             min-width: 400px;
@@ -94,70 +134,31 @@
             color: white;
         }
 
-        /* header와 footer 사이 본문 영역 */
+        /* content : header와 footer 사이 본문 영역 */
+        #content{
+            
+        }
+        #carouselExampleCaptions{
+            /* display: none; */
+        }
+        .carousel-inner{
+            max-width: 800px;
+        }
         #swiper-and-login{
             display: flex;
         }
-        #carouselExampleCaptions{
-            flex-basis: 750px;
-        }
-        .carousel-inner{
-            /* max-width: 400px; */
-        }
-        /* #carouselExampleCaptions{
-            height: 400px;
-        } */
-
-        .swiper-container{
-            display: none;
-        }
-        /* #swiper{
+        #swiper{
             flex-basis: 500px;
         }
         #swiper-slide > img{
             height: 500px;
-        } */
-        
+        }
         .login-area{
-            flex-basis: 368px;
+            flex-basis: 300px;
         }
         #login-form{
-            margin: 10px;
-            padding: 40px;
-            border: 1px solid #e5e5e5;
+            
         }
-        #id, #pw{
-            display: block;
-            padding: 4px;
-            margin: 10px auto;
-            width: 100%;
-        }
-        #autologin{
-            margin-top: 10px;
-        }
-        #btn_login{
-            margin-top: 15px;
-            display: block;
-            width: 100%;
-            height: 40px;
-            background-color: yellow;
-        }
-        #find-id-pw{
-            margin-top: 15px;
-        }
-        #line_or{
-            margin-top: 15px;
-        }
-        #quick-logins{
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        #kakao_login, #google_login, #naver_login{
-            height: 40px;
-            width: 30%;
-        }
-
         #loggedin{
         
         }
@@ -324,11 +325,11 @@
             const loginForm = document.getElementById("login-form")
             const loggedIn = document.getElementById("loggedin")
             if(isLogin == false){
-                loginForm.style.display = "block"
+                loginForm.style.display = "auto"
                 loggedIn.style.display = "none"
             } else {
-                loginForm.style.display = "block"
-                loggedIn.style.display = "flex"
+                loginForm.style.display = "none"
+                loggedIn.style.display = "auto"
             }
         }
     </script>
@@ -343,7 +344,7 @@
             </div>
             
             <div id="logo-and-toggler">
-                <a id="logo" href="#">
+                <a id="logo" href="./index.html">
                     <img src="./image/logo.png" alt="" width="250px">
                 </a>
                 <button id="navbar-toggler" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -362,8 +363,8 @@
                 </div>
                 <div class="offcanvas-body">
                     <div id="m_top-nav">
-                        <a href="./signIn.html">로그인</a>
-                        <a href="./signUp1.html">회원가입</a>
+                        <a href="./signIn_01.html">로그인</a>
+                        <a href="./signUp1_01.html">회원가입</a>
                         <a href="">알림</a>
                     </div>
                     <nav id="m_main-nav">
@@ -467,157 +468,181 @@
         </header>
     </div>
 <!-- content 영역 시작 -->
-    <div id="swiper-and-login-wrap">
-        <div id="swiper-and-login">
-            <!-- Bootstrap carousel 추가 -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>First slide label</h5>
-                      <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+<body class="container">
 
-            <!-- Slider -->
-            <div class="swiper-container">
-                <!-- Slide wrapper -->
-                <div class="swiper-wrapper"></div>
-                    <!-- 각 슬라이드 -->
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-            </div>
-            <aside class="login-area" id="login-form">
-                <input id="id" type="text" placeholder="아이디">
-                <input id="pw" type="password" placeholder="비밀번호">
-                <input type="checkbox" id="autologin">
-                <label for="autologin">자동로그인</label><br>
-                <button id="btn_login">로그인</button>
-                <div id="find-id-pw">
-                    <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
-                </div>
-                <div id="line_or"><span id="txt_or">또는</span></div>
-                <div id="quick-logins">
-                    <button id="kakao_login">카카오</button>
-                    <button id="google_login">구글</button>
-                    <button id="naver_login">네이버</button>
-                </div>
-            </aside>
-            <aside class="login-area" id="loggedin">
-                <p>ID</p>
-                <p>010-1111-1111</p>
-                <button id="btn_member-info-mgmt">회원정보 변경</button>
-                <table>
-                    <tr>
-                        <td>N월 이용이력</td>
-                        <td>대여반납이력 ></td>
-                    </tr>
-                    <tr>
-                        <td>이용시간</td>
-                        <td>0 분</td>
-                    </tr>
-                    <tr>
-                        <td>거리</td>
-                        <td>0.00 km</td>
-                    </tr>
-                    <tr>
-                        <td>칼로리</td>
-                        <td>0.00 kcal</td>
-                    </tr>
-                    <tr>
-                        <td>탄소절감</td>
-                        <td>0.00 kg</td>
-                    </tr>
-                </table>
-            </aside>    
+    <!-- 내부 스크립트 : 온로드 귀찮아서 일단 만듬. -->
+    <script>  
+        // 카카오 관련 스크립트
+        Kakao.init('2d9fcbbf7cb1fda303e953ed5af4e1c4'); // 내 어플리케이션의 앱 키
+        Kakao.isInitialized();// SDK 초기화 여부를 판단여부. 딱 한 번만 실행해야 함.
+
+        function kakao(){ // 카카오 로그인 하는 팝업창만 뜸. 정보가져오기 X
+            alert("카카오")
+            
+            console.log(Kakao.isInitialized())
+            alert( Kakao.isInitialized() ) 
+
+            // 팝업 방식으로 로그인 ㄱㄱ :  https://developers.kakao.com/tool/demo/login/login?method=dynamic
+            Kakao.Auth.login({
+                success: function(authObj) {
+                    alert(JSON.stringify(authObj))
+                    kakaoUserInfo()
+                },
+                fail: function(err) {
+                    alert(JSON.stringify(err))
+                }
+            })
+        }
+
+        function kakaoUserInfo(){
+                Kakao.API.request({
+                    url: '/v2/user/me', // 고정값임.
+                    success: function(res) {
+                        // 정보 가져오기 성공
+                        // 나는 동의항목에서 일단 이메일만 가져오기로 했음.
+                        var email = res.kakao_account.email
+                        console.log(email)
+                        alert(JSON.stringify(res))
+                    },
+                    fail: function(error) {
+                        //정보 가져오기 실패
+                        alert(
+                            'login success, but failed to request user information: ' +
+                            JSON.stringify(error)
+                        )
+                    }
+                })
+        }
+
+        function kakaoLogout() { // 나중에 로그아웃에 넣기.
+            if (!Kakao.Auth.getAccessToken()) {
+                alert('Not logged in.')
+                return
+            }
+            Kakao.Auth.logout(function() {
+                alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+            })
+        }
+    </script>
+
+    <script>
+        // 아예 시도도 안됨.. 일단. ㅠ 다음꺼 ㄱ
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            import { 
+            getAuth,// authentication 설정
+            signInWithPopup, //google 로그인을 팝업창에 띄우기 위해
+            GoogleAuthProvider, //google login 기능
+            signInWithEmailAndPassword,// email 로그인
+            createUserWithEmailAndPassword, //email 회원가입
+            } from 'https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js';
+
+            // auth 설정 필수!!
+            const auth = getAuth();
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            apiKey: "AIzaSyBD60ZB0Now9FajCq2KsevPfNhFrEvukNM",
+            authDomain: "kkpk-2e2b6.firebaseapp.com",
+            projectId: "kkpk-2e2b6",
+            storageBucket: "kkpk-2e2b6.appspot.com",
+            messagingSenderId: "376460784690",
+            appId: "1:376460784690:web:e2dd1241d1d3a05c8ff82b"
+            };
+
+            //Google 로그인
+            
+            const provider = new GoogleAuthProvider();
+            export const loginGoogle = () => {
+            return signInWithPopup(auth, provider);
+            };
+
+            function googleSignIn(){
+                            loginGoogle().then((result) => {
+                console.log(result);
+                const user = result.user;
+                loginSuccess(user.email, user.uid);
+                alert("구글 로그인 성공 " + user.email)
+            });
+            }
+            
+
+    </script>
+
+    <!--  화면 시작 -->
+    <!--  첫 번째 플렉스 아이템 요소 - 이미지 -->
+    <img src="./image/tutorial_sample04.jpg" id = "item1" class="rounded float-start" alt="샘플 이미지" style="width: 50%;  height: 50%; " >
+    <!--  두 번째 플렉스 아이템 요소 - 로그인 -->
+    <div id = "item2">
+            <ul>
+                <li><img src="./image/logo.png" alt="logo" onclick="location.href='./index.html'"></li>
+                <li><input type="text" name="" id="id" placeholder="아이디"></li>
+                <li><input type="pw" name="" id="pw" placeholder="비밀번호"></li>
+                <li><input type="checkbox" name="" id="cb" >로그인 상태 유지</li>
+                <li><div class="d-grid gap-2"><button class="btn btn-primary" type="button" id="SignIn">로그인하기</button></div></li>
+                <li>
+                    <a href="signUp1_01.html">회원가입</a>
+                    <a href="">아이디 찾기</a> 
+                    <a href="">비밀번호 찾기</a>
+                </li>
+                <li><img src="./image/join_line.jpg" alt=""></li>
+                <li style="display: inline-block;">
+                    <div id="log2">
+                        <button type="button" class="btn btn-warning" id="kakaoSignIn" onclick="kakao()">카카오 로그인</button>
+                        <button type="button" class="btn btn-primary" onclick="googleSignIn()">Google 로그인</button>
+                        
+                        <button type="button" class="btn btn-success" onclick="alert('네이버 서버 점검중 입니다(무기한)')">네이버 로그인</button>
+                    </div>
+                </li>
+                <li><div class="d-grid gap-2"><button class="btn btn-primary" type="button"">비회원 로그인</button></div></li>
+            </ul>
         </div>
     </div>
-    <div id="guide-nav-wrap">
-        <nav id="guide-nav">
-            <div>
-                대여방법
-            </div>
-            <div>대여방법</div>
-            <div>대여방법</div>
-            <div>대여방법</div>
-        </nav>    
+    <!--  세 번째 플렉스 아이템 요소 - 안내 글씨들 -->
+    <div id="item3">
+        <p><strong> 로그인 회원가입시 SNS 제공 업체 정책상 자동로그인이 지원되고 있지 않습니다.</strong></p>
+        <p><strong>이점 양해 부탁드립니다.</strong></p>
+        <p> - 자동로그인을 원하시는 경우 따릉이 회원으로 전환.</p>
+        <p><strong>※ 따릉이 회원 전환 방법</strong></p>
+        <ol>
+            <li>SNS로그인-나의 공간-회원정보관리-개인정보수정-비밀번호 변경 메뉴에서 비밀번호 입력</li>
+            <li>생성된 비밀번호와 따릉이 아이디(개인정보수정에서 확인가능)를 통해 로그인</li>
+        </ol>
     </div>
-    <div id="guide-wrap">
-        <section id="guide">
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-        </section>    
-    </div>
-    <div id="places-wrap">
-        <section id="places">
-            <div class="place-item" onclick="location.href='https://www.naver.com'">
-                <img class="place-img" src="./image/place3.PNG" alt="">
-                <div class="place-card">
-                    <h4>서울관광재단이 추천하는 서울 댕댕이 산책코스 7선 - 영등포구</h4>
-                    <p>반려동물과 함께하는 서울 산책코스, 영등포구 안양천 산책로를 소개합니다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place1.PNG" alt="">
-                <div class="place-card">
-                    <h4>봄과 함께 서울을 걷다.</h4>
-                    <p>포근해진 날씨에 어디로든 떠나고 싶은 요즘, 봄의 기운을 만끽할 수 있는 서울 봄 데이트 코스를 추천한다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place2.PNG" alt="">
-                <div class="place-card">
-                    <h4>봄은 꽃이다. 서울 꽃 시장에서 봄을 사세요.</h4>
-                    <p>꽃처럼 봄이 피어나기 시작하는 3월, 1년 내내 아름다운 꽃이 가득한 '서울에서 가장 향기로운 시장'을 소개합니다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place4.PNG" alt="">
-                <div class="place-card">
-                    <h4>서울에서 가장 이국적인 거리 이태원을 가다.</h4>
-                    <p>골목골목이 마치 해외여행을 하고 있는 듯, 착각을 불러일으키는 특별하고 이색적인 경험을 선물해 줄 이태원 맛집, 이태원 놀거리를 찾아 이태원으로 떠나보자.</p>
-                </div>
-            </div>  
-        </section>    
-    </div>
+
+
+
+
+
+
+    <!-- BootStrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+
+
+    
+    <!-- Firebase 사용하기 위한거임. -->
+    <script type="module">
+       // 해당 스크립트는 구글 로그인에 관한 코드를 담고 있습니다.
+        
+  // Import the functions you need from the SDKs you need
+
+    </script>
+          <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js'
+
+    import { getAuth, signInWithPopup,GoogleAuthProvider } from "firebase/auth";
+
+    
+  </script>
 <!-- content 영역 끝 -->
     <div id="footer-wrap" style="background-color: gainsboro;">
         <footer id="footer">

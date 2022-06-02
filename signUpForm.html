@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        
+        <!--  필요 라이브러리들 추가  -->
+       
+        <!-- CSS 연결 -->
+        <link rel="stylesheet" href="./css/bootstrapInah.css">
+        <!-- JS 연결 --> 
+        <script src="./js/bootstrapInah.js"></script>
+        <script src="jquery-3.6.0.slim.min.js"></script>
+        <script src="./js/signUp.js"></script>
+       
+        <style>
+            /*  테스트 용으로 마진만 줌. */
+            body { margin: 10%;} 
+
+            label { width: 150px;}
+
+            /* 나만의 class를 만들어서 저 밑에 di */
+            /* <div class="row g-3 align-items-center">  */
+            /* 이 위를 보면 클래스를 총 세 가지 적용 한거임, space로 구분해서, */
+            /*  그래서 나만의 class my 를 만들어서 저 뒤에 하난 뛰고 my 쓰면 됨. */
+
+        </style>
+
+</head>
+<body>
+
+    <form id="form-register">
+        <legend>필수 입력 항목입니다.</legend>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="name" class="col-form-label">이름</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="userName" class="form-control" minlength="6" maxlength="12" autofocus>
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text"></span>
+            </div>
+        </div>
+
+        
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">휴대폰 번호 인증</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="phoneNum" class="form-control" maxlength="13">
+            </div>
+            <div class="col-auto">
+                <button type="submit" id="phoneNumSubmit" class="btn btn-primary">인증번호 보내기</button>
+            </div>
+        </div>
+
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">인증번호 확인</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="??" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                올바르지 않습니다
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">아이디</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="id" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                영문, 숫자 6~12자리
+            </span>
+            </div>
+            <div class="col-auto">
+                <button id="checkId" class="btn btn-primary">중복 검사</button>
+            </div>
+
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">비밀번호 </label>
+            </div>
+            <div class="col-auto">
+            <input type="password" id="pw1" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                영문, 숫자, 특수문자(!@#$%^&*?~)조합 8~12자리
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">비밀번호 확인</label>
+            </div>
+            <div class="col-auto">
+            <input type="password" id="pw2" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <span id="text-warning" class="form-text">
+                비밀번호를 한 번 더 입력하세요
+            </span>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">이메일</label>
+            </div>
+            <div class="col-auto">
+            <input type="text" id="userEmail" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                @
+                </span>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="email2" class="form-control" minlength="6" maxlength="12">
+            </div>
+            <div class="col-auto">
+            <select class="form-select"  id="userDomain" aria-label="Default select example" placeholder="">
+                <option selected>직접 입력</option>
+                <option value="daum.net">daum.net</option>
+                <option value="empal.com">empal.com</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="hotmail.com">hotmail.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="naver.com">naver.com</option>
+                <option value="yahoo.co.kr">yahoo.co.kr</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+            <input type="checkbox" id="cbEmail" class="form-control" >
+            </div>
+            <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                이메일 수신 여부
+            </span>
+            </div>
+        </div>
+
+        
+    <p>단, 회원의 서비스 이용과 관련한 권리 및 의무 등에 관한 사항에 대해 변경될 경우 통지 
+        <br>
+        의무사항에 따라 수신 동의 여부와 무관하게 메일이 발송될 수 있음을 참고해 주시기 바랍니다.
+    </p>
+    <div class="col-auto">
+        <button id="btn-submit" type="submit" class="btn btn-primary">다 음</button>
+    </div>
+
+    </form>
+
+
+
+
+</body>
+</html>
