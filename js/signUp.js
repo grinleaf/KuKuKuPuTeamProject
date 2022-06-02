@@ -16,18 +16,37 @@
         // 나이 종류에 대한 const 값 ( 새싹 따릉이 일 경우 , isAdult = false)
         const isAdult = false  // 디폴트 성인
 
+        var $name
+        var $id
         var $pw1
         var $pw2 
+        var $phone_num_data
+        var $phone_num
+
         var $email 
-        var $domain = $('#userDomain').val()
+        var $domain
+        var $cb_email
+
+
+        var $flag = 0
+
+        var userInfo
+
 
 
         $('#checkId').click( ()=>{
             const reId = /^\w{6,12}/     //영문, 숫자 6~12자리        
-            var id = $('#id').val()
-            console.log( '값 :  ' + id)
-            if (reId.test(id)) console.log(' 올바른 아이디임.')
-            else console.log(' 올바르지 않은 아이디임.')
+            $id = $('#id').val()
+            console.log( '값 :  ' + $id)
+            if (reId.test(id)){ 
+                console.log(' 올바른 아이디임.')
+                if( $flag >=1){  $flag -=1}
+            }
+            else{ 
+                console.log(' 올바르지 않은 아이디임.')
+                alert('올바른 아이디를 입력해주세요.')
+                $flag +=1
+            }
 
         })
 
@@ -36,13 +55,15 @@
         // 사용자가 키값을 하나 누를 때 마다 발동. -> 콜백이벤트...
         $('#phoneNum').keydown(function (event) {
             var key = event.charCode || event.keyCode || 0;
-            $text = $(this); 
+            $phone_num  = $(this)
+           
+
             if (key !== 8 && key !== 9) {
-                if ($text.val().length === 3) {
-                    $text.val($text.val() + '-');
+                if ($phone_num.val().length === 3) {
+                    $phone_num.val($phone_num.val() + '-');
                 }
-                if ($text.val().length === 8) {
-                    $text.val($text.val() + '-');
+                if ($phone_num.val().length === 8) {
+                    $phone_num.val($phone_num.val() + '-');
                 }
             }
             return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
@@ -53,11 +74,17 @@
         // 인증번호 보내기 버튼 누르면 발동하는 콜백. 정규식으로 숫자 확인.
         $('#phoneNumSubmit').click( () =>
         {
-            var num = $('#phoneNum').val()
+            $phone_num_data =  $('#phoneNum').val()
             const rePhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-            if(rePhone.test(num)) console.log( rePhone.test(num) )
-            else (console.log( '폰 번호가 아님' )
-             )
+            if(rePhone.test($phone_num_data)) {
+                console.log( rePhone.test($phone_num_data) )
+                if( $flag >=1){  $flag -=1}
+            }
+            else { 
+                console.log( '폰 번호가 아님' )
+                $('#phoneNum').val('') 
+                $flag +=1
+                   } 
         })
 
         // 비번 입력 칸에서 포커스 나가면 발동하는 콜백
@@ -72,10 +99,14 @@
         $('#pw2').blur(()=>{ 
             $pw2 = $('#pw2').val()
 
-            if ($pw1 === $pw2) console.log('비번이 같음') 
+            if ($pw1 === $pw2){
+                console.log('비번이 같음') 
+                if( $flag >=1){  $flag -=1}
+            } 
             else {
                 console.log('비번이 틀림')
                 $('#pw2').val('')
+                $flag +=1
             }
         })
 
@@ -84,8 +115,14 @@
 
             const reEmailFirst = /[a-z0-9]+/    //  @ 앞
             
-            if( reEmailFirst.test($('#userEmail').val())) console.log(" 이멜이 정규식에 맞음" + $('#userEmail').val())
-            else console.log(" 이멜이 정규식에 안 맞음 " + $('#email1').val())
+            if( reEmailFirst.test($('#userEmail').val())) {
+                console.log(" 이멜이 정규식에 맞음" + $('#userEmail').val())
+                if( $flag >=1){  $flag -=1}
+            }
+            else {
+                console.log(" 이멜이 정규식에 안 맞음 " + $('#email1').val())
+                $flag +=1
+            }
         })
 
         // 이메일 검사
@@ -93,75 +130,56 @@
 
             const reEmailSecond =  /\.\w+(\.\w+)?/   // @ 뒤 
             
-            if( reEmailSecond.test($('#email2').val())) console.log(" 이멜이 정규식에 맞음" + $('#email2').val())
-            else console.log(" 이멜이 정규식에 안 맞음 " + $('#email2').val())
+            if( reEmailSecond.test($('#email2').val())){
+                 console.log(" 이멜이 정규식에 맞음" + $('#email2').val())
+                 if( $flag >=1){  $flag -=1}
+            }
+            else {
+                console.log(" 이멜이 정규식에 안 맞음 " + $('#email2').val())
+                $flag +=1
+            }
         })
 
         $("#userDomain").on('change', function() {
-            var domain = this.value
-            $('#email2').val(domain)
-            console.log('셀렉트로 선택된 값은' + domain)
+            $domain = this.value
+            $('#email2').val($domain)
+            console.log('셀렉트로 선택된 값은' +$domain)
         });
-    
-       
 
+        if($("#cbEmail").is(':checked')) $cb_email = true  // 체크O : 리턴 -  true   /  체크X : 리턴 -  false
+        else $cb_email = false
+        
   
         // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러 ( 콜백 메소드)
-         $('#form-register').submit(function(e) {
-            e.preventDefault(); // 버튼을 눌러 넘어온 이벤트 객체임. 이 객체의 기본 동작을 막기. (안넘으면 넘어감)
-            var  $name = $('#userName').val()
+        $('#form-register').submit(function(e) {
+
+            userInfo = {
+                name : $name,
+                phoneNum : $phone_num_data,
+                id : $id, 
+                pw : $pw, 
+                email : $email + $domain ,
+                cb_email : $cb_email , 
+                date : new Date()
+            }     
             
-            // 제출 하기 전 객체를 만들어서 데이터를 보내자. 나중..
+            toServer(userInfo)
+        })
 
-           alert('제출')
-    
-        });
+        function toServer(userInfo){
 
+            var xhr = new XMLHttpRequest()
 
-
-            
-        }) //JSQuery=========================================================================================   
-
-
-
-        // 생성자 함수로 사용자 객체 만들기 - 더 생각해보기.
-        class SignUpUserInfo{
-
-            constructor(name, phoneNum, id, pw, email, cbEmail){
-                this.name = name,
-                this.phoneNum = phoneNum,
-                this.id = id, 
-                this.pw = pw, 
-                this.email = email,
-                this.cbEmail = cbEmail
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText)
+                }
             }
-
-            toServer(){
-                // 포스트 방식으로 보내기 ㄱㄱ
-            }
-            fromServer(){
-
-            }
-
+            xhr.open('POST','signUpForm.php', true)
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // 2번째 파라미터는 www 기술을 썼다라는 건데
+            // 멀티 폼 데이터는 헤더와 바디를 나눴다는 약속을 한 형식?암, 아 존나 어려움,,
+            xhr.send('id ='+userInfo.name+'&pw='+userInfo.phoneNum+) // 이 안의 데이터들
         }
 
-// 다음 버튼을 누르면 제이슨 객체로 만듬. 포스트로 보내야 하는데 ㅠ 나중에 ㄱ ㅜㅜ
-// function sub(name, phoneNum, id, pw, email, cbEmail){
-    
-//     var userInfo = {
-//     name : name,
-//     phoneNum: phoneNum,
-//     id : id, 
-//     pw : pw, 
-//     email : email,
-//     cbEmail : cbEmail
-//     }
 
-//     var json = JSON.stringify(userInfo) 
-
-//         console.log(json); // 유저 폼 데이터를 객체로 만듬.
-
-// }
-
-// var a = document.getElementById('aa')
-// a.
+        }) //JSQuery=========================================================================================   
