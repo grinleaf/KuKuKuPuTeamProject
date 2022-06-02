@@ -94,31 +94,70 @@
             color: white;
         }
 
-        /* content : header와 footer 사이 본문 영역 */
-        #content{
-            
-        }
-        #carouselExampleCaptions{
-            /* display: none; */
-        }
-        .carousel-inner{
-            max-width: 800px;
-        }
+        /* header와 footer 사이 본문 영역 */
         #swiper-and-login{
             display: flex;
         }
-        #swiper{
+        #carouselExampleCaptions{
+            flex-basis: 750px;
+        }
+        .carousel-inner{
+            /* max-width: 400px; */
+        }
+        /* #carouselExampleCaptions{
+            height: 400px;
+        } */
+
+        .swiper-container{
+            display: none;
+        }
+        /* #swiper{
             flex-basis: 500px;
         }
         #swiper-slide > img{
             height: 500px;
-        }
+        } */
+        
         .login-area{
-            flex-basis: 300px;
+            flex-basis: 368px;
         }
         #login-form{
-            
+            margin: 10px;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
         }
+        #id, #pw{
+            display: block;
+            padding: 4px;
+            margin: 10px auto;
+            width: 100%;
+        }
+        #autologin{
+            margin-top: 10px;
+        }
+        #btn_login{
+            margin-top: 15px;
+            display: block;
+            width: 100%;
+            height: 40px;
+            background-color: yellow;
+        }
+        #find-id-pw{
+            margin-top: 15px;
+        }
+        #line_or{
+            margin-top: 15px;
+        }
+        #quick-logins{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        #kakao_login, #google_login, #naver_login{
+            height: 40px;
+            width: 30%;
+        }
+
         #loggedin{
         
         }
@@ -285,11 +324,11 @@
             const loginForm = document.getElementById("login-form")
             const loggedIn = document.getElementById("loggedin")
             if(isLogin == false){
-                loginForm.style.display = "auto"
+                loginForm.style.display = "block"
                 loggedIn.style.display = "none"
             } else {
-                loginForm.style.display = "none"
-                loggedIn.style.display = "auto"
+                loginForm.style.display = "block"
+                loggedIn.style.display = "flex"
             }
         }
     </script>
@@ -438,21 +477,21 @@
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="2000">
+                  <div class="carousel-item active" data-bs-interval="5000">
                     <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>First slide label</h5>
                       <p>Some representative placeholder content for the first slide.</p>
                     </div>
                   </div>
-                  <div class="carousel-item" data-bs-interval="2000">
+                  <div class="carousel-item" data-bs-interval="5000">
                     <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Second slide label</h5>
                       <p>Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
-                  <div class="carousel-item" data-bs-interval="2000">
+                  <div class="carousel-item" data-bs-interval="5000">
                     <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Third slide label</h5>
@@ -480,14 +519,20 @@
                     <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
             </div>
             <aside class="login-area" id="login-form">
-                <input id="id" type="text" placeholder="아이디"><br>
-                <input id="pw" type="password" placeholder="비밀번호"><br>
+                <input id="id" type="text" placeholder="아이디">
+                <input id="pw" type="password" placeholder="비밀번호">
                 <input type="checkbox" id="autologin">
-                <label for="autologin">자동로그인</label>
-                <span>
-                    <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
-                </span>
+                <label for="autologin">자동로그인</label><br>
                 <button id="btn_login">로그인</button>
+                <div id="find-id-pw">
+                    <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
+                </div>
+                <div id="line_or"><span id="txt_or">또는</span></div>
+                <div id="quick-logins">
+                    <button id="kakao_login">카카오</button>
+                    <button id="google_login">구글</button>
+                    <button id="naver_login">네이버</button>
+                </div>
             </aside>
             <aside class="login-area" id="loggedin">
                 <p>ID</p>
