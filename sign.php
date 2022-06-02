@@ -16,27 +16,18 @@
     // 이걸 시간으로 보내기
     $now = date('Y-m-d H:i:s');
 
-    $db = mysqli_connect("kkpk.dothome.co.kr","kkpk","commit!!11","kkpk"); // 네번째는 db명
+    $db = mysqli_connect("localhost","webserver","xowl!!0405","webserver"); // 네번째는 db명
 
     mysqli_query($db, "set names utf8"); //한글깨짐 방지
-
-    $sql = "INSERT INTO `userInfo`( `name`, `phoneNum`, `id`, `pw`, `email`, `cbEmail`, `date`) VALUES ('$name','$phoneNum','$id','$pw','$email','$cb_email','$now')";
+    $sql = "INSERT INTO please( name ,id) VALUES ('$name','$id')";
 
 
     $result = mysqli_query($db,$sql); // 결과 확인용 확인용 result
 
     if($result) echo " 게시글 업로드 되따";
-    else echo "망;
+    else echo "또 안돼";
 
 
     mysqli_close($db);
-
-
-
-
-
-
-
-
 
 ?>
