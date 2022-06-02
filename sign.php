@@ -11,7 +11,7 @@
     $cb_email = $_POST['cb_email'];
 
     // 에코 성공.
-    echo " 아이디 :   $id  ,  비밀번호  :   $pw  , 이메일 : $email";
+    echo " 아이디 :   $id  ,  이름  :   $name  , 이메일 : $email";
 
     // 이걸 시간으로 보내기
     $now = date('Y-m-d H:i:s');

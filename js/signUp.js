@@ -31,7 +31,6 @@
         var $flag = 0
 
 
-
         $('#checkId').click( ()=>{
             const reId = /^\w{6,12}/     //영문, 숫자 6~12자리        
             $id = $('#id').val()
@@ -151,6 +150,7 @@
         // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러 ( 콜백 메소드)
 
         $('#btnSignUp').click( function(){
+            $name =  $('#userName').val()
             $.post("sign.php",
                 {name : $name,
                  phoneNum : $phone_num_data,
