@@ -12,14 +12,33 @@
         }
     </style> -->
 
-    <link rel="stylesheet" href="rental_station_top.css">
+    <link rel="stylesheet" href="./css/rental_station_top.css">
 
 </head>
 
 <body>
 
     <!-- 맨위 -->
-    <div id="top" style="width: 100%; height: 40px;"></div>
+    <div id="top">
+        
+        <div id="top-nav">
+            <a href="./signIn.html">로그인</a>
+            <a href="./signUp1.html">회원가입</a>
+            <a href="">알림</a>
+        </div>
+        <style>
+            #top-nav{
+                display: flex;
+                justify-content: flex-end;
+            }
+            #top-nav > a{
+                margin-left: 20px;
+            }
+
+        </style>
+        
+        
+    </div>
 
     <!-- 상단 탭 -->
     <header style="border: 1px solid black; width: 100%; height: auto;" class="header">
@@ -33,7 +52,7 @@
         </span>
 
         <h1 class="img_log">
-            <a href="" class="a">
+            <a href="./index.html" class="a">
                 <img src="https://www.bikeseoul.com/images/logo.png" alt="서울자전거" id="logo">
             </a>
         </h1>

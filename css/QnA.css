@@ -1,10 +1,15 @@
-#container_total{
-    padding: 100px;
-    width: 1000px;
+#align_all{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
-#content_title{
-    font-weight: bold;
-    text-align: left;
+
+#container_total{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    min-width: 900px;
+    width: 1000px;
 }
 
 table{
@@ -16,13 +21,13 @@ table td{
     /* border: 1px solid #ccc */
 }
 
-td a{
+table#menu_table td a{
     text-decoration: none;
     color: #333;
     font-weight: bold;
     font-size: 12px;
 }
-td a:hover{
+table#menu_table td a:hover{
     color: #4cab6a;
 }
 

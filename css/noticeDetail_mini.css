@@ -24,8 +24,9 @@ div#all{
 }
 
 h5#content_title{
+    display: flex;
     font-size: 15px;
-    padding-left: 250px;
+    justify-content: space-between;
 }
 
 #notice_div_btn{
@@ -40,6 +41,17 @@ h5#content_title{
     line-height: 2rem;
     border: 1px solid #aaa;
 }
+
+h5#content_title img:first-child{
+    width: 13px;
+    height: 15px;
+}
+
+h5#content_title img:nth-child(2){
+    width: 13px;
+    height: 15px;
+}
+
 
 header{
     

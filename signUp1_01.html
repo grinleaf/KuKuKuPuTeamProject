@@ -11,13 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
     
+
+
     <style>
         /* 기본 설정 */
         *{ 
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border: 1px solid lightgrey;
+            /* border: 1px solid lightgrey; */
         }
         body{
             min-width: 400px;
@@ -298,13 +300,13 @@
     <div id="header-wrap">
         <header id="header">
             <div id="top-nav">
-                <a href="./signIn.html">로그인</a>
-                <a href="./signUp1.html">회원가입</a>
+                <a href="./signIn_01.html">로그인</a>
+                <a href="./signUp1_01.html">회원가입</a>
                 <a href="">알림</a>
             </div>
             
             <div id="logo-and-toggler">
-                <a id="logo" href="#">
+                <a id="logo" href="./index.html">
                     <img src="./image/logo.png" alt="" width="250px">
                 </a>
                 <button id="navbar-toggler" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -323,8 +325,8 @@
                 </div>
                 <div class="offcanvas-body">
                     <div id="m_top-nav">
-                        <a href="./signIn.html">로그인</a>
-                        <a href="./signUp1.html">회원가입</a>
+                        <a href="./signIn_01.html">로그인</a>
+                        <a href="./signUp1_01.html">회원가입</a>
                         <a href="">알림</a>
                     </div>
                     <nav id="m_main-nav">
@@ -428,151 +430,29 @@
         </header>
     </div>
 <!-- content 영역 시작 -->
-    <div id="swiper-and-login-wrap">
-        <div id="swiper-and-login">
-            <!-- Bootstrap carousel 추가 -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>First slide label</h5>
-                      <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="./image/tutorial_sample04.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-            <!-- Slider -->
-            <div class="swiper-container">
-                <!-- Slide wrapper -->
-                <div class="swiper-wrapper"></div>
-                    <!-- 각 슬라이드 -->
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-                    <div class="swiper-slide"><img src="./image/tutorial_sample04.jpg" alt="" width="300px"></div>
-            </div>
-            <aside class="login-area" id="login-form">
-                <input id="id" type="text" placeholder="아이디"><br>
-                <input id="pw" type="password" placeholder="비밀번호"><br>
-                <input type="checkbox" id="autologin">
-                <label for="autologin">자동로그인</label>
-                <span>
-                    <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
-                </span>
-                <button id="btn_login">로그인</button>
-            </aside>
-            <aside class="login-area" id="loggedin">
-                <p>ID</p>
-                <p>010-1111-1111</p>
-                <button id="btn_member-info-mgmt">회원정보 변경</button>
-                <table>
-                    <tr>
-                        <td>N월 이용이력</td>
-                        <td>대여반납이력 ></td>
-                    </tr>
-                    <tr>
-                        <td>이용시간</td>
-                        <td>0 분</td>
-                    </tr>
-                    <tr>
-                        <td>거리</td>
-                        <td>0.00 km</td>
-                    </tr>
-                    <tr>
-                        <td>칼로리</td>
-                        <td>0.00 kcal</td>
-                    </tr>
-                    <tr>
-                        <td>탄소절감</td>
-                        <td>0.00 kg</td>
-                    </tr>
-                </table>
-            </aside>    
-        </div>
-    </div>
-    <div id="guide-nav-wrap">
-        <nav id="guide-nav">
-            <div>
-                대여방법
-            </div>
-            <div>대여방법</div>
-            <div>대여방법</div>
-            <div>대여방법</div>
-        </nav>    
-    </div>
-    <div id="guide-wrap">
-        <section id="guide">
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-            <div>
-                <img src="./image/tutorial_sample04.jpg" alt="">
-            </div>  
-        </section>    
-    </div>
-    <div id="places-wrap">
-        <section id="places">
-            <div class="place-item" onclick="location.href='https://www.naver.com'">
-                <img class="place-img" src="./image/place3.PNG" alt="">
-                <div class="place-card">
-                    <h4>서울관광재단이 추천하는 서울 댕댕이 산책코스 7선 - 영등포구</h4>
-                    <p>반려동물과 함께하는 서울 산책코스, 영등포구 안양천 산책로를 소개합니다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place1.PNG" alt="">
-                <div class="place-card">
-                    <h4>봄과 함께 서울을 걷다.</h4>
-                    <p>포근해진 날씨에 어디로든 떠나고 싶은 요즘, 봄의 기운을 만끽할 수 있는 서울 봄 데이트 코스를 추천한다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place2.PNG" alt="">
-                <div class="place-card">
-                    <h4>봄은 꽃이다. 서울 꽃 시장에서 봄을 사세요.</h4>
-                    <p>꽃처럼 봄이 피어나기 시작하는 3월, 1년 내내 아름다운 꽃이 가득한 '서울에서 가장 향기로운 시장'을 소개합니다.</p>
-                </div>
-            </div>  
-            <div class="place-item">
-                <img class="place-img" src="./image/place4.PNG" alt="">
-                <div class="place-card">
-                    <h4>서울에서 가장 이국적인 거리 이태원을 가다.</h4>
-                    <p>골목골목이 마치 해외여행을 하고 있는 듯, 착각을 불러일으키는 특별하고 이색적인 경험을 선물해 줄 이태원 맛집, 이태원 놀거리를 찾아 이태원으로 떠나보자.</p>
-                </div>
-            </div>  
-        </section>    
-    </div>
+    <div class="container">
+		<div class="content">
+			<div class="join">
+				<div class="sub_title">
+					<h3>회원가입</h3>
+				</div>
+				<div style="background: #efefef; padding: 20px 40px; font-size: 12px; color: #666; letter-spacing: normal; line-height: 20px; width: 100%; margin: 30px auto 60px auto;box-sizing: border-box;">
+				<div style="text-align:center;font-size: 16px;width: 100%;"><strong>[회원가입 안내]</strong><br></div>
+				<span>
+					● 서울자전거 따릉이는 만14세 이상(일반회원), 만 13세로 구분하여 회원가입이 가능합니다.<br>
+					● <strong>만 13세는 보호자(부모,법정대리인)</strong> 본인인증을 통해서 회원가입이 가능하므로, <strong><font color="red">반드시 보호자 핸드폰에서 진행</font></strong>하여 주시기 바랍니다.<br>
+					● 위의 사항에 동의할 경우에만 아래의 가입하기 버튼을 눌러 진행하여 주기 바랍니다.
+				</span>
+				</div>
+			</div>
+			<div class="btn2">
+				<a>만 13세 <br>회원가입하기</a>
+			</div>
+			<div class="btn2">
+				<a href="./signUp2_01.html">만 14세 이상<br>회원가입하기</a>
+			</div>
+		</div>
+	</div>
 <!-- content 영역 끝 -->
     <div id="footer-wrap" style="background-color: gainsboro;">
         <footer id="footer">

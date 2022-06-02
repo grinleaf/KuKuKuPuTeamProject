@@ -5,7 +5,14 @@
         height: auto;
         padding-bottom: 5px;
     }
+    #top {
+        display: none;
+    }
+}
 
+a{
+    text-decoration: none;
+    color: black;
 }
 
 section {
