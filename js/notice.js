@@ -29,7 +29,7 @@ function notice_add(){
 }
 
 function move_detail_page(){
-    window.open('./noticeDetail.html', '_self')
+    window.open('./noticeDetail_01.html', '_self')
 }
 
 

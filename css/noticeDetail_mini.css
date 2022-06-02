@@ -23,8 +23,9 @@ div#all{
     max-width: 555px;
 }
 
-h5#content_title{
+h3#content_title{
     display: flex;
+    font-weight: bold;
     font-size: 15px;
     justify-content: space-between;
 }
@@ -42,21 +43,28 @@ h5#content_title{
     border: 1px solid #aaa;
 }
 
-h5#content_title img:first-child{
-    width: 13px;
+h3#content_title img:first-child{
+    width: 10px;
     height: 15px;
 }
 
-h5#content_title img:nth-child(2){
-    width: 13px;
+h3#content_title img:nth-child(2){
+    width: 15px;
     height: 15px;
 }
 
-
-header{
-    
+#div_prev_01 {
+    display: inline-block;
+    margin-left: 0px;
+    width: 22%;
+}
+#div_prev_01 img{
+    display: inline;
+    text-align: left;
 }
 
-footer{
-
+#div_prev_02{
+    display: inline-block;
+    text-align: left;
+    width: 68%;
 }

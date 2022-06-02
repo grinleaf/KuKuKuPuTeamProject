@@ -10,8 +10,8 @@
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <link rel="stylesheet" href="./css/notice_mini.css" media="(max-width:800px)">
-    <link rel="stylesheet" href="./css/notice.css">
+    <link rel="stylesheet" href="./css/notice_mini.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="./css/notice.css" media="(min-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
     <script src="./js/bootstrap774.js"></script>
     
@@ -21,7 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border: 1px solid lightgrey;
+            /* border: 1px solid lightgrey; */
         }
         body{
             min-width: 400px;
@@ -192,7 +192,7 @@
 
     <style media="(max-width:640px)">
         body{
-            background-color: lightblue;
+            /* background-color: lightblue; */
         }
         #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
             width: auto;
@@ -434,7 +434,7 @@
 <!-- content 영역 시작 -->
 <div id="all">
     <div id="container_total">
-        <h5 id="content_title"><img id="back_mini" src="https://www.bikeseoul.com/img/btn_back.png">공지사항</h5>
+        <h4 id="content_title"><span><img id="back_mini" src="https://www.bikeseoul.com/img/btn_back.png"></span><span>공지사항</span></h4>
         <br>
         <div id="container_search">        
             <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn">검색</button>

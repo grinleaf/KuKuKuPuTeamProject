@@ -23,10 +23,16 @@ div#all{
     width: 800px;
 }
 
-h5#content_title{
+h3#content_title{
     width: 100%;
     font-weight: bold;
     text-align: left;
+}
+
+h3#content_title img{
+    display: none;
+    width: 13px;
+    height: 15px;
 }
 
 #notice_div_btn{
@@ -42,16 +48,13 @@ h5#content_title{
     border: 1px solid #aaa;
 }
 
-h5#content_title img{
-    display: none;
-    width: 13px;
-    height: 15px;
-}
+#div_prev_01 {
+    display: inline-block;
+    margin-left: 15px;
 
-header{
+}
+#div_prev_02{
+    display: inline-block;
+    text-align: left;
     
-}
-
-footer{
-
 }

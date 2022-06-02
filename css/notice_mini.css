@@ -18,27 +18,26 @@ div#all{
     margin-bottom: 30px;
 }
 #content_title{
-    border: 1px solid red;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    /* border: 1px solid red; */
+    font-weight: bold;
     font-size: 16px;
 }
 
 img#back_mini{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 10px; height: 18px;
 }
 
 #search_box{
     font-size: 12px; 
     line-height: 1.2rem;
+    flex-grow: 6;
     padding: 6px;
     margin-right: 5px;
 }
 #search_btn{
     width: 3.5rem;
-    flex-grow: 1;
+    flex-grow: 0.5;
     flex-basis: 50px;
     font-size: 12px;
     color: white;
@@ -57,6 +56,20 @@ img#back_mini{
 
 ul a{
     text-decoration: none;
-    color: red;
+    /* color: red; */
 }
+
+h4#content_title span:first-child{
+    display: inline-block;
+    text-align: left;
+    width: 5%;
+}
+
+h4#content_title span:nth-child(2){
+    display: inline-block;
+    text-align: center;
+    width: 85%;
+}
+
+
 
