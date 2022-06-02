@@ -9,11 +9,11 @@
         <!--  필요 라이브러리들 추가  -->
        
         <!-- CSS 연결 -->
-        <link rel="stylesheet" href="./css/bootstrapInah.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
         <!-- JS 연결 --> 
-        <script src="./js/bootstrapInah.js"></script>
-        <script src="jquery-3.6.0.slim.min.js"></script>
-        <script src="./js/signUp.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script src="./js/jquery-3.6.0.min.js"></script>
+        <script src="./js/signup.js"></script>
        
         <style>
             /*  테스트 용으로 마진만 줌. */
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-    <form id="form-register">
+    <form id="form-register" method="post">
         <legend>필수 입력 항목입니다.</legend>
 
         <div class="row g-3 align-items-center">
@@ -167,7 +167,7 @@
             의무사항에 따라 수신 동의 여부와 무관하게 메일이 발송될 수 있음을 참고해 주시기 바랍니다.
         </p>
         <div class="col-auto">
-            <button id="btn-submit" type="submit" class="btn btn-primary">다 음</button>
+            <button id="btnSignUp" type="button" class="btn btn-primary">회원가입</button>
         </div>
 
     </form>

@@ -30,8 +30,6 @@
 
         var $flag = 0
 
-        var userInfo
-
 
 
         $('#checkId').click( ()=>{
@@ -151,35 +149,20 @@
         
   
         // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러 ( 콜백 메소드)
-        $('#form-register').submit(function(e) {
 
-            userInfo = {
-                name : $name,
-                phoneNum : $phone_num_data,
-                id : $id, 
-                pw : $pw, 
-                email : $email + $domain ,
-                cb_email : $cb_email , 
-                date : new Date()
-            }     
-            
-            toServer(userInfo)
+        $('#btnSignUp').click( function(){
+            $.post("sign.php",
+                {name : $name,
+                 phoneNum : $phone_num_data,
+                 id : $id, 
+                 pw :"ddd555", 
+                 email : $email + $domain ,
+                 cb_email : $cb_email , 
+                 date : "2022년 오늘"},
+                 function(data,status){
+                    // 요청 성공시 실행되는 콜백 메소드
+                    alert( '데이터' + data + ' 상태' + status)
+                })
         })
-
-        function toServer(userInfo){
-
-            var xhr = new XMLHttpRequest()
-
-            xhr.onreadystatechange = function(){
-                if(xhr.readyState == 4 && xhr.status == 200){
-                    console.log(xhr.responseText)
-                }
-            }
-            xhr.open('POST','signUpForm.php', true)
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // 2번째 파라미터는 www 기술을 썼다라는 건데
-            // 멀티 폼 데이터는 헤더와 바디를 나눴다는 약속을 한 형식?암, 아 존나 어려움,,
-            xhr.send('id ='+userInfo.name+'&pw='+userInfo.phoneNum+) // 이 안의 데이터들
-        }
-
 
         }) //JSQuery=========================================================================================   
