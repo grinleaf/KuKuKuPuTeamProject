@@ -10,7 +10,8 @@
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <link rel="stylesheet" href="./css/QnA.css">
+    <link rel="stylesheet" href="./css/QnA.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/QnA_mini.css" media="(max-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
     <script src="./js/bootstrap774.js"></script>
     <script src="./js/QnA.js"></script> 
@@ -190,9 +191,9 @@
         }
     </style>
 
-    <style media="(max-width:640px)">
+    <style media="(max-width:768px)">
         body{
-            background-color: lightblue;
+            /* background-color: lightblue; */
         }
         #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
             width: auto;
@@ -445,24 +446,46 @@
     }
   </style>
   <br>
-  <hr>
-  <div>
-      <table id="menu_table">
-          <tr>
-              <td><a onclick="clickMenu(0)"><img src="https://www.bikeseoul.com/images/opi/opi_1.png"><br>대여 및 반납</a></td>
-              <td><a onclick="clickMenu(1)"><img src="https://www.bikeseoul.com/images/opi/opi_2.png"><br>자전거 추가배치</a></td>
-              <td><a onclick="clickMenu(2)"><img src="https://www.bikeseoul.com/images/opi/opi_3.png"><br>대여소(개설/폐쇄)</a></td>
-              <td><a onclick="clickMenu(3)"><img src="https://www.bikeseoul.com/images/opi/opi_4.png"><br>결제/환불/마일리지</a></td>
-              <td rowspan="2"><a href="./QnA_1to1_01.html"><img id="img_1to1" src="https://www.bikeseoul.com/images/opi/opi_9.png" alt=""><br>1:1 문의하기</a></td>
-          </tr>
-          <tr>
-              <td><a onclick="clickMenu(4)"><img src="https://www.bikeseoul.com/images/opi/opi_6.png"><br>자전거 및 시설관리</a></td>
-              <td><a onclick="clickMenu(5)"><img src="https://www.bikeseoul.com/images/opi/opi_7.png"><br>앱 또는 홈페이지 문의</a></td>
-              <td><a onclick="clickMenu(6)"><img src="https://www.bikeseoul.com/images/opi/opi_8.png"><br>방치 자전거 발견</a></td>
-              <td><a onclick="clickMenu(7)"><img src="https://www.bikeseoul.com/images/opi/opi_5.png"><br>운영 및 정책</a></td>
-          </tr>
+  <hr id="QnA_divider">
+  <div id="div_content_all_wrap">
+  <div id="div_menu_table">
+      <table id="menu_table_mini">
+        <tr>
+            <td><a href="#anchor_port" onclick="clickMenu(0)"><img src="https://www.bikeseoul.com/images/opi/opi_1.png"><br>대여 및 반납</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(1)"><img src="https://www.bikeseoul.com/images/opi/opi_2.png"><br>자전거 추가배치</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(2)"><img src="https://www.bikeseoul.com/images/opi/opi_3.png"><br>대여소(개설/폐쇄)</a></td>
+        </tr>
+        <tr>
+            <td><a href="#anchor_port" onclick="clickMenu(3)"><img src="https://www.bikeseoul.com/images/opi/opi_4.png"><br>결제/환불/마일리지</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(4)"><img src="https://www.bikeseoul.com/images/opi/opi_6.png"><br>자전거 및 시설관리</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(5)"><img src="https://www.bikeseoul.com/images/opi/opi_7.png"><br>앱 또는 홈페이지 문의</a></td>
+        </tr>
+        <tr>
+            <td><a href="#anchor_port" onclick="clickMenu(6)"><img src="https://www.bikeseoul.com/images/opi/opi_8.png"><br>방치 자전거 발견</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(7)"><img src="https://www.bikeseoul.com/images/opi/opi_5.png"><br>운영 및 정책</a></td>
+        </tr>
+        <tr>
+            <td colspan="3"><a href="./QnA_1to1_01.html"><img id="img_1to1" src="https://www.bikeseoul.com/images/opi/opi_9.png" alt=""><br>1:1 문의하기</a></td>
+        </tr>
       </table>
-      <br><hr>
+
+      <table id="menu_table">
+        <tr>
+            <td><a href="#anchor_port" onclick="clickMenu(0)"><img src="https://www.bikeseoul.com/images/opi/opi_1.png"><br>대여 및 반납</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(1)"><img src="https://www.bikeseoul.com/images/opi/opi_2.png"><br>자전거 추가배치</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(2)"><img src="https://www.bikeseoul.com/images/opi/opi_3.png"><br>대여소(개설/폐쇄)</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(3)"><img src="https://www.bikeseoul.com/images/opi/opi_4.png"><br>결제/환불/마일리지</a></td>
+            <td rowspan="2"><a href="./QnA_1to1_01.html"><img id="img_1to1" src="https://www.bikeseoul.com/images/opi/opi_9.png" alt=""><br>1:1 문의하기</a></td>
+        </tr>
+        <tr>
+            <td><a href="#anchor_port" onclick="clickMenu(4)"><img src="https://www.bikeseoul.com/images/opi/opi_6.png"><br>자전거 및 시설관리</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(5)"><img src="https://www.bikeseoul.com/images/opi/opi_7.png"><br>앱 또는 홈페이지 문의</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(6)"><img src="https://www.bikeseoul.com/images/opi/opi_8.png"><br>방치 자전거 발견</a></td>
+            <td><a href="#anchor_port" onclick="clickMenu(7)"><img src="https://www.bikeseoul.com/images/opi/opi_5.png"><br>운영 및 정책</a></td>
+        </tr>
+      </table>
+  </div>
+      <br><hr id="anchor_port">
       <div>
           <div class='accordion' id='accordionExample01'>
               <div class='accordion-item'>

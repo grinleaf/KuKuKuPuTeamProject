@@ -52,13 +52,13 @@ h3 img:first-child{
     border: none; border-radius: 1px;
 }
 
-#notice_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem; display: flex; flex-direction: column;}
-#notice_table tr{ display:flex; font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
-#notice_table tr:first-child{ flex-grow: 1; justify-content: center; border-top: 1px solid #444444; border-bottom: 1px solid #444444; font-size: 12px;}
-#notice_table th:first-child { flex-grow: 7; font-weight: bold; cursor: pointer; font-size: 12px;}
-#notice_table th:nth-child(2) { display: flex; flex-grow: 3; justify-content: right; padding-right: 30px;}
-#notice_table td:first-child{ flex-grow: 7; font-weight: bold; cursor: pointer; font-size: 12px;}
-#notice_table td:nth-child(2){ display: flex; flex-grow: 3; justify-content: right; padding-right: 15px; }
+#qna_status_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem; display: flex; flex-direction: column;}
+#qna_status_table tr{ display:flex; font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
+#qna_status_table tr:first-child{ flex-grow: 1; justify-content: center; border-top: 1px solid #444444; border-bottom: 1px solid #444444; font-size: 12px;}
+#qna_status_table th:first-child { flex-grow: 6; font-weight: bold; cursor: pointer; font-size: 12px;}
+#qna_status_table th:nth-child(2),th:nth-child(3) { display: flex; flex-grow: 3; justify-content: center; }
+#qna_status_table td:first-child{ flex-grow: 6; cursor: pointer; font-size: 12px;}
+#qna_status_table td:nth-child(2),td:nth-child(3){ display: flex; flex-grow: 3; justify-content: center;  }
 
 ul a{
     text-decoration: none;

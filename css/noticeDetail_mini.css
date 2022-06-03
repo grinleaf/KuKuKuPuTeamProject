@@ -5,13 +5,14 @@ div#all{
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 50px;
     align-items: center;
 }
 
 #container_total{
     text-align: center;
-    max-width: 560;
+    width: 500px;
+    
+    padding: 10px 20px 50px 20px;
 }
 
 #container_total span:first-child{
@@ -20,13 +21,13 @@ div#all{
 }
 
 #container_total hr{
-    max-width: 555px;
+    width: auto;
 }
 
 h3#content_title{
     display: flex;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 16px;
     justify-content: space-between;
 }
 
@@ -43,14 +44,20 @@ h3#content_title{
     border: 1px solid #aaa;
 }
 
+#header-wrap, #footer-wrap{
+    display: none;
+}
+
+
 h3#content_title img:first-child{
     width: 10px;
-    height: 15px;
+    height: 18px;
 }
 
 h3#content_title img:nth-child(2){
     width: 15px;
     height: 15px;
+    visibility: hidden;
 }
 
 #div_prev_01 {

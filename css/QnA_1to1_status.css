@@ -51,18 +51,18 @@ h3 img#notice_hidden_img{
     border: none; border-radius: 1px;
 }
 
-#notice_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem;}
-#notice_table tr{ font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
-#notice_table tr:first-child{ 
+#qna_status_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem;}
+#qna_status_table tr{ font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
+#qna_status_table tr:first-child{ 
     width: "70%";
     border-top: 1px solid #444444;
     border-bottom: 1px solid #444444;
     font-size: 12px;
     text-align: center;
 }
-#notice_table tr:nth-child(2){ width: "30%"; text-align: left; }
-#notice_table td:first-child{ text-align: left; padding-left: 1rem; font-weight: bold; cursor: pointer;}
-#notice_table td:nth-child(2){ text-align: center; }
+#qna_status_table tr:nth-child(2){ width: "30%"; text-align: left; }
+#qna_status_table td:first-child{ text-align: left; padding-left: 1rem; cursor: pointer;}
+#qna_status_table td:nth-child(2), td:nth-child(3){ text-align: center; }
 
 /* ul a{
     text-decoration: none;
