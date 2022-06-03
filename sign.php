@@ -2,6 +2,7 @@
 
     header('Content-Type:text/plain; Charset=utf-8');
 
+
     // 회원가입 폼에서 넘어온 유저 데이터.
     $name =$_POST['name'];
     $phoneNum = $_POST['phoneNum'];

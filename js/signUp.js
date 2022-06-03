@@ -192,34 +192,43 @@
             }
         }
 
-    
+        function sendData(){
+
+            var xhr = new XMLHttpRequest()
+
+            var params = 'name=' + 'aaaaaaaaaaaaa'
+                        + '&phoneNum=' + $('#phoneNum').val()
+                        + '&id=' + $('#id').val()
+                        + '&pw=' + $('#pw2').val()
+                        + '&email=' + $('#userEmail').val() + "@"+  $('#email2').val();
+            
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                   alert(xhr.responseText)
+                }
+               
+            }
+            xhr.open('POST','./sign.php', true)
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // 2번째 파라미터는 www 기술을 썼다라는 건데
+            // 멀티 폼 데이터는 헤더와 바디를 나눴다는 약속을 한 형식?암, 
+            xhr.send(params) // 이 안의 데이터들
+
+        }
 
         // 등록 버튼을 누르면 폼 데이터가 검사 되기 전에, 유효성 검사를 위한 핸들러 ( 콜백 메소드) 
         // 이 버튼을 누르면 Ajax으로 비동기 서버작업 수행.
 
         $('#btnSignUp').click( function(){
 
+
             if(!checkId() || !checkName()||!checkPhoneNum()||!checkPw()||!checkPwConfirm()||!checkEmailFirst()|| !checkEmailSecond()){
                 alert('올바른 회원가입 양식을 작성해주세요')
-            }else{
-                        
-            $.post("sign.php",
-                {name : $name,
-                 phoneNum : $phone_num_data,
-                 id : $id, 
-                 pw :$pw2, 
-                 email : $email  +"@"+ $domain ,
-                 cb_email : $cb_email
-                },
-                 function(data,status){
-                    // 요청 성공시 실행되는 콜백 메소드
-                    alert( '데이터' + data + ' 상태' + status)
-                })
+            }else{ 
+
+                sendData()
+               
 
             }
 
-
-
         })
-
         }) //JSQuery=========================================================================================   
