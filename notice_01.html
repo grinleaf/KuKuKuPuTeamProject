@@ -14,287 +14,45 @@
     <link rel="stylesheet" href="./css/notice.css" media="(min-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
     <script src="./js/bootstrap774.js"></script>
-    
-    <style>
-        /* 기본 설정 */
-        *{ 
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* border: 1px solid lightgrey; */
-        }
-        body{
-            min-width: 400px;
-        }
-        ol, ul{
-            margin-bottom: 0;
-            padding-left: 0;
-        }
-        li{
-            list-style-type: none;
-        }
-        a{
-            text-decoration: none;
-            color: black;
-        }
-
-        /* 공통 설정 */
-        #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
-            width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* header */
-        #header{
-            position: relative;
-        }
-        #navbar-toggler{
-            display: none
-        }
-        #top-nav{
-            display: flex;
-            justify-content: flex-end;
-        }
-        #top-nav > a{
-            margin-left: 20px;
-        }
-
-        #main-nav{
-            /* carousel의 z-index가 1이라 메뉴가 덮이지 않도록 */
-            z-index: 2;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            line-height: 2.5rem;
-            text-align: center;
-
-            display: inline-flex;
-            justify-content: space-between;
-        }
-        #main-nav > ul{
-        }
-        #main-nav > ul > li{
-            width: 140px;
-            position: relative;
-        }
-        #main-nav li a{
-            display: inline-block;
-            width: 100%;
-        }
-        #main-nav > ul > li > ul{
-            width: 140px;
-            display: none;
-            position: absolute;
-        }
-        #main-nav > ul > li:hover > ul{
-            display: block;
-            background-color: white;
-        }
-        #main-nav > ul > li > ul > li:hover{
-            background-color: #032a3b;
-            transition: ease 0.5s;
-        }
-        #main-nav > ul > li > ul > li:hover > a{
-            color: white;
-        }
-
-        /* content : header와 footer 사이 본문 영역 */
-        #content{
-            
-        }
-        #carouselExampleCaptions{
-            /* display: none; */
-        }
-        .carousel-inner{
-            max-width: 800px;
-        }
-        #swiper-and-login{
-            display: flex;
-        }
-        #swiper{
-            flex-basis: 500px;
-        }
-        #swiper-slide > img{
-            height: 500px;
-        }
-        .login-area{
-            flex-basis: 300px;
-        }
-        #login-form{
-            
-        }
-        #loggedin{
-        
-        }
-
-        #guide-nav{
-            height: 100px;
-            display: flex;
-        }
-        #guide-nav > div{
-            flex-grow: 1;
-        }
-        #guide{
-            display: flex;
-        }
-        #guide > div > img{
-            width: 100%;
-        }
-        #places{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .place-item{
-            width: 50%;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .place-img{
-            width: 100%;
-        }
-        .place-card{
-            width: 100%;
-            height: 100%;
-            background-color: #00000088;
-            position: absolute;
-            bottom: -76%;
-            border-radius: 30px 30px 0 0;
-            padding: 20px;
-            transition: ease 0.5s;
-        }
-        .place-item:hover > .place-card{
-            position: absolute;
-            bottom: -65%;
-            transition: ease 0.5s;
-        }
-        .place-card > h4{
-            color: white;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .place-card > p{
-            color: whitesmoke;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* footer */
-        #footer{
-        }
-    </style>
-
-    <style media="(max-width:640px)">
-        body{
-            /* background-color: lightblue; */
-        }
-        #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
-            width: auto;
-        }
-        #header{
-            /* display: flex;
-            flex-direction: column; */
-        }
-        #logo-and-toggler{
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        #logo{
-            display: inline-block;
-            margin:0 auto;
-        }
-        #navbar-toggler{
-            display: inline;
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-        }
-        #navbar-toggler span{
-            display: block;
-            width: 30px;
-            height: 3px;
-            margin: 6px auto;
-            background: rgb(0, 0, 0);
-            transition: all .6s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-        }
-        #top-nav{
-            display: none;
-        }
-        #m_top-nav{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        #m_top-nav > a{
-            margin-right: 1rem;
-            margin-bottom: 10px;
-        }
-
-        #main-nav{
-            display: none;
-        }
-        #m_main-nav a{
-            display: block;
-            line-height: 3rem;
-        }
-        #m_main-nav > ul > li > ul{
-            display: none;
-        }
-        #m_main-nav > ul > li:hover > ul{
-            display: block;
-        }
-
-        .login-area{
-            display: none;
-        }
-
-        .place-card{
-            height: 100%;
-            bottom: -70%;
-            border-radius: 15px 15px 0 0;
-            padding: 20px;
-        }
-        .place-item:hover > .place-card{
-            position: absolute;
-            bottom: -30%;
-        }
-        .place-card > h4{
-            -webkit-line-clamp: 1;
-        }
-        .place-card > p{
-            -webkit-line-clamp: 2;
-        }
-
-        @media(hover:none){
-            body{
-                background-color: lightgoldenrodyellow;
-            }
-            #m_main-nav > ul > li:active > ul{
-                display: block;
-            }
-        }
-    </style>
+    <!-- index.html용 style -->
+    <link rel="stylesheet" href="./index.css">
 
     <script>
         function afterload(){
+            //로그인 여부에 따른 UI 적용
+            //로그인 안돼있으면 로그인정보창, 돼있으면 로그인입력창 안 띄우기
             let isLogin = false
+            const topNavLogin = document.getElementById("top-nav-login")
+            const topNavSignUp = document.getElementById("top-nav-signup")
+            const topNavMypage = document.getElementById("top-nav-mypage")
+            const topNavLogout = document.getElementById("top-nav-logout")
+            const mTopNavLogin = document.getElementById("m_top-nav-login")
+            const mTopNavSignUp = document.getElementById("m_top-nav-signup")
+            const mTopNavMypage = document.getElementById("m_top-nav-mypage")
+            const mTopNavLogout = document.getElementById("m_top-nav-logout")
+
             const loginForm = document.getElementById("login-form")
             const loggedIn = document.getElementById("loggedin")
-            if(isLogin == false){
-                loginForm.style.display = "auto"
+
+            if(isLogin == false){ //비로그인 시
+                topNavMypage.style.display = "none"
+                topNavLogout.style.display = "none"
+                mTopNavMypage.style.display = "none"
+                mTopNavLogout.style.display = "none"
+
                 loggedIn.style.display = "none"
-            } else {
+            } else { //로그인 시
+                topNavLogin.style.display = "none"
+                topNavSignUp.style.display = "none"
+                mTopNavLogin.style.display = "none"
+                mTopNavSignUp.style.display = "none"
+                
                 loginForm.style.display = "none"
-                loggedIn.style.display = "auto"
             }
+        }
+
+        function isTabletWidth(){
+            return window.innerWidth < 768
         }
     </script>
 </head>
@@ -302,13 +60,14 @@
     <div id="header-wrap">
         <header id="header">
             <div id="top-nav">
-                <a href="./signIn_01.html">로그인</a>
-                <a href="./signUp1_01.html">회원가입</a>
-                <a href="">알림</a>
+                <a id="top-nav-login" href="./signIn.html">로그인</a>
+                <a id="top-nav-signup" href="./signUp1.html">회원가입</a>
+                <a id="top-nav-mypage" href="">마이페이지</a>
+                <a id="top-nav-logout" href="">로그아웃</a>
             </div>
             
             <div id="logo-and-toggler">
-                <a id="logo" href="./index.html">
+                <a id="logo" href="#">
                     <img src="./image/logo.png" alt="" width="250px">
                 </a>
                 <button id="navbar-toggler" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
@@ -327,108 +86,42 @@
                 </div>
                 <div class="offcanvas-body">
                     <div id="m_top-nav">
-                        <a href="./signIn_01.html">로그인</a>
-                        <a href="./signUp1_01.html">회원가입</a>
-                        <a href="">알림</a>
+                        <a id="m_top-nav-login" href="./signIn.html">로그인</a>
+                        <a id="m_top-nav-signup" href="./signUp1.html">회원가입</a>
+                        <a id="m_top-nav-mypage" href="">마이페이지</a>
+                        <a id="m_top-nav-logout" href="">로그아웃</a>
                     </div>
                     <nav id="m_main-nav">
                         <ul>
                             <li><a href="./Information_Use_01.html">이용안내</a>
-                                <ul>
-                                    <li><a href="#">aaa</a></li>
-                                    <li><a href="#">bbb</a></li>
-                                    <li><a href="#">ccc</a></li>
-                                </ul>
                             </li>
-                        </ul>
-                        <ul>
                             <li><a href="./rental_station_01.html">대여소 조회</a>
-                                <ul>
-                                    <li><a href="#">aaa</a></li>
-                                    <li><a href="#">bbb</a></li>
-                                    <li><a href="#">ccc</a></li>
-                                </ul>
                             </li>
-                        </ul>
-                        <ul>
                             <li><a href="#none">이용권 구매</a>
-                                <ul>
-                                    <li><a href="#">aaa</a></li>
-                                    <li><a href="#">bbb</a></li>
-                                    <li><a href="#">ccc</a></li>
-                                </ul>
                             </li>
-                        </ul>
-                        <ul>
                             <li><a href="./QnA_01.html">문의/FAQ</a>
-                                <ul>
-                                    <li><a href="#">aaa</a></li>
-                                    <li><a href="#">bbb</a></li>
-                                    <li><a href="#">ccc</a></li>
-                                </ul>
                             </li>
-                        </ul>
-                        <ul>
                             <li><a href="./notice_01.html">공지사항</a>
-                                <ul>
-                                    <li><a href="#">aaa</a></li>
-                                    <li><a href="#">bbb</a></li>
-                                    <li><a href="#">ccc</a></li>
-                                </ul>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-
+    
             <nav id="main-nav">
                 <ul>
                     <li><a href="./Information_Use_01.html">이용안내</a>
-                        <ul>
-                            <li><a href="#">aaa</a></li>
-                            <li><a href="#">bbb</a></li>
-                            <li><a href="#">ccc</a></li>
-                        </ul>
                     </li>
-                </ul>
-                <ul>
                     <li><a href="./rental_station_01.html">대여소 조회</a>
-                        <ul>
-                            <li><a href="#">aaa</a></li>
-                            <li><a href="#">bbb</a></li>
-                            <li><a href="#">ccc</a></li>
-                        </ul>
                     </li>
-                </ul>
-                <ul>
                     <li><a href="#none">이용권 구매</a>
-                        <ul>
-                            <li><a href="#">aaa</a></li>
-                            <li><a href="#">bbb</a></li>
-                            <li><a href="#">ccc</a></li>
-                        </ul>
                     </li>
-                </ul>
-                <ul>
                     <li><a href="./QnA_01.html">문의/FAQ</a>
-                        <ul>
-                            <li><a href="#">aaa</a></li>
-                            <li><a href="#">bbb</a></li>
-                            <li><a href="#">ccc</a></li>
-                        </ul>
                     </li>
-                </ul>
-                <ul>
                     <li><a href="./notice_01.html">공지사항</a>
-                        <ul>
-                            <li><a href="#">aaa</a></li>
-                            <li><a href="#">bbb</a></li>
-                            <li><a href="#">ccc</a></li>
-                        </ul>
                     </li>
                 </ul>
             </nav>
-            
         </header>
     </div>
 <!-- content 영역 시작 -->
