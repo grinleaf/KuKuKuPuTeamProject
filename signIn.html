@@ -19,41 +19,37 @@
 
         ul { list-style: none;}
 
-        .container {
-            position: relative;
-            display: flex ;
-             align-items:stretch;
-            
-        }
-        .container div { 
+        /*  전체 레이아웃 */
+        .container { 
+            display: flex;
+            flex-direction: row;
             flex-wrap: wrap;
+        }
+        /* 총 세 개의 플렉스 아이템들  => 1. 이미지 2. 로그인 부분 3. 안내 글씨들 */
+        /*  */
+   
+        .item2{
+            width: 50%;  height: 50%; margin-left: 10%; margin-right: 10%;
+            align-self: stretch;
+        }
+        .item3{
+            width: 50%;  height: 50%;
+            margin-left: 10%; margin-right: 10%;
             }
 
-        #d1 > div {
-            flex-wrap: wrap;
-        }
-        img {
-            width: 50%;
-        }
-        #text{ float: left;}
-        /* #log2 p{
-            display: inline-block;
-            flex-wrap: wrap;
-        } */
-/* 
-        @media ( min-width:560px ) { 
-            #aa{
-            width: 560px; 
-            height: 200px;
-            background-color: skyblue; 
+        @media screen and (min-width:500px){
+                #wapper { flex-flow: row wrap;}
             }
-        } */
+            @media screen and (max-width:500px){
+                #wapper { flex-flow: column nowrap;}
+            }
 
     </style>
 </head>
 
 <body class="container">
 
+    <!-- 내부 스크립트 : 온로드 귀찮아서 일단 만듬. -->
     <script>  
         // 카카오 관련 스크립트
         Kakao.init('2d9fcbbf7cb1fda303e953ed5af4e1c4'); // 내 어플리케이션의 앱 키
@@ -159,23 +155,11 @@
 
     </script>
 
-
-    <div id = "d1">
-        <div><img src="./image/tutorial_sample04.jpg" class="rounded float-start" alt="샘플 이미지"></div>
-        <div id="text">
-            <p><strong> 로그인 회원가입시 SNS 제공 업체 정책상 자동로그인이 지원되고 있지 않습니다.</strong></p>
-            <p><strong>이점 양해 부탁드립니다.</strong></p>
-            <p> - 자동로그인을 원하시는 경우 따릉이 회원으로 전환.</p>
-            <p><strong>※ 따릉이 회원 전환 방법</strong></p>
-            <ol>
-                <li>SNS로그인-나의 공간-회원정보관리-개인정보수정-비밀번호 변경 메뉴에서 비밀번호 입력</li>
-                <li>생성된 비밀번호와 따릉이 아이디(개인정보수정에서 확인가능)를 통해 로그인</li>
-            </ol>
-        </div>
-    </div>
-
-    <div class = "d2">
-        <div id="">
+    <!--  화면 시작 -->
+    <!--  첫 번째 플렉스 아이템 요소 - 이미지 -->
+    <img src="./image/tutorial_sample04.jpg" id = "item1" class="rounded float-start" alt="샘플 이미지" style="width: 50%;  height: 50%; " >
+    <!--  두 번째 플렉스 아이템 요소 - 로그인 -->
+    <div id = "item2">
             <ul>
                 <li><img src="./image/logo.png" alt="logo"></li>
                 <li><input type="text" name="" id="id" placeholder="아이디"></li>
@@ -183,7 +167,7 @@
                 <li><input type="checkbox" name="" id="cb" >로그인 상태 유지</li>
                 <li><div class="d-grid gap-2"><button class="btn btn-primary" type="button" id="SignIn">로그인하기</button></div></li>
                 <li>
-                    <a href="">회원가입</a>
+                    <a href="signUp1.html">회원가입</a>
                     <a href="">아이디 찾기</a> 
                     <a href="">비밀번호 찾기</a>
                 </li>
@@ -200,6 +184,22 @@
             </ul>
         </div>
     </div>
+    <!--  세 번째 플렉스 아이템 요소 - 안내 글씨들 -->
+    <div id="item3">
+        <p><strong> 로그인 회원가입시 SNS 제공 업체 정책상 자동로그인이 지원되고 있지 않습니다.</strong></p>
+        <p><strong>이점 양해 부탁드립니다.</strong></p>
+        <p> - 자동로그인을 원하시는 경우 따릉이 회원으로 전환.</p>
+        <p><strong>※ 따릉이 회원 전환 방법</strong></p>
+        <ol>
+            <li>SNS로그인-나의 공간-회원정보관리-개인정보수정-비밀번호 변경 메뉴에서 비밀번호 입력</li>
+            <li>생성된 비밀번호와 따릉이 아이디(개인정보수정에서 확인가능)를 통해 로그인</li>
+        </ol>
+    </div>
+
+
+
+
+
 
     <!-- BootStrap CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
