@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/QnA_1to1.css">
+    <link rel="stylesheet" href="./css/QnA_1to1.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/QnA_1to1_mini.css" media="(max-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
     <script src="./js/bootstrap774.js"></script>
     <script src="./js/QnA_1to1.js"></script>
@@ -190,9 +191,9 @@
         }
     </style>
 
-    <style media="(max-width:640px)">
+    <style media="(max-width:768px)">
         body{
-            background-color: lightblue;
+            /* background-color: lightblue; */
         }
         #header, #swiper-and-login, #guide-nav, #guide, #places, #footer{
             width: auto;
@@ -449,7 +450,7 @@
         <table>
             <tr>
                 <td>제목</td>
-                <td><input id="qna_title" type="text" width="100%"></td>
+                <td><input id="qna_title" type="text"></td>
             </tr>
             <tr>
                 <td>아이디</td>
@@ -459,7 +460,7 @@
                 <td>내용</td>
                 <td>
                     반복 작성, 비문, 반말, 욕설, 비난, 상업광고 게재 시 해당 글이 답변없이 삭제됨을 동의합니다. (동의 <input type="checkbox" name="qna_cb" id="qna_checkbox">)
-                    <textarea name="" id="qna_content" cols="80" rows="5"></textarea>
+                    <textarea name="" id="qna_content" cols="48" rows="5"></textarea>
                 </td>
             </tr>
             <tr>
