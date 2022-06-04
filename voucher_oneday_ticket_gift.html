@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+
+        <div class="ticket_title_box" style=" width: 1030px; height: 95px; margin: auto;">
+
+            <h3 id="ticket_title">이용권 구매</h3>
+
+        </div>
+
+        <div class="ticket_subtitle_box" style="width: 1030px; height: 45px; margin: auto;">
+
+            <p id="ticket_subtitle">※기존의 일반권이 1시간권, 프리미엄권이 2시간권으로 변경되었습니다.</p>
+
+        </div>
+
+        <div class="ticket_tap_box" style="width: 1030px; height: 170px; margin: auto;">
+
+            <div id="no">
+
+                <a href="./voucher_season_ticket.html">정기권
+                    <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                </a>
+
+            </div>
+
+            <div id="no">
+
+                <a href="./voucher_oneday_ticket.html">일일권
+                    <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                </a>
+
+            </div>
+
+            <div id="no">
+
+                <a href="./voucher_group_ticket.html">단체권
+                    <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                </a>
+
+            </div>
+
+            <div id="no">
+
+                <a href="./voucher_season_ticket_gift.html">정기권 선물하기
+                    <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                </a>
+
+            </div>
+
+            <div id="on">
+
+                <a href="./voucher_oneday_ticket_gift.html">일일권 선물하기
+                    <p>1시간권, 2시간권을 선택하실 수 있습니다.</p>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="pay_infobtn_box" style="width: 1030px; height: 45px; margin: 0 auto;">
+
+            <a id="pay_infobtn" href="">※ 이용권 사용안내</a>
+
+        </div>
+
+        <div class="pay_info_box" style="width: 1030px; height: 170px; margin: auto;">
+
+            <ul id="pay_info">
+            	<li>선물하기는<strong>회원간</strong>에만 가능합니다.</li>
+
+                <li>기본대여시간은 1시간권(60분), 2시간권(120분)입니다.</li>
+
+                <li>초과시 5분마다 추가요금(200원)과금됩니다.<br>
+                	<span>예시) 기본 초과 1분 ~ 5분 : 200원, 6분 ~ 10분 : 400원 </span>
+                </li>
+
+                <li>추가요금은 이용권 결제수단으로 자동결제됩니다.</li>
+            </ul>
+
+        </div>
+
+        <div class="pay_box_box" style="width: 1030px; height: 700px; margin: auto;">
+
+            <div class="pay_box">
+
+                <h3>정기권종류선택</h3>
+
+                <select class="form-select">
+                    <option>선택</option>
+                    <option>7일(1시간권)</option>
+                    <option>30일(1시간권)</option>
+                    <option>180일(1시간권)</option>
+                    <option>7일(2시간권)</option>
+                    <option>30일(2시간권)</option>
+                    <option>180일(2시간권)</option>
+                    <option>365일(2시간권)</option>
+                </select>
+
+                <div class="pay_select">
+                    
+                    <input id="pay" type="text" value="0" readonly>
+                    <span>원</span>
+
+                </div>
+
+            </div>
+
+            <div class="gift_box">
+
+                <h3>선물 받는 사람</h3>
+
+                <div class="gift_num">
+                    <span class="phone"><input title="휴대번호 첫번째 입력" id="phonNo1" type="number" style="width:20%" maxlength="3"></span>
+                    -
+                    <span class="phone"><input title="휴대번호 두번째 입력" id="phonNo2" type="number" style="width:25%" maxlength="4"></span>
+                    -
+                    <span class="phone"><input title="휴대번호 세번째 입력" id="phonNo2" type="number" style="width:25%"  maxlength="4"></span>
+                    <button id="addGiftBtn">확인</button>
+                    <input type="hidden" id="giftCnt" value="0">
+                </div>
+
+            </div>
+
+            <div class="method_of_payment">
+
+                <h3>결제금액</h3>
+
+                <div class="radio">
+
+                    <div class="payment_zeropay">
+                    
+                        <label><input id="zeropay" type="radio">제로페이</label>
+    
+                    </div>
+    
+                    <div class="payment_card">
+    
+                        <label><input id="card" type="radio">신용/체크카드</label>
+    
+                    </div>
+    
+                    <div class="payment_payco">
+    
+                        <label><input id="payco" type="radio">
+                        <img src="https://www.bikeseoul.com/images/payco.png" alt="">
+                        </label>
+    
+                    </div>
+    
+                    <div class="payment_kakaopay">
+    
+                        <label><input id="kakaopay" type="radio">
+                        <img src="https://www.bikeseoul.com/images/ico_kakaopay.gif" alt="">
+                        </label>
+    
+                    </div>
+    
+                    <div class="payment_phone">
+    
+                        <label><input id="phone" type="radio">휴대폰결제</label>
+    
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="paybox_total">
+
+                <h3>결제금액</h3>
+
+                <div id="top_line"></div>
+
+                <div class="voucher">
+
+                    <p>이용권</p>
+                    <p id="voucher_price">0원</p>
+
+                </div>
+
+                <div class="mileage">
+
+                    <p>마일리지</p>
+                    <p id="mileage_price">0원</p>
+
+                </div>
+
+                <div id="bottom_line"></div>
+
+                <div class="pay_total">
+
+                    <input id="pay_total_final" type="text" value="0" readonly>
+                    <span>원</span>
+
+                </div>
+
+                <div class="check1">
+
+                    <label>
+                        <input type="checkbox">
+                        추가요금자동결제,환불규정, <a href="">이용약관</a>에 동의하며 결제를 진행합니다.
+                        (<a href="">이용권 사용안내</a>)
+                    </label>
+
+                </div>
+
+                <div class="check2">
+
+                    <label>
+                        <input type="checkbox">
+                        만 13세 미만의 미성년자가 서비스를 이용하는 경우, 사고 발생 시 보험 적용을 받을 수 없는 등의 불이익을 받으실 수 있습니다. (만 15세 미만의 경우 상법 제732조에 의거하여 사망 보험 적용 불가)
+                    </label>
+
+                </div>
+
+                <div class="pay_button_box">
+
+                    <button id="pay_button">결제하기</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+<style>
+
+    .ticket_title_box{
+        display:flex;
+        align-items:center;
+    }
+
+
+    #ticket_title{
+        font-size: 30px;
+        letter-spacing: -0.075em;
+        color: #000;
+    }
+
+    #ticket_subtitle{
+        font-size: 16px;
+        color: #666;
+        letter-spacing: -0.075em;
+    }
+
+    .ticket_tap_box div{
+        float: left;
+        margin: 12px 5px 0 5px;
+        text-align: center;
+        width: 19%;
+    }
+
+    #on a{
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+        border: 1px solid #4cab6a;
+        background-color: #4cab6a;
+        padding-top: 8px;
+        display: block;
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 100%;
+        height: 148px;
+        text-decoration: none;
+        position: relative;
+    }
+
+    #on p{
+        background-color: #f5f5f5;
+        font-size: 13px;
+        color: #333;
+        font-weight: normal;
+        background-color: #f5f5f5;
+        padding: 31px 15px 32px 15px;
+        position: absolute;
+        bottom: 0px;
+        margin: 0px;
+    }
+
+    #no a{
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+        background-color: #808a92;
+        padding-top: 8px;
+        display: block;
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 100%;
+        height: 148px;
+        text-decoration: none;
+        position: relative;
+    }
+
+    #no p{
+        background-color: #f5f5f5;
+        font-size: 13px;
+        color: #333;
+        font-weight: normal;
+        background-color: #f5f5f5;
+        padding: 31px 15px 32px 15px;
+        position: absolute;
+        bottom: 0px;
+        margin: 0px;
+    }
+
+    .pay_infobtn_box a{
+        float: right;
+        padding-right: 5px;
+        padding-top: 15px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #222;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #pay_info li{
+        font-size: 14px;
+        color: #333;
+        line-height: 1.8;
+    }
+
+    #pay_info li span{
+        color: red;
+        font-weight: bold;
+    }
+
+    .pay_box{
+        border: 1px solid black;
+        padding: 20px;
+        width: 500px;
+        height: 107px;
+        margin: 8px;
+    }
+
+    .form-select{
+        background: white;
+        border: 1px black solid;
+        height: 32px;
+        width: 50%;
+    }
+
+    .pay_select{
+        position: relative;
+        border-bottom: 1px #222 solid;
+        display: inline-block;
+        line-height: 29px;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        text-align: right;
+        height: 32px;
+    }
+
+    #pay{
+        border: 0;
+        text-align: right;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+    }
+
+    .method_of_payment{
+        border: 1px solid black;
+        width: 500px;
+        height: 180px;
+        margin: 8px;
+        padding: 20px;
+
+    }
+
+    .radio{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .payment_zeropay, .payment_card, .payment_payco, .payment_kakaopay, .payment_phone{
+        margin-right: 10px;
+        width: 30%;
+        margin-top: 10px;
+    }
+
+    .pay_box_box{
+        position: relative;
+    }
+
+    .paybox_total{
+        background-color: #fff;
+        border: 4px #000 solid;
+        height: 452px;
+        padding: 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 300px;
+        margin: 8px;
+    }
+
+    .paybox_total p{
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #top_line{
+        border-top: 2px solid black;
+    }
+
+    #bottom_line{
+        border-top: 2px solid black;
+    }
+
+    .voucher{
+        display: flex;
+    }
+
+    #voucher_price{
+        width: 80%;
+        text-align: right;
+    }
+
+    .mileage{
+        display: flex;
+    }
+
+    #mileage_price{
+        width: 75%;
+        text-align: right;
+    }
+
+    .check1{
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .check1 a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .check2{
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    #pay_button{
+        margin-top: 20px;
+        width: 100%;
+        background-color: #24384a;
+        height: 60px;
+        font-size: 22px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .pay_total{
+        margin-top: 10px;
+    }
+
+    #pay_total_final{
+        border: 0;
+        text-align: right;
+        font-size: 40px;
+        color: #4cab6a;
+        font-weight: bold;
+        width: 88%;
+    }
+
+    .gift_box{
+        border: 1px solid black;
+        padding: 20px;
+        width: 500px;
+        height: 95px;
+        margin: 8px;
+    }
+
+    .gift_num input{
+        border: 0;
+        font-size: 15px;
+        text-align: right;
+        height: 30px;
+        padding: 0 5px;
+        border-bottom: 1px black solid;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+
+</style>
