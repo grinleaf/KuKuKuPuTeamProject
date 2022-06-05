@@ -13,30 +13,6 @@ function btn_mypage_click(page_url){
             
         }
     });
-    // $('.nav_btn_userInfo').on('click', function(){
-        // var button= document.getElementsByClassName('nav_btn_userInfo')
-        // $(document).ready(function(){
-        //     for(var i=0; i<button.length; i++){ button[i].removeClass('active'); }
-        // })
-
-        // var btns= document.querySelector('button');
-        // var classes= btns.classList;
-
-        // classes.toggle('active');
-        // if(classes.contains('nav_btn_userInfo active')){
-           
-        //     for(var i=0; i<button.length; i++){ 
-        //         button[i].removeClass('active');
-        //         alert(jQuery(button[i]).attr('class'));
-        // }}
-        
-        // else 
-        // $(this).addClass('active');
-        // alert(jQuery(this).attr('class'));   //가진 클래스명 확인
-    // }
-
-    
-    // });  
 
     function retain_clicked_effect(){
         var div2 = document.getElementsByClassName("nav_btn_userInfo");
