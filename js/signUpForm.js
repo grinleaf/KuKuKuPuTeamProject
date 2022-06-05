@@ -192,6 +192,26 @@
             }
         }
 
+        // 디비 연결 테스트용
+        $('#btn_db').click( ()=>{
+
+            var xhr = new XMLHttpRequest()
+
+            var params = '디비 연결 테스트 시작';
+            
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    alert(저ㅇ상)
+                   alert(xhr.responseText)
+                }
+               
+            }
+            xhr.open('POST','./sign.php', true)
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded') // 2번째 파라미터는 www 기술을 썼다라는 건데
+            // 멀티 폼 데이터는 헤더와 바디를 나눴다는 약속을 한 형식?암, 
+            xhr.send(params) // 이 안의 데이터들
+
+        })
         function sendData(){
 
             var xhr = new XMLHttpRequest()
