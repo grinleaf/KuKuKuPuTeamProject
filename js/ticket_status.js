@@ -1,14 +1,14 @@
 //DB에서 데이터를 내려받아 저장할 배열객체들
-let ticketStatusArray= [
+var ticketStatusArray= [
     {ticket:"정기권 7일 2시간", registDate:"2022.06.03", used:"미사용"},
     {ticket:"asdf", registDate:"2022.06.03", used:"미사용"},
     {ticket:"asdfwefs", registDate:"2022.06.03", used:"미사용"},
     {ticket:"정기권 7일 2시간", registDate:"2022.06.03", used:"미사용"}
 ];
-let receiveTicektArray= [
+var receiveTicektArray= [
     {ticket:"정기권 30일 2시간", registDate:"2022.06.03", used:"미사용", sender:"abcd"}
 ];
-let sendTicketArray= [
+var sendTicketArray= [
     {ticket:"정기권 180일 1시간", sendDate:"2022.06.03", receiver:"efgh"}
 ];
 
