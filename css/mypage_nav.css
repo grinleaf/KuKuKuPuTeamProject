@@ -93,6 +93,13 @@
     color: white;
 }
 
+#mypage_nav_wrap button.clicked{
+    border: 0px;
+    background-color: #4cab6a;
+    font-weight: bold;
+    color: white;
+}
+
 #mypage_nav_wrap h3 img:first-child{
     /* border: 1px solid blue; */
     width: 13px; height: 18px;

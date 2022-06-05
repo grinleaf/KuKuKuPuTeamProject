@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="./css/ticket_status_mini.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="./css/ticket_status.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/mypage_nav.css">
+    <link rel="stylesheet" href="./css/bootstrap774.css">
+    
+    <script src="./js/ticket_status.js"></script>
+    <script src="./js/mypage_nav.js"></script>
+    <script src="./js/bootstrap774.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- index.html용 style -->
+    <link rel="stylesheet" href="./index.css">
+
+    <script>
+        function afterload(){
+            //로그인 여부에 따른 UI 적용
+            //로그인 안돼있으면 로그인정보창, 돼있으면 로그인입력창 안 띄우기
+            let isLogin = false
+            const topNavLogin = document.getElementById("top-nav-login")
+            const topNavSignUp = document.getElementById("top-nav-signup")
+            const topNavMypage = document.getElementById("top-nav-mypage")
+            const topNavLogout = document.getElementById("top-nav-logout")
+            const mTopNavLogin = document.getElementById("m_top-nav-login")
+            const mTopNavSignUp = document.getElementById("m_top-nav-signup")
+            const mTopNavMypage = document.getElementById("m_top-nav-mypage")
+            const mTopNavLogout = document.getElementById("m_top-nav-logout")
+
+            const loginForm = document.getElementById("login-form")
+            const loggedIn = document.getElementById("loggedin")
+
+            if(isLogin == false){ //비로그인 시
+                topNavMypage.style.display = "none"
+                topNavLogout.style.display = "none"
+                mTopNavMypage.style.display = "none"
+                mTopNavLogout.style.display = "none"
+
+                loggedIn.style.display = "none"
+            } else { //로그인 시
+                topNavLogin.style.display = "none"
+                topNavSignUp.style.display = "none"
+                mTopNavLogin.style.display = "none"
+                mTopNavSignUp.style.display = "none"
+                
+                loginForm.style.display = "none"
+            }
+        }
+
+        function isTabletWidth(){
+            return window.innerWidth < 768
+        }
+    </script>
+</head>
+<body onload="afterload()">
+    <div id="header-wrap">
+        <header id="header">
+            <div id="top-nav">
+                <a id="top-nav-login" href="./signIn_01.html">로그인</a>
+                <a id="top-nav-signup" href="./signUp1_01.html">회원가입</a>
+                <a id="top-nav-mypage" href="">마이페이지</a>
+                <a id="top-nav-logout" href="">로그아웃</a>
+            </div>
+            
+            <div id="logo-and-toggler">
+                <a id="logo" href="#">
+                    <img src="./image/logo.png" alt="" width="250px">
+                </a>
+                <button id="navbar-toggler" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <a class="offcanvas-title" id="staticBackdropLabel" href="#">
+                        <img src="./image/logo.png" alt="" width="250px">
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="m_top-nav">
+                        <a id="m_top-nav-login" href="./signIn_01.html">로그인</a>
+                        <a id="m_top-nav-signup" href="./signUp1_01.html">회원가입</a>
+                        <a id="m_top-nav-mypage" href="">마이페이지</a>
+                        <a id="m_top-nav-logout" href="">로그아웃</a>
+                    </div>
+                    <nav id="m_main-nav">
+                        <ul>
+                            <li><a href="./Information_Use_01.html">이용안내</a>
+                            </li>
+                            <li><a href="./rental_station_01.html">대여소 조회</a>
+                            </li>
+                            <li><a href="#none">이용권 구매</a>
+                            </li>
+                            <li><a href="./QnA_01.html">문의/FAQ</a>
+                            </li>
+                            <li><a href="./notice_01.html">공지사항</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="./Information_Use_01.html">이용안내</a>
+                    </li>
+                    <li><a href="./rental_station_01.html">대여소 조회</a>
+                    </li>
+                    <li><a href="#none">이용권 구매</a>
+                    </li>
+                    <li><a href="./QnA_01.html">문의/FAQ</a>
+                    </li>
+                    <li><a href="./notice_01.html">공지사항</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+<!-- 마이페이지 상단 메뉴바 영역 시작-->
+    <div id="mypage_nav_wrap">
+        <span><h3 id="mypage_title"><img src="https://www.bikeseoul.com/img/btn_back.png">마이페이지<img id="ticket_status_hidden_img" src="https://www.bikeseoul.com/img/close.png"></h3></span>
+        <br>
+        <div>
+            <div id="mypage_nav_wrap_align">
+                <table>
+                    <tr>
+                        <td><img src="./image/ic_info.png">회원정보</td>
+                        <td>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('./ticket_status.html')">개인정보 수정</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">sns 로그인 연동 설정</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">회원탈퇴 설정</button>
+                            <button type="button" class="nav_btn_userInfo_hidden" style="visibility: hidden;">회원탈퇴 설정</button>
+                            <button type="button" class="nav_btn_userInfo_hidden" style="visibility: hidden;">회원탈퇴 설정</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="./image/ic_assignment.png">이용정보</td>
+                        <td>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">시설 이용내역</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('./ticket_status.html')">이용권 결제내역</button>
+                        </td>
+                    </tr>
+                </table>    
+            </div>
+        </div>
+    </div>
+<!-- 마이페이지 상단 메뉴바 영역 끝 -->
+
+<!-- content 영역 시작 -->
+    <div id="show_mypage_html"><?php include('./ticket_status.html'); ?></div>
+<!-- content 영역 끝 -->
+    <div id="footer-wrap" style="background-color: gainsboro;">
+        <footer id="footer">
+            <div id="store">
+                <img src="./image/app_ios.png" alt="">
+                <img src="./image/app_and.png" alt="">
+            </div>
+            <div id="sns">
+                <img src="./image/instaLink.png" alt="">
+                <img src="./image/facebookLink.png" alt="">
+                <img src="./image/naverblogLink.png" alt="">
+            </div>
+            <div id="footer-nav">
+                <a href="">이용약관</a> | 
+                <a href="">개인정보처리방침</a> | 
+                <a href="">보험안내</a> | 
+                <a href="">도움주신 분</a>
+            </div>
+            <p>서울특별시 중구 세종대로 110 서울특별시 대표자 오세훈, Tel : 1599-0120 (사업자등록번호 : 104-83-00469) 우편번호 04524</p>
+            <p>COPYRIGHT ⓒ 2018 bikeseoul All RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+</body>
+</html>
