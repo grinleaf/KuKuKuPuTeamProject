@@ -1,0 +1,37 @@
+div#all{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+#container_total{
+    display: inline-block;
+    text-align: center;
+    width: 800px;
+    margin-top: 50px;
+}
+
+#ticket_status_table, #receive_ticket_table, #send_ticket_table{ width: 100%; line-height: 2.5rem; margin-top: 2rem; margin-bottom: 2rem; }
+#ticket_status_table tr, #receive_ticket_table tr, #send_ticket_table tr{ width:15%;font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
+#ticket_status_table tr:first-child, #receive_ticket_table tr:first-child, #send_ticket_table tr:first-child{ 
+    width: 50%;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    font-size: 12px;
+    text-align: center;
+}
+#ticket_status_table tr:nth-child(2), #receive_ticket_table tr:nth-child(2), #send_ticket_table tr:nth-child(2){ text-align: left;}
+#ticket_status_table td, #receive_ticket_table td, #send_ticket_table td{ width: auto; text-align: center;}
+#ticket_status_table td:first-child, #receive_ticket_table td:first-child, #send_ticket_table td:first-child{ text-align: center;}
+
+.nav-item a{
+    color: #4cab6a;
+}
+
+
+
+/* ul a{
+    text-decoration: none;
+    color: red; 
+} */
+

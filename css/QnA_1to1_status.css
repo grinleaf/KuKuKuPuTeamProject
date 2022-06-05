@@ -1,0 +1,71 @@
+div#all{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+#container_total{
+    display: inline-block;
+    text-align: center;
+    width: 800px;
+    margin-top: 50px;
+}
+#container_search{
+    flex-wrap: wrap;
+    display:block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#content_title{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}
+
+h3 img:first-child{
+    /* border: 1px solid blue; */
+    width: 13px; height: 18px;
+    display: none;
+}
+
+h3 img#notice_hidden_img{
+    width: 15px;
+    height: 15px;
+    visibility: hidden;
+}
+
+#search_box{
+    width: 70%;
+    font-size: 12px; 
+    line-height: 1.2rem; 
+    padding: 6px;
+    margin-right: 5px;
+}
+#search_btn{
+    width: 3.5rem;
+    font-size: 12px;
+    color: white;
+    padding: 6px;
+    background-color: green;
+    border: none; border-radius: 1px;
+}
+
+#qna_status_table{ width: 100%; line-height: 2.5rem; margin-bottom: 2rem;}
+#qna_status_table tr{ font-size: 13px; line-height: 3rem; border-bottom: 1px solid #cccccc }
+#qna_status_table tr:first-child{ 
+    width: "70%";
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    font-size: 12px;
+    text-align: center;
+}
+#qna_status_table tr:nth-child(2){ width: "30%"; text-align: left; }
+#qna_status_table td:first-child{ text-align: left; padding-left: 1rem; cursor: pointer;}
+#qna_status_table td:nth-child(2), td:nth-child(3){ text-align: center; }
+
+/* ul a{
+    text-decoration: none;
+    color: red; 
+} */
+
