@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 
@@ -92,10 +93,16 @@
 
                 <h3>정기권종류선택</h3>
 
-                <select class="form-select">
+                <select class="form-select" id="paySelect">
                     <option>선택</option>
-                    <option>일일 회원(1시간권)</option>
-                    <option>일일 회원(2시간권)</option>
+                    <option value="3000">7일(1시간권)</option>
+                    <option value="5000">30일(1시간권)</option>
+                    <option value="15000">180일(1시간권)</option>
+                    <option value="30000">365일(1시간권)</option>
+                    <option value="4000">7일(2시간권)</option>
+                    <option value="7000">30일(2시간권)</option>
+                    <option value="20000">180일(2시간권)</option>
+                    <option value="40000">365일(2시간권)</option>
                 </select>
 
                 <div class="pay_select">
@@ -104,6 +111,16 @@
                     <span>원</span>
 
                 </div>
+
+                <script>
+
+                    $( "#paySelect" ).change(function(){
+                        $("#pay").val( $("#paySelect").val() );
+                        $("#voucher_price").val( $("#paySelect").val() );
+                        $("#pay_total_final").val( $("#paySelect").val() );
+                    });
+
+                </script>
 
             </div>
 
@@ -176,14 +193,18 @@
                 <div class="voucher">
 
                     <p>이용권</p>
-                    <p id="voucher_price">0원</p>
+                    <!-- <p id="voucher_price">0원</p> -->
+                    <input id="voucher_price" type="text" value="0" readonly>
+                    <p>원</p>
 
                 </div>
 
                 <div class="mileage">
 
                     <p>마일리지</p>
-                    <p id="mileage_price">0원</p>
+                    <!-- <p id="mileage_price">0원</p> -->
+                    <input id="mileage_price" type="text" value="0" readonly>
+                    <p>원</p>
 
                 </div>
 
@@ -426,8 +447,12 @@
     }
 
     #voucher_price{
-        width: 80%;
+        width: 75%;
         text-align: right;
+        border: 0;
+        height: 21px;
+        font-size: 16px;
+        margin-top: 10px;
     }
 
     .mileage{
@@ -435,8 +460,12 @@
     }
 
     #mileage_price{
-        width: 75%;
+        width: 70%;
         text-align: right;
+        border: 0;
+        height: 21px;
+        font-size: 16px;
+        margin-top: 10px;
     }
 
     .check1{
