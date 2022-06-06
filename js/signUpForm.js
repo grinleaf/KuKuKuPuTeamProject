@@ -42,7 +42,7 @@
         }
             
         function checkId(){
-            const reId = /^\w{6,12}$/     //영문, 숫자 6~12자리        
+            const reId = /^[A-Za-z0-9]{6,12}$/     //영문, 숫자 6~12자리      
             $id = $('#id').val()
             console.log( '값 :  ' + $id)
 
@@ -192,8 +192,9 @@
             }
         }
 
-        // 디비 연결 테스트용
-        $('#btn_db').click( ()=>{
+        function test(){
+
+            alert('디비 테스트 ㄱㄱ')
 
             var xhr = new XMLHttpRequest()
 
@@ -211,12 +212,22 @@
             // 멀티 폼 데이터는 헤더와 바디를 나눴다는 약속을 한 형식?암, 
             xhr.send(params) // 이 안의 데이터들
 
-        })
+        }
+
+
+        document.getElementById('testDB').click(
+            test()
+        )
+
+
+
         function sendData(){
+
+            console.log('디비 넷웤 작업을 시작합니당')
 
             var xhr = new XMLHttpRequest()
 
-            var params = 'name=' + 'aaaaaaaaaaaaa'
+            var params = 'name=' + $name
                         + '&phoneNum=' + $('#phoneNum').val()
                         + '&id=' + $('#id').val()
                         + '&pw=' + $('#pw2').val()
@@ -239,12 +250,12 @@
         // 이 버튼을 누르면 Ajax으로 비동기 서버작업 수행.
 
         $('#btnSignUp').click( function(){
-
+            alert(' 버튼 클릭')
 
             if(!checkId() || !checkName()||!checkPhoneNum()||!checkPw()||!checkPwConfirm()||!checkEmailFirst()|| !checkEmailSecond()){
                 alert('올바른 회원가입 양식을 작성해주세요')
             }else{ 
-
+              
                 sendData()
                
 

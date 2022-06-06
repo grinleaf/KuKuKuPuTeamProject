@@ -19,12 +19,16 @@
 
         echo " 아이디 :   $id  ,  이름  :   $name  , 이메일 : $email   시각 : $now" ;
 
-    $db = mysqli_connect('localhost','kkpk','commit!!00','userInfo'); // 네번째는 db명
+    $db = mysqli_connect('localhost','kkpk','nell##00','kkpk'); // 네번째는 db명
+
+    if(mysqli_connect_errno()){
+        echo " 아예 접속 에러. ";
+    }
 
     mysqli_query($db, 'set names utf8'); //한글깨짐 방지
 
     
-    $sql = "INSERT INTO userInfo( name, phoneNum, id, pw, email, cbEmail, date) VALUES ( '$name', '$phoneNum','$id','$pw','$email','$cb_email','$now')";
+    $sql = "INSERT INTO user_info( name, phoneNum, id, pw, email, cbEmail, date) VALUES ( '$name', '$phoneNum','$id','$pw','$email','$cb_email','$now')";
     //$sql = "SELECT * FROM `userInfo`";
 
     // $sql = "INSERT INTO please( name ,id) VALUES ('$name','$id')";
