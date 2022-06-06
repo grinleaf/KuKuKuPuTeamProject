@@ -56,8 +56,13 @@ table td:nth-child(2){
     padding: 15px 15px 15px 0px;
 }
 table input{
-    width: auto;
+    width: 100%;
 }
+
+#qna_title{
+    width: 100%;
+}
+
 table #qna_checkbox{
     width: 3%;
 }

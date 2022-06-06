@@ -15,6 +15,9 @@
     font-weight: bold;
     text-align: left;
 }
+
+
+
 #qna_warning{
     font-size: 12px;
     background-color: #eee;
@@ -56,9 +59,11 @@ table td:nth-child(2){
     font-size: 12px;
     padding: 15px;
 }
-table input{
+
+#qna_title{
     width: 100%;
 }
+
 table #qna_checkbox{
     width: 3%;
 }
