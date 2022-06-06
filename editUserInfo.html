@@ -9,10 +9,12 @@
         <link rel="stylesheet" href="./css/bootstrap.css">
         <!-- JS 연결 --> 
         <script src="./js/bootstrap.js"></script>
+        <script src="./js/editUserInfo.js"></script>
         <style>
-            label {
-                width: 150px;
+            table{
+                border: 1px solid gray;
             }
+            
         </style>
     <title>회원 정보 수정</title>
 </head>
@@ -20,111 +22,106 @@
 
 
    <table>
+       <legend>회원 정보 변경 페이지 입니다</legend>
+            <tr>
+                <td>아이디</td>     
+                <td><p id="userId">예시입니다.</p></td>  
+            </tr>
+
+            <tr>
+                <td>비밀번호</td>
+                <td>
+                    <div class="row g-3 align-items-center">
+
+                        <div class="col-auto">
+                            <button type="button" id="phoneNumSubmit" class="btn btn-primary">비밀번호 변경</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>이메일 주소</td>
+                <td>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <input type="text" id="userEmail" class="form-control" minlength="6" maxlength="12">
+                        </div>
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">
+                            @
+                            </span>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" id="email2" class="form-control" minlength="6" maxlength="12">
+                        </div>
+                        <div class="col-auto">
+                            <select class="form-select"  id="userDomain" aria-label="Default select example" placeholder="">
+                                <option value="">직접 입력</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="empal.com">empal.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="hotmail.com">hotmail.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="yahoo.co.kr">yahoo.co.kr</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <input type="checkbox" id="cbEmail" class="form-control"> 
+                        </div>
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">
+                                이메일 수신 여부
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>휴대전화 번호</td>
+                <td>
+                    <div class="row g-3 align-items-center">
+                        <p id="userPhoneNum">서버에서 불러온 고객 폰번호</p>
+                        <div class="col-auto">
+                            <button type="button" id="phoneNumSubmit" class="btn btn-primary">휴대전화 번호 변경</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" id="phoneNumSubmit" class="btn btn-primary">휴대전화 분실 신청</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>체중</td>
+                <td>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                          <label for="inputPassword6" class="col-form-label">체중</label>
+                        </div>
+                        <div class="col-auto">
+                           <input type="text" id="id" class="form-control" minlength="6" maxlength="12">
+                        </div>
+                        <div class="col-auto">
+                          <span id="text-warning" class="form-text">
+                               Kg
+                          </span>
+                        </div>
+                        <div class="col-auto">
+                            <!-- 이걸 밑으로 내려야 함 -->
+                            <span id="text-warning" class="form-text">
+                                운동량 계산을 위해 필요한 정보입니다.<br>
+                                미기재시 65kg으로 계산됩니다.
+                            </span>
+                          </div>
+            
+                    </div>
+                </td>
+            </tr>
+        </table>
 
 
-
-   </table>
-    <form id="form-register" method="post">
-        <legend>회원 정보 변경 페이지 입니다.</legend>
-
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-            <label for="name" class="col-form-label">아이디</label>
-            </div>
-            <div class="col-auto">
-            <input type="text" id="userName" class="form-control" minlength="3" maxlength="12" autofocus>
-            </div>
-            <div class="col-auto">
-            <span id="text-warning" class="form-text"></span>
-            </div>
-        </div>
-
-        
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">비밀번호</label>
-            </div>
-            <div class="col-auto">
-                <button type="button" id="phoneNumSubmit" class="btn btn-primary">비밀번호 변경</button>
-            </div>
-        </div>
-
-        <div class="row g-3 align-items-center">
-
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">이메일 주소</label>
-            </div>
-            <div class="col-auto">
-                <input type="text" id="userEmail" class="form-control" minlength="6" maxlength="12">
-            </div>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                @
-                </span>
-            </div>
-            <div class="col-auto">
-                <input type="text" id="email2" class="form-control" minlength="6" maxlength="12">
-            </div>
-            <div class="col-auto">
-                <select class="form-select"  id="userDomain" aria-label="Default select example" placeholder="">
-                    <option value="">직접 입력</option>
-                    <option value="daum.net">daum.net</option>
-                    <option value="empal.com">empal.com</option>
-                    <option value="gmail.com">gmail.com</option>
-                    <option value="hanmail.net">hanmail.net</option>
-                    <option value="hotmail.com">hotmail.com</option>
-                    <option value="nate.com">nate.com</option>
-                    <option value="naver.com">naver.com</option>
-                    <option value="yahoo.co.kr">yahoo.co.kr</option>
-                </select>
-            </div>
-            <div class="col-auto">
-                <input type="checkbox" id="cbEmail" class="form-control"> 
-            </div>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    이메일 수신 여부
-                </span>
-            </div>
-        </div>
-
-
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <label for="inputPassword6" class="col-form-label">휴대전화 번호</label>
-            </div>
-            <div class="col-auto">
-              <input type="text" id="??" class="form-control" minlength="6" maxlength="12">
-            </div>
-            <div class="col-auto">
-                <button type="button" id="phoneNumSubmit" class="btn btn-primary">휴대전화 번호 변경</button>
-            </div>
-            <div class="col-auto">
-                <button type="button" id="phoneNumSubmit" class="btn btn-primary">휴대전화 분실 신청</button>
-            </div>
-        </div>
-
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">체중</label>
-            </div>
-            <div class="col-auto">
-               <input type="text" id="id" class="form-control" minlength="6" maxlength="12">
-            </div>
-            <div class="col-auto">
-              <span id="text-warning" class="form-text">
-                   Kg
-              </span>
-            </div>
-            <div class="col-auto">
-                <!-- 이걸 밑으로 내려야 함 -->
-                <span id="text-warning" class="form-text">
-                    운동량 계산을 위해 필요한 정보입니다.<br>
-                    미기재시 65kg으로 계산됩니다.
-                </span>
-              </div>
-
-        </div>
 
 
 </body>

@@ -1,4 +1,5 @@
 <?php
+// 쓰레기 버리기
 
     header('Content-Type:text/plain; Charset=utf-8');
 

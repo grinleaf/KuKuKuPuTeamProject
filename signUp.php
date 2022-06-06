@@ -1,5 +1,7 @@
 <?php
 
+    // 회원가입 유저 데이를를 서버 DB에 저장하는 php 입니다.
+
     header('Content-Type:text/plain; Charset=utf-8');
 
 
