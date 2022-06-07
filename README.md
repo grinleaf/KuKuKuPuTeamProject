@@ -22,9 +22,13 @@
  구글 로그인시 이메일: userGoogleEmail <br/>
  구글 로그인시 최초가입(로그인) 시각: userGoogleDate  <br/>
    <br/>
- 3. 사용법 ( ex. 사용자의 이름을 쓰고 싶다면?  )  <br/>
+ 3. 사용법 = localStorage.getItem('식별자') <br/>
+   ( ex. 사용자의 이름을 쓰고 싶다면?  )  <br/>
       <br/>
-   localStorage.getItem('userName')
+   localStorage.getItem('userName')<br/>
+   <br/>
+ps. 추천 코드 ( 변수 하나 만들어서 쓰새욤)
+    let userId = localStorage.getItem('userName')
   
   
  
