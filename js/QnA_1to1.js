@@ -1,6 +1,7 @@
 function downloadDB(){
     // 로그인 정보 가져오기 (유저 아이디)
-    // let 
+    let userId= localStorage.getItem('userId')
+    document.getElementById('qna_user_id').innerHTML= userId
 }
 
 function uploadDB(){
