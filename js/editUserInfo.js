@@ -52,6 +52,7 @@ jQuery(document).ready(
 
         localStorage.setItem('userName',userInfoObject[0].name) // 로컬 히스토리에 id 식별자로 저장했음
         localStorage.setItem('userPhoneNum',userInfoObject[0].phoneNum) // 로컬 히스토리에 id 식별자로 저장했음
+        localStorage.setItem('userId',userInfoObject[0].id) // 로컬 히스토리에 id 식별자로 저장했음
         localStorage.setItem('userPw',userInfoObject[0].pw) // 로컬 히스토리에 id 식별자로 저장했음
         localStorage.setItem('userEmail',userInfoObject[0].email) // 로컬 히스토리에 id 식별자로 저장했음
         localStorage.setItem('userCbEmail',userInfoObject[0].cbEmail) // 로컬 히스토리에 id 식별자로 저장했음
