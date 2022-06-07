@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 
-    <div>
+    <div style="width: 1030px; margin: auto;">
 
-        <div class="ticket_title_box" style=" width: 1030px; height: 95px; margin: auto;">
+        <div class="ticket_title_box" style=" width: 100%; height: 95px; margin: auto;">
 
             <h3 id="ticket_title">이용권 구매</h3>
 
         </div>
 
-        <div class="ticket_subtitle_box" style="width: 1030px; height: 45px; margin: auto;">
+        <div class="ticket_subtitle_box" style="width: 100%; height: 45px; margin: auto;">
 
             <p id="ticket_subtitle">※기존의 일반권이 1시간권, 프리미엄권이 2시간권으로 변경되었습니다.</p>
 
         </div>
 
-        <div class="ticket_tap_box" style="width: 1030px; height: 170px; margin: auto;">
+        <div class="ticket_tap_box" style="width: 100%; height: 170px; margin: auto;">
 
             <div id="on">
 
@@ -65,13 +66,13 @@
 
         </div>
 
-        <div class="pay_infobtn_box" style="width: 1030px; height: 45px; margin: 0 auto;">
+        <div class="pay_infobtn_box" style="width: 100%; height: 45px; margin: 0 auto;">
 
             <a id="pay_infobtn" href="">※ 이용권 사용안내</a>
 
         </div>
 
-        <div class="pay_info_box" style="width: 1030px; height: 170px; margin: auto;">
+        <div class="pay_info_box" style="width: 100%; height: 170px; margin: auto;">
 
             <ul id="pay_info">
             	<li><strong>1회 1매씩</strong> 구매가 가능합니다.</li>
@@ -87,155 +88,163 @@
 
         </div>
 
-        <div class="pay_box_box" style="width: 1030px; height: 700px; margin: auto;">
+        <div class="pay_box_box" style="width: 100%; height: auto; margin: auto;">
 
-            <div class="pay_box">
+            <div class="box1">
 
-                <h3>정기권종류선택</h3>
+                <div class="pay_box">
 
-                <select class="form-select" id="paySelect">
-                    <option>선택</option>
-                    <option value="3000">7일(1시간권)</option>
-                    <option value="5000">30일(1시간권)</option>
-                    <option value="15000">180일(1시간권)</option>
-                    <option value="30000">365일(1시간권)</option>
-                    <option value="4000">7일(2시간권)</option>
-                    <option value="7000">30일(2시간권)</option>
-                    <option value="20000">180일(2시간권)</option>
-                    <option value="40000">365일(2시간권)</option>
-                </select>
-
-                <div class="pay_select">
-                    
-                    <input id="pay" type="text" value="0" readonly>
-                    <span>원</span>
-
+                    <h3>정기권종류선택</h3>
+    
+                    <select class="form-select" id="paySelect">
+                        <option>선택</option>
+                        <option value="3000">7일(1시간권)</option>
+                        <option value="5000">30일(1시간권)</option>
+                        <option value="15000">180일(1시간권)</option>
+                        <option value="30000">365일(1시간권)</option>
+                        <option value="4000">7일(2시간권)</option>
+                        <option value="7000">30일(2시간권)</option>
+                        <option value="20000">180일(2시간권)</option>
+                        <option value="40000">365일(2시간권)</option>
+                    </select>
+    
+                    <div class="pay_select">
+                        
+                        <input id="pay" type="text" value="0" readonly>
+                        <span>원</span>
+    
+                    </div>
+    
+                    <script>
+    
+                        $( "#paySelect" ).change(function(){
+                            $("#pay").val( $("#paySelect").val() );
+                            $("#voucher_price").val( $("#paySelect").val() );
+                            $("#pay_total_final").val( $("#paySelect").val() );
+                        });
+    
+                    </script>
+    
                 </div>
-
-                <script>
-
-                    $( "#paySelect" ).change(function(){
-                        $("#pay").val( $("#paySelect").val() );
-                        $("#voucher_price").val( $("#paySelect").val() );
-                        $("#pay_total_final").val( $("#paySelect").val() );
-                    });
-
-                </script>
+    
+                <div class="method_of_payment">
+    
+                    <h3>결제금액</h3>
+    
+                    <div class="radio">
+    
+                        <div class="payment_zeropay">
+                        
+                            <label><input id="zeropay" type="radio">제로페이</label>
+        
+                        </div>
+        
+                        <div class="payment_card">
+        
+                            <label><input id="card" type="radio">신용/체크카드</label>
+        
+                        </div>
+        
+                        <div class="payment_payco">
+        
+                            <label><input id="payco" type="radio">
+                            <img src="https://www.bikeseoul.com/images/payco.png" alt="">
+                            </label>
+        
+                        </div>
+        
+                        <div class="payment_kakaopay">
+        
+                            <label><input id="kakaopay" type="radio">
+                            <img src="https://www.bikeseoul.com/images/ico_kakaopay.gif" alt="">
+                            </label>
+        
+                        </div>
+        
+                        <div class="payment_phone">
+        
+                            <label><input id="phone" type="radio">휴대폰결제</label>
+        
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="non_payment_box">
+    
+                    <h3>미납</h3>
+    
+                    <div class="non_payment">
+                        <span>미납금액</span>
+                        <span id="won">0원</span>
+                        <span style="margin-left: 5px;">/초과이용</span>
+                        <span id="gun">0건</span>
+                    </div>
+    
+                </div>
 
             </div>
 
-            <div class="method_of_payment">
+            <div class="box2">
 
-                <h3>결제금액</h3>
+                <div class="paybox_total">
 
-                <div class="radio">
-
-                    <div class="payment_zeropay">
-                    
-                        <label><input id="zeropay" type="radio">제로페이</label>
+                    <h3>결제금액</h3>
+    
+                    <div id="top_line"></div>
+    
+                    <div class="voucher">
+    
+                        <p>이용권</p>
+                        <!-- <p id="voucher_price">0원</p> -->
+                        <input id="voucher_price" type="text" value="0" readonly>
+                        <p>원</p>
+                    </div>
+    
+                    <div class="mileage">
+    
+                        <p>마일리지</p>
+                        <!-- <p id="mileage_price">0원</p> -->
+                        <input id="mileage_price" type="text" value="0" readonly>
+                        <p>원</p>
     
                     </div>
     
-                    <div class="payment_card">
+                    <div id="bottom_line"></div>
     
-                        <label><input id="card" type="radio">신용/체크카드</label>
+                    <div class="pay_total">
+    
+                        <input id="pay_total_final" type="text" value="0" readonly>
+                        <span>원</span>
     
                     </div>
     
-                    <div class="payment_payco">
+                    <div class="check1">
     
-                        <label><input id="payco" type="radio">
-                        <img src="https://www.bikeseoul.com/images/payco.png" alt="">
+                        <label>
+                            <input type="checkbox">
+                            추가요금자동결제,환불규정, <a href="">이용약관</a>에 동의하며 결제를 진행합니다.
+                            (<a href="">이용권 사용안내</a>)
                         </label>
     
                     </div>
     
-                    <div class="payment_kakaopay">
+                    <div class="check2">
     
-                        <label><input id="kakaopay" type="radio">
-                        <img src="https://www.bikeseoul.com/images/ico_kakaopay.gif" alt="">
+                        <label>
+                            <input type="checkbox">
+                            만 13세 미만의 미성년자가 서비스를 이용하는 경우, 사고 발생 시 보험 적용을 받을 수 없는 등의 불이익을 받으실 수 있습니다. (만 15세 미만의 경우 상법 제732조에 의거하여 사망 보험 적용 불가)
                         </label>
     
                     </div>
     
-                    <div class="payment_phone">
+                    <div class="pay_button_box">
     
-                        <label><input id="phone" type="radio">휴대폰결제</label>
+                        <button id="pay_button">결제하기</button>
     
                     </div>
-
-                </div>
-
-            </div>
-
-            <div class="non_payment_box">
-
-                <h3>미납</h3>
-
-                <div class="non_payment">
-	                <span>미납금액</span>
-                    <span id="won">0원</span>
-	                <span style="margin-left: 5px;">/초과이용</span>
-                    <span id="gun">0건</span>
-	            </div>
-
-            </div>
-
-            <div class="paybox_total">
-
-                <h3>결제금액</h3>
-
-                <div id="top_line"></div>
-
-                <div class="voucher">
-
-                    <p>이용권</p>
-                    <!-- <p id="voucher_price">0원</p> -->
-                    <input id="voucher_price" type="text" value="0" readonly>
-                    <p>원</p>
-                </div>
-
-                <div class="mileage">
-
-                    <p>마일리지</p>
-                    <!-- <p id="mileage_price">0원</p> -->
-                    <input id="mileage_price" type="text" value="0" readonly>
-                    <p>원</p>
-
-                </div>
-
-                <div id="bottom_line"></div>
-
-                <div class="pay_total">
-
-                    <input id="pay_total_final" type="text" value="0" readonly>
-                    <span>원</span>
-
-                </div>
-
-                <div class="check1">
-
-                    <label>
-                        <input type="checkbox">
-                        추가요금자동결제,환불규정, <a href="">이용약관</a>에 동의하며 결제를 진행합니다.
-                        (<a href="">이용권 사용안내</a>)
-                    </label>
-
-                </div>
-
-                <div class="check2">
-
-                    <label>
-                        <input type="checkbox">
-                        만 13세 미만의 미성년자가 서비스를 이용하는 경우, 사고 발생 시 보험 적용을 받을 수 없는 등의 불이익을 받으실 수 있습니다. (만 15세 미만의 경우 상법 제732조에 의거하여 사망 보험 적용 불가)
-                    </label>
-
-                </div>
-
-                <div class="pay_button_box">
-
-                    <button id="pay_button">결제하기</button>
-
+    
                 </div>
 
             </div>
@@ -248,6 +257,14 @@
 </html>
 
 <style>
+
+    @media screen and (min-width:700px) {
+
+        .pay_box_box {
+            flex-wrap: wrap;
+        }
+
+    }
 
     .ticket_title_box{
         display:flex;
@@ -434,7 +451,17 @@
     }
 
     .pay_box_box{
-        position: relative;
+        display: flex;
+        /* position: relative; */
+        flex-direction: row;
+    }
+
+    .box1, .box2{
+        display: flex;
+    }
+
+    .box1{
+        flex-direction: column;
     }
 
     .paybox_total{
@@ -442,9 +469,9 @@
         border: 4px #000 solid;
         height: 452px;
         padding: 30px;
-        position: absolute;
+        /* position: absolute;
         right: 0;
-        top: 0;
+        top: 0; */
         width: 300px;
         margin: 8px;
     }
