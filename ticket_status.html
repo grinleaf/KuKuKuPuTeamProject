@@ -10,10 +10,13 @@
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <link rel="stylesheet" href="./css/notice_mini.css" media="(max-width:768px)">
-    <link rel="stylesheet" href="./css/notice.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/ticket_status_mini.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="./css/ticket_status.css" media="(min-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
+    
+    <script src="./js/ticket_status.js"></script>
     <script src="./js/bootstrap774.js"></script>
+    
     <!-- index.html용 style -->
     <link rel="stylesheet" href="./index.css">
 
@@ -61,7 +64,7 @@
         <header id="header">
             <div id="top-nav">
                 <a id="top-nav-login" href="./signIn_01.html">로그인</a>
-                <a id="top-nav-signup" href="./signUp1.html">회원가입</a>
+                <a id="top-nav-signup" href="./signUp1_01.html">회원가입</a>
                 <a id="top-nav-mypage" href="">마이페이지</a>
                 <a id="top-nav-logout" href="">로그아웃</a>
             </div>
@@ -127,25 +130,53 @@
 <!-- content 영역 시작 -->
 <div id="all">
     <div id="container_total">
-        <h3 id="content_title"><img src="https://www.bikeseoul.com/img/btn_back.png">공지사항<img id="notice_hidden_img" src="https://www.bikeseoul.com/img/close.png"></h3>
-        <br>
-        <div id="container_search">        
-            <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn">검색</button>
-        </div>
-        <table id="notice_table">
-            <tr id="table_row">
-                <th>제목</th>
-                <th>날짜</th>
-            </tr>
-            <script src="./js/notice.js"></script>
-        </table>
-        <ul id="notice_indicate" class="pagination justify-content-center">
-            <li onclick="select_indicator(0)" class="page-item"><a href="" class="page-link" style="color: #444;">1</a></li>
-            <li onclick="select_indicator(1)" class="page-item"><a href="" class="page-link" style="color: #444;">2</a></li>
-            <li onclick="select_indicator(2)" class="page-item"><a href="" class="page-link" style="color: #444;">3</a></li>
-            <li onclick="select_indicator(3)" class="page-item"><a href="" class="page-link" style="color: #444;">4</a></li>
-            <li onclick="select_indicator(4)" class="page-item"><a href="" class="page-link" style="color: #444;">5</a></li>
+    <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">이용권 현황</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">받은 이용권</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu2">보낸 이용권</a>
+            </li>
         </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane container active" id="home">
+                <table id="ticket_status_table" class="ticket_tables">
+                    <tr>
+                        <th>이용권</th>
+                        <th>등록일자</th>
+                        <th>사용</th>
+                    </tr>
+                    <script>ticket_status_add()</script>
+                </table>
+            </div>
+            <div class="tab-pane container fade" id="menu1">
+                <table id="receive_ticket_table" class="ticket_tables">
+                    <tr id="table_row">
+                        <th>이용권</th>
+                        <th>등록일자</th>
+                        <th>사용</th>
+                        <th>발신인</th>
+                    </tr>
+                    <script>receiveticket_add()</script>
+                </table>
+            </div>
+            <div class="tab-pane container fade" id="menu2">
+                <table id="send_ticket_table" class="ticket_tables">
+                    <tr id="table_row">
+                        <th>이용권</th>
+                        <th>발송일</th>
+                        <th>수신인</th>
+                    </tr>
+                    <script>send_ticket_add()</script>
+                </table>
+            </div>
+        </div>
     </div>
     </div>
 <!-- content 영역 끝 -->

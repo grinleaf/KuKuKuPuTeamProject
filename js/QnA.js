@@ -70,8 +70,6 @@ let qnaArray8= [
     for(var i=0; i<x.length;i++){ 
         x[i].style.display= 'none'
      }
-    
-
     switch(num){
         case 0: x[num].style.display= 'block'; break
         case 1: x[num].style.display= 'block'; break
@@ -82,6 +80,8 @@ let qnaArray8= [
         case 6: x[num].style.display= 'block'; break
         case 7: x[num].style.display= 'block'; break
     }
+
+    
 }
 
 // function qna_add(qnaArray){
