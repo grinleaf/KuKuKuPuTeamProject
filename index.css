@@ -40,9 +40,11 @@ a{
 #top-nav{
     display: flex;
     justify-content: flex-end;
+    margin-right: 20px;
 }
 #top-nav > a{
-    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 3rem;
 }
 
 #main-nav{
@@ -149,13 +151,36 @@ a{
 }
 
 #guide-nav{
-    height: 100px;
-    padding: 0 0 20px 0;
-    display: flex;
+    background-color: thistle;
+    margin: 0 auto 20px auto;
 }
-#guide-nav > div{
+#guide-nav *{
+}
+#guide-nav > ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+#guide-nav > ul > li{
+    flex-grow: 1;
+    display: flex;
+    flex-basis: 20%;
+    padding: 10px;
+    
+    background-color: #253849;
+    border: 1px solid white;
+
+}
+#guide-nav > ul > li > a{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
     flex-grow: 1;
 }
+
+
 #guide{
     padding: 0 0 20px 0;
     display: flex;
@@ -213,11 +238,10 @@ a{
 #footer{
     font-size: 0.8rem;
     position: relative;
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 #store{
     text-align: right;
-    margin-top: 10px;
 }
 #store > img {
     width: 200px;
@@ -337,9 +361,11 @@ body{
     background-color: lightblue;
 }
 
-
 #login-form, #loggedin{
     display: none;
+}
+
+#guide-nav > ul > li{
 }
 
 .place-item:hover > .place-card{
