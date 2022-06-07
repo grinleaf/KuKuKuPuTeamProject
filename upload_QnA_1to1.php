@@ -11,9 +11,11 @@
     $srcName= $file['name'];
     $tmpName= $file['tmp_name'];
 
+
     if(!file_exists("./uploadImages/$user_id")){
         mkdir("./uploadImages/$user_id",0777);
     }
+
     $dstName= "./uploadImages/$user_id/".date('YmdHis')."_$srcName";
     move_uploaded_file($tmpName,$dstName);
 

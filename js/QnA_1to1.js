@@ -1,6 +1,6 @@
 function downloadDB(){
     // 로그인 정보 가져오기 (유저 아이디)
-    let 
+    // let 
 }
 
 function uploadDB(){
@@ -34,6 +34,7 @@ function uploadDB(){
     formData.append('content', content)
 
     formData.append('file', file)
+    // file= file.substring(12)
 
     let xhr= new XMLHttpRequest()
     //결과값 출력
