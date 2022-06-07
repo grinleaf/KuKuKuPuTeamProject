@@ -37,6 +37,7 @@
         //$row 는 한 레코드닊[]ㅇ지드렂ㄷ루
         echo json_encode($rows);
 
+
         mysqli_close($db);
 
         
