@@ -27,7 +27,7 @@
       <br/>
    localStorage.getItem('userName')<br/>
    <br/>
-ps. 추천 코드 ( 변수 하나 만들어서 쓰새욤)
+ps. 추천 코드 ( 변수 하나 만들어서 쓰새욤) <br/>
     let userId = localStorage.getItem('userName')
   
   
