@@ -10,10 +10,16 @@
     <!-- Swiper : 스와이프 가능한 반응형 슬라이더 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <link rel="stylesheet" href="./css/notice_mini.css" media="(max-width:768px)">
-    <link rel="stylesheet" href="./css/notice.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/ticket_status_mini.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="./css/ticket_status.css" media="(min-width:768px)">
+    <link rel="stylesheet" href="./css/mypage_nav.css">
     <link rel="stylesheet" href="./css/bootstrap774.css">
+    
+    <script src="./js/ticket_status.js"></script>
+    <script src="./js/mypage_nav.js"></script>
     <script src="./js/bootstrap774.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <!-- index.html용 style -->
     <link rel="stylesheet" href="./index.css">
 
@@ -61,7 +67,7 @@
         <header id="header">
             <div id="top-nav">
                 <a id="top-nav-login" href="./signIn_01.html">로그인</a>
-                <a id="top-nav-signup" href="./signUp1.html">회원가입</a>
+                <a id="top-nav-signup" href="./signUp1_01.html">회원가입</a>
                 <a id="top-nav-mypage" href="">마이페이지</a>
                 <a id="top-nav-logout" href="">로그아웃</a>
             </div>
@@ -124,30 +130,40 @@
             </nav>
         </header>
     </div>
-<!-- content 영역 시작 -->
-<div id="all">
-    <div id="container_total">
-        <h3 id="content_title"><img src="https://www.bikeseoul.com/img/btn_back.png">공지사항<img id="notice_hidden_img" src="https://www.bikeseoul.com/img/close.png"></h3>
+
+<!-- 마이페이지 상단 메뉴바 영역 시작-->
+    <div id="mypage_nav_wrap">
+        <span><h3 id="mypage_title"><img src="https://www.bikeseoul.com/img/btn_back.png">마이페이지<img id="ticket_status_hidden_img" src="https://www.bikeseoul.com/img/close.png"></h3></span>
         <br>
-        <div id="container_search">        
-            <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn">검색</button>
+        <div>
+            <div id="mypage_nav_wrap_align">
+                <table>
+                    <tr>
+                        <td><img src="./image/ic_info.png">회원정보</td>
+                        <td>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('./ticket_status.html')">개인정보 수정</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">sns 로그인 연동 설정</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">회원탈퇴 설정</button>
+                            <button type="button" class="nav_btn_userInfo_hidden" style="visibility: hidden;">회원탈퇴 설정</button>
+                            <button type="button" class="nav_btn_userInfo_hidden" style="visibility: hidden;">회원탈퇴 설정</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="./image/ic_assignment.png">이용정보</td>
+                        <td>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('#')">시설 이용내역</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('./ticket_status.html')">이용권 결제내역</button>
+                            <button type="button" class="nav_btn_userInfo" onclick="btn_mypage_click('./QnA_1to1_status.html')">1:1 문의내역</button>
+                        </td>
+                    </tr>
+                </table>    
+            </div>
         </div>
-        <table id="notice_table">
-            <tr id="table_row">
-                <th>제목</th>
-                <th>날짜</th>
-            </tr>
-            <script src="./js/notice.js"></script>
-        </table>
-        <ul id="notice_indicate" class="pagination justify-content-center">
-            <li onclick="select_indicator(0)" class="page-item"><a href="" class="page-link" style="color: #444;">1</a></li>
-            <li onclick="select_indicator(1)" class="page-item"><a href="" class="page-link" style="color: #444;">2</a></li>
-            <li onclick="select_indicator(2)" class="page-item"><a href="" class="page-link" style="color: #444;">3</a></li>
-            <li onclick="select_indicator(3)" class="page-item"><a href="" class="page-link" style="color: #444;">4</a></li>
-            <li onclick="select_indicator(4)" class="page-item"><a href="" class="page-link" style="color: #444;">5</a></li>
-        </ul>
     </div>
-    </div>
+<!-- 마이페이지 상단 메뉴바 영역 끝 -->
+
+<!-- content 영역 시작 -->
+    <div id="show_mypage_html"><?php include('./ticket_status.html'); ?></div>
 <!-- content 영역 끝 -->
     <div id="footer-wrap" style="background-color: gainsboro;">
         <footer id="footer">

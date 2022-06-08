@@ -11,12 +11,11 @@ let noticeArray= [
     {titleTr:"[안내] 새싹따릉이 안전이용 동영상 안내",dateTr:"2021.01.22"}
 ];
 
-// export default noticeArray
-
 function notice_add(){
     let table= document.getElementById('notice_table')
     for(var i=0; i<noticeArray.length; i++){
         let tr= document.createElement('tr')
+        tr.setAttribute('id', 'notice_table_tr'+(i+1))
         let noticeTitle= document.createElement('td')
         noticeTitle.appendChild(document.createTextNode(noticeArray[i].titleTr))
         noticeTitle.onclick= move_detail_page
@@ -32,5 +31,13 @@ function move_detail_page(){
     window.open('./noticeDetail_01.html', '_self')
 }
 
-
-notice_add()
+function search_title(){
+    let input_search= document.getElementById('search_box').innerHTML
+    for(var i=0; i<noticeArray.length; i++){
+        if(noticeArray[i].titleTr.includes(input_search)){
+            document.getElementById('notice_table_tr'+(i+1)).style.display= ''
+        }else{
+            document.getElementById('notice_table_tr'+(i+1)).style.display= 'none'
+        }
+    }
+}

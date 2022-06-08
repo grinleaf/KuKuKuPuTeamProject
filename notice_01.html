@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/notice.css" media="(min-width:768px)">
     <link rel="stylesheet" href="./css/bootstrap774.css">
     <script src="./js/bootstrap774.js"></script>
+
     <!-- index.html용 style -->
     <link rel="stylesheet" href="./index.css">
 
@@ -130,14 +131,14 @@
         <h3 id="content_title"><img src="https://www.bikeseoul.com/img/btn_back.png">공지사항<img id="notice_hidden_img" src="https://www.bikeseoul.com/img/close.png"></h3>
         <br>
         <div id="container_search">        
-            <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn">검색</button>
+            <input id="search_box" type="text" placeholder="검색어를 입력해주세요."><button id="search_btn" onclick="search_title()">검색</button>
         </div>
         <table id="notice_table">
             <tr id="table_row">
                 <th>제목</th>
                 <th>날짜</th>
             </tr>
-            <script src="./js/notice.js"></script>
+            <script>notice_add()</script>
         </table>
         <ul id="notice_indicate" class="pagination justify-content-center">
             <li onclick="select_indicator(0)" class="page-item"><a href="" class="page-link" style="color: #444;">1</a></li>
