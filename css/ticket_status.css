@@ -1,3 +1,5 @@
+/* *{border: 1px solid red;} */
+
 div#all{
     display: flex;
     flex-direction: column;
@@ -7,8 +9,8 @@ div#all{
 #container_total{
     display: inline-block;
     text-align: center;
-    width: 800px;
-    margin-top: 50px;
+    width: 768px;
+    margin-top: 30px;
 }
 
 #ticket_status_table, #receive_ticket_table, #send_ticket_table{ width: 100%; line-height: 2.5rem; margin-top: 2rem; margin-bottom: 2rem; }
@@ -27,11 +29,3 @@ div#all{
 .nav-item a{
     color: #4cab6a;
 }
-
-
-
-/* ul a{
-    text-decoration: none;
-    color: red; 
-} */
-

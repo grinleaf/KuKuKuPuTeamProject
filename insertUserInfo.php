@@ -1,4 +1,5 @@
 <?php   
+// 쓰레기 버리기
 
 
     $name =$_POST['name'];

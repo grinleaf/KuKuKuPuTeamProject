@@ -3,16 +3,9 @@
     .header {
         flex-wrap: wrap;
         height: auto;
-        padding-bottom: 5px;
+        justify-content: space-between;
     }
-    #top {
-        display: none;
-    }
-}
 
-a{
-    text-decoration: none;
-    color: black;
 }
 
 section {
@@ -48,6 +41,7 @@ section {
     width: 520px;
     height: 45px;
     margin-left: 50px;
+    margin-right: 50px;
 }
 
 #input_text {

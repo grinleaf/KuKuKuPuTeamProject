@@ -39,13 +39,17 @@
 
     <div class="mid" style="width: 1030px; height: auto; margin: auto;">
 
-      <a id="QRbike" href="javascript:doDisplay();">
-        <p id="info02">QR 따릉이 이용안내</p>
-      </a>
+      <div class="aaa">
 
-      <a id="safe" href="javascript:DoDisplay();">
-        <p id="info03">안전수칙</p>
-      </a>
+        <a id="QRbike" href="javascript:doDisplay();">
+          <p id="info02">QR 따릉이 이용안내</p>
+        </a>
+
+        <a id="safe" href="javascript:DoDisplay();">
+          <p id="info03">안전수칙</p>
+        </a>
+
+      </div>
 
       <div id="hidden">
 
@@ -69,6 +73,14 @@
       </div>
 
       <style>
+        @media screen and (max-width:700px) {
+
+          .aaa {
+            display: block;
+          }
+
+        }
+
         .container {
           display: flex;
           flex-direction: column;
