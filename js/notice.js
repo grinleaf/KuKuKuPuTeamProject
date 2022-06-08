@@ -32,7 +32,7 @@ function move_detail_page(){
 }
 
 function search_title(){
-    let input_search= document.getElementById('search_box').innerHTML
+    let input_search= document.getElementById('search_box').value
     for(var i=0; i<noticeArray.length; i++){
         if(noticeArray[i].titleTr.includes(input_search)){
             document.getElementById('notice_table_tr'+(i+1)).style.display= ''

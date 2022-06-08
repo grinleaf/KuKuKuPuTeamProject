@@ -1,4 +1,4 @@
-//DB에서 데이터를 내려받아 저장할 배열객체들
+//DB에서 데이터를 내려받아 저장할 배열객체들!
 var ticketStatusArray= [
     {ticket:"정기권 7일 2시간", registDate:"2022.06.03", used:"미사용"},
     {ticket:"asdf", registDate:"2022.06.03", used:"미사용"},
@@ -12,6 +12,7 @@ var sendTicketArray= [
     {ticket:"정기권 180일 1시간", sendDate:"2022.06.03", receiver:"efgh"}
 ];
 
+//이용권 현황
 function ticket_status_add(){
     let table= document.getElementById('ticket_status_table')
     if(ticketStatusArray.length==0) document.createTextNode('해당 데이터가 없습니다.')
@@ -33,7 +34,7 @@ function ticket_status_add(){
     }
 }
 
-
+//받은 이용권
 function receiveticket_add(){
     let table= document.getElementById('receive_ticket_table')
     if(receiveTicektArray.length==0) document.createTextNode('해당 데이터가 없습니다.')
@@ -58,6 +59,7 @@ function receiveticket_add(){
     }
 }
 
+//보낸 이용권
 function send_ticket_add(){
     let table= document.getElementById('send_ticket_table')
     if(sendTicketArray.length==0) document.createTextNode('해당 데이터가 없습니다.')
