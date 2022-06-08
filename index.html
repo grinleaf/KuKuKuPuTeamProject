@@ -14,10 +14,20 @@
     <link rel="stylesheet" href="./index.css">
 
     <script>
+        let isLogin = false
+        function checkIsLogin(){
+            if(localStorage.id){
+                isLogin = true
+            } else {
+                isLogin = false
+            }
+        }
+        checkIsLogin()
+
         function afterload(){
             //로그인 여부에 따른 UI 적용
             //로그인 안돼있으면 로그인정보창, 돼있으면 로그인입력창 안 띄우기
-            let isLogin = false
+            
             const topNavLogin = document.getElementById("top-nav-login")
             const topNavSignUp = document.getElementById("top-nav-signup")
             const topNavMypage = document.getElementById("top-nav-mypage")
@@ -56,28 +66,56 @@
             xhr.onreadystatechange = function(){
                 if(xhr.readyState == 4 && xhr.status == 200){
                     alert(xhr.responseText)
-                    let loginForm = document.getElementById("login-form")
+                    const loginForm = document.getElementById("login-form")
+                    const loggedin = document.getElementById("loggedin")
                     loginForm.style.display = "none"
-                    let loggedin = document.getElementById("loggedin")
                     loggedin.style.display = "block"
 
-                    let jo = JSON.parse(xhr.responseText)
-                    alert(jo.name)
+                    const pId = document.getElementById("loggedin_id")
+                    const pPhone = document.getElementById("loggedin_phone")
+                    const tdTime = document.getElementById("bike-usage-time")
+                    const tdDistance = document.getElementById("bike-usage-distance")
+                    const tdCalorie = document.getElementById("bike-usage-calorie")
+                    const tdCarbon = document.getElementById("bike-usage-carbon-reduced")
 
-                    saveLocalStorage()
+                    let userAccount = JSON.parse(xhr.responseText)
+                    alert(userAccount.result)
+                    pId.textContent = userAccount.id
+                    pPhone.textContent = userAccount.phone
+                    tdTime.textContent = userAccount.time + " 분"
+                    tdDistance.textContent = userAccount.distance + " km"
+                    tdCalorie.textContent = userAccount.calorie + " kcal"
+                    tdCarbon.textContent = userAccount.carbonReduced + " kg"
+
+                    saveLocalStorage(pId)
                 }
             }
             xhr.open("POST", "./indexEmailLogin.php", true)
-            xhr.send()
+            xhr.setRequestHeader('Content-type', "application/x-www-form-urlencoded") //body에 실린 데이터가 form에서 사용하는 map 방식으로 돼있다는 걸 알려주는 말
+
+            let id = document.getElementById("id").value
+            let pw = document.getElementById("pw").value
+            let bodyStr = "id=" + id + "&pw=" + pw
+            xhr.send(bodyStr)
         }
 
-        function saveLocalStorage(){
+        function changeUI(){
+            
+        }
+
+        function saveLocalStorage(id){
             if( ! localStorage.id){
-                localStorage.setItem("id", "aaa")
+                localStorage.setItem("id", id)
                 alert("id 만듦")
             } else {
-                alert(localStorage.getItem("id"))
+                alert("localStorage id: " + localStorage.getItem("id"))
             }
+        }
+
+        function logout(){
+            alert("logout")
+            localStorage.clear
+            isLogin = false
         }
     </script>
 </head>
@@ -88,7 +126,7 @@
                 <a id="top-nav-login" href="./signIn.html">로그인</a>
                 <a id="top-nav-signup" href="./signUp1.html">회원가입</a>
                 <a id="top-nav-mypage" href="">마이페이지</a>
-                <a id="top-nav-logout" href="">로그아웃</a>
+                <a id="top-nav-logout" href="" onclick="logout()">로그아웃</a>
             </div>
             
             <div id="logo-and-toggler">
@@ -217,8 +255,8 @@
                 </div>
             </aside>
             <aside class="login-area" id="loggedin">
-                <p>ID</p>
-                <p>010-1111-1111</p>
+                <p id="loggedin_id">ID</p>
+                <p id="loggedin_phone">010-1111-1111</p>
                 <button id="btn_member-info-mgmt">회원정보 변경</button>
                 <table>
                     <tr>
@@ -227,19 +265,19 @@
                     </tr>
                     <tr>
                         <td>이용시간</td>
-                        <td>0 분</td>
+                        <td id="bike-usage-time">0 분</td>
                     </tr>
                     <tr>
                         <td>거리</td>
-                        <td>0.00 km</td>
+                        <td id="bike-usage-distance">0.00 km</td>
                     </tr>
                     <tr>
                         <td>칼로리</td>
-                        <td>0.00 kcal</td>
+                        <td id="bike-usage-calorie">0.00 kcal</td>
                     </tr>
                     <tr>
                         <td>탄소절감</td>
-                        <td>0.00 kg</td>
+                        <td id="bike-usage-carbon-reduced">0.00 kg</td>
                     </tr>
                 </table>
             </aside>    
