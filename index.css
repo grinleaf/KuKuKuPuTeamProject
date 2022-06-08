@@ -270,7 +270,7 @@ a{
 /* Tablet Device */
 @media all and (max-width:1024px){
 body{
-    background-color: lightpink;
+    /* background-color: lightpink; */
 
     
 }
@@ -358,7 +358,7 @@ body{
 /* Mobile Device */
 @media all and (max-width:768px){
 body{
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 #login-form, #loggedin{
