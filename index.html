@@ -50,6 +50,35 @@
         function isTabletWidth(){
             return window.innerWidth < 768
         }
+
+        function login(){
+            let xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    alert(xhr.responseText)
+                    let loginForm = document.getElementById("login-form")
+                    loginForm.style.display = "none"
+                    let loggedin = document.getElementById("loggedin")
+                    loggedin.style.display = "block"
+
+                    let jo = JSON.parse(xhr.responseText)
+                    alert(jo.name)
+
+                    saveLocalStorage()
+                }
+            }
+            xhr.open("POST", "./indexEmailLogin.php", true)
+            xhr.send()
+        }
+
+        function saveLocalStorage(){
+            if( ! localStorage.id){
+                localStorage.setItem("id", "aaa")
+                alert("id 만듦")
+            } else {
+                alert(localStorage.getItem("id"))
+            }
+        }
     </script>
 </head>
 <body onload="afterload()">
@@ -177,14 +206,13 @@
                 <input id="pw" type="password" placeholder="비밀번호">
                 <input type="checkbox" id="autologin">
                 <label for="autologin">자동로그인</label><br>
-                <button id="btn_login">로그인</button>
+                <button id="btn_login" onclick="login()">로그인</button>
                 <div id="find-id-pw">
                     <a href="">아이디</a> / <a href="">비밀번호 찾기</a>
                 </div>
                 <div id="line_or"><span id="txt_or">또는</span></div>
                 <div id="quick-logins">
                     <button id="kakao_login">카카오</button>
-                    <button id="google_login">구글</button>
                     <button id="naver_login">네이버</button>
                 </div>
             </aside>
