@@ -79,7 +79,6 @@
                     const tdCarbon = document.getElementById("bike-usage-carbon-reduced")
 
                     let userAccount = JSON.parse(xhr.responseText)
-                    alert(userAccount.result)
                     pId.textContent = userAccount.id
                     pPhone.textContent = userAccount.phone
                     tdTime.textContent = userAccount.time + " 분"
@@ -87,7 +86,7 @@
                     tdCalorie.textContent = userAccount.calorie + " kcal"
                     tdCarbon.textContent = userAccount.carbonReduced + " kg"
 
-                    saveLocalStorage(pId)
+                    saveLocalStorage(userAccount.id)
                 }
             }
             xhr.open("POST", "./indexEmailLogin.php", true)
@@ -108,14 +107,34 @@
                 localStorage.setItem("id", id)
                 alert("id 만듦")
             } else {
-                alert("localStorage id: " + localStorage.getItem("id"))
+                alert("id 왜 있지?")
             }
         }
 
         function logout(){
-            alert("logout")
-            localStorage.clear
+            localStorage.clear()
             isLogin = false
+
+            const loginForm = document.getElementById("login-form")
+            const loggedin = document.getElementById("loggedin")
+            loginForm.style.display = "block"
+            loggedin.style.display = "none"
+
+            const pId = document.getElementById("loggedin_id")
+            const pPhone = document.getElementById("loggedin_phone")
+            const tdTime = document.getElementById("bike-usage-time")
+            const tdDistance = document.getElementById("bike-usage-distance")
+            const tdCalorie = document.getElementById("bike-usage-calorie")
+            const tdCarbon = document.getElementById("bike-usage-carbon-reduced")
+
+            pId.textContent = ""
+            pPhone.textContent = ""
+            tdTime.textContent = "" + " 분"
+            tdDistance.textContent = "" + " km"
+            tdCalorie.textContent = "" + " kcal"
+            tdCarbon.textContent = "" + " kg"
+
+            alert("로그아웃 되었습니다")
         }
     </script>
 </head>
@@ -126,7 +145,7 @@
                 <a id="top-nav-login" href="./signIn.html">로그인</a>
                 <a id="top-nav-signup" href="./signUp1.html">회원가입</a>
                 <a id="top-nav-mypage" href="">마이페이지</a>
-                <a id="top-nav-logout" href="" onclick="logout()">로그아웃</a>
+                <a id="top-nav-logout" href="#none" onclick="logout()">로그아웃</a>
             </div>
             
             <div id="logo-and-toggler">
@@ -256,7 +275,7 @@
             </aside>
             <aside class="login-area" id="loggedin">
                 <p id="loggedin_id">ID</p>
-                <p id="loggedin_phone">010-1111-1111</p>
+                <p id="loggedin_phone">000-0000-0000</p>
                 <button id="btn_member-info-mgmt">회원정보 변경</button>
                 <table>
                     <tr>
