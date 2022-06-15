@@ -1,4 +1,4 @@
-# 🧩 KKPK 팀 프로젝트 🧩
+# 🧩 KKPK 팀 프로젝트 (반응형 웹) 🧩
 ### 🎯 '서울 따릉이' 웹페이지 클론 & 부분 리뉴얼 프로젝트<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(기존 홈페이지 : https://www.bikeseoul.com/)
 * 서울따릉이 홈페이지를 확인한 결과, 가독성이 좋지 못하고 이유 없이 반복되는 페이지가 많아 해당 부분을 보완하여 부분 리뉴얼, 클론 프로젝트를 진행하였습니다.
 
@@ -31,6 +31,7 @@
 * <strong>2차 병합 (6/3 FRI)</strong>
   * 프론트엔드 클릭이벤트 및 부트스트랩 구성
   * 페이지간 링크 연결 및 세부기능 구현
+  * 담당 페이지별 백엔드 연동 작업
 * <strong>화면구성 최종 병합 (6/8 WED)</strong>
 <br>
 
@@ -39,11 +40,14 @@
 * <a name='Jun'>고준형 작업영역</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
+
 * <a name='Kkt'>김기태 작업영역</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
+
 * <a name='Ji'>김지영 작업영역</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <hr>
+
 * <a name='Inah'>박인아 작업영역</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
