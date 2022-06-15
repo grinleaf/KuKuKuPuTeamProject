@@ -10,6 +10,8 @@
 3. &nbsp;&nbsp;html/CSS와 JavaScript를 이용한 화면구성 (미디어쿼리, 외부 라이브러리(BootStrap, JQuery) 활용)
 4. &nbsp;&nbsp;Git을 이용한 팀원 간 협업 및 형상관리 (https://github.com/grinleaf/KuKuKuPuTeamProject.git)
 
+🏆 <strong>구현 홈페이지 주소 : http://kkpk.dothome.co.kr/KuKuKuPuTeamProject/ </strong>
+
 📝 <strong>팀 프로젝트 진행 과정</strong>
 * <strong>주제선정 및 벤치마킹 (5/27 FRI)</strong>
   * 첫 회의, 주제선정 / 프로젝트 형태 (클론, 리뉴얼, 창작 中 <strong>클론과 리뉴얼</strong> 선택) / 일자별 계획
