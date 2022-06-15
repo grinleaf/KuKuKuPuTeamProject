@@ -32,9 +32,7 @@
 * <strong>화면구성 최종 병합 (6/8 WED)</strong>
 <br>
 
-<hr>
-
-### ⛏ <strong>구성원별 작업 코드 및 실행화면 🔨</strong>
+# ⛏ <strong>구성원별 작업 코드 및 실행화면 🔨</strong>
 
 * <a name='Jun'>고준형 작업영역</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
